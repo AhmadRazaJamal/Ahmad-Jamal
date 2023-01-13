@@ -30,13 +30,13 @@ const Portfolio = () => {
 
   return (
     <React.Fragment>
-      <ScrollControls pages={3} damping={0.1}>
+      <ScrollControls pages={10} damping={0.1}>
         <Office model={model} scale={0.1} position={[0, 2.5, 0]} />
         <Scroll html>
           {/* DOM contents in here will scroll along */}
-          {/* <h1>html in here (optional)</h1>
-          <h1 style={{ top: '100vh' }}>second page</h1>
-          <h1 style={{ top: '200vh' }}>third page</h1> */}
+          <h1 style={{ top: '40vh', left: '20vh', position: 'absolute' }}>Regular overlay Text</h1>
+          <h1 style={{ top: '140vh', left: '20vh', position: 'absolute' }}>Regular overlay Text</h1>
+          <h1 style={{ top: '240vh', left: '20vh', position: 'absolute' }}>Regular overlay Text</h1>
         </Scroll>
       </ScrollControls>
       <directionalLight castShadow position={[1, 2, 3]} intensity={1.5} />
@@ -50,7 +50,7 @@ function Office(props: any) {
   useFrame((state, delta) => {
     // The offset is between 0 and 1, you can apply it to your models any way you like
     const offset = scroll.offset
-    state.scene.position.set(0 + offset, 0, 0 + offset)
+    state.scene.position.set(0 - offset, 0, 0 - offset)
   })
   return <primitive object={props.model.scene} scale={props.scale} />
 }
