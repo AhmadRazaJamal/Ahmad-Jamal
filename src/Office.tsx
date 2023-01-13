@@ -1,5 +1,4 @@
 import { OrbitControls, useGLTF } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
 import { Perf } from "r3f-perf";
 import React from "react";
 import * as THREE from "three";
