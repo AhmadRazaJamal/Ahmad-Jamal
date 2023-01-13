@@ -1,8 +1,8 @@
-import { OrbitControls, Scroll, ScrollControls, useGLTF, useScroll } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
-import { Perf } from "r3f-perf";
-import React, { useRef } from "react";
+import { Scroll, ScrollControls, useGLTF, useScroll } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import React from "react";
 import * as THREE from "three";
+import Section from "./Section";
 
 const Portfolio = () => {
   const model = useGLTF("./office.glb");
@@ -34,9 +34,7 @@ const Portfolio = () => {
         <Office model={model} scale={0.1} position={[0, 2.5, 0]} />
         <Scroll html>
           {/* DOM contents in here will scroll along */}
-          <h1 style={{ top: '40vh', left: '20vh', position: 'absolute' }}>Regular overlay Text</h1>
-          <h1 style={{ top: '140vh', left: '20vh', position: 'absolute' }}>Regular overlay Text</h1>
-          <h1 style={{ top: '240vh', left: '20vh', position: 'absolute' }}>Regular overlay Text</h1>
+          <Section />
         </Scroll>
       </ScrollControls>
       <directionalLight castShadow position={[1, 2, 3]} intensity={1.5} />
