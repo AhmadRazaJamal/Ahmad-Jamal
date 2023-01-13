@@ -24,9 +24,9 @@ const Portfolio = () => {
     child.material = bakedMaterial;
   });
 
-  model.scene.position.x = 2
-  model.scene.position.y = -2
-  model.scene.position.z = -1
+  model.scene.position.x = 0
+  model.scene.position.y = -0.8
+  model.scene.position.z = -0.5
 
   return (
     <React.Fragment>
@@ -34,9 +34,9 @@ const Portfolio = () => {
         <Office model={model} scale={0.1} position={[0, 2.5, 0]} />
         <Scroll html>
           {/* DOM contents in here will scroll along */}
-          <h1>html in here (optional)</h1>
+          {/* <h1>html in here (optional)</h1>
           <h1 style={{ top: '100vh' }}>second page</h1>
-          <h1 style={{ top: '200vh' }}>third page</h1>
+          <h1 style={{ top: '200vh' }}>third page</h1> */}
         </Scroll>
       </ScrollControls>
       <directionalLight castShadow position={[1, 2, 3]} intensity={1.5} />
@@ -49,9 +49,8 @@ function Office(props: any) {
   const scroll = useScroll()
   useFrame((state, delta) => {
     // The offset is between 0 and 1, you can apply it to your models any way you like
-    const offset = 1 - scroll.offset
-    // state.camera.position.set(Math.sin(offset) * -10, Math.atan(offset * Math.PI * 2) * 5, Math.cos((offset * Math.PI) / 3) * -10)
-    // state.camera.lookAt(0, 0, 0)
+    const offset = scroll.offset
+    state.scene.position.set(0 + offset, 0, 0 + offset)
   })
   return <primitive object={props.model.scene} scale={props.scale} />
 }

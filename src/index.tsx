@@ -3,8 +3,6 @@ import ReactDOM from "react-dom/client";
 import { Canvas } from "@react-three/fiber";
 import Portfolio from "./Portfolio";
 import React from "react";
-import { PerspectiveCamera } from "three";
-
 const root = ReactDOM.createRoot(document.querySelector("#root") as any);
 
 root.render(
@@ -20,6 +18,7 @@ root.render(
       position: [-2, 2, 2],
     }}
   >
+    <axesHelper args={[2]} />
     <Portfolio />
   </Canvas>
 );
