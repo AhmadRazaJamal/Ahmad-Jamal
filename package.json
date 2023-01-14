@@ -11,6 +11,9 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@emotion/react": "^11.10.5",
+        "@emotion/styled": "^11.10.5",
+        "@mui/material": "^5.11.4",
         "@react-three/drei": "^9.32.3",
         "@react-three/fiber": "^8.8.7",
         "@types/jest": "^29.2.5",

@@ -8,3 +8,9 @@ body,
     height: 100%;
     background: ivory;
 }
+
+#side-bar-01 {
+    top: '40vh';
+    left: '20vh';
+    position: 'absolute'
+}
