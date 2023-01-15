@@ -26,7 +26,7 @@ const Portfolio = () => {
 
   return (
     <React.Fragment>
-      <ScrollControls pages={3}>
+      <ScrollControls pages={10}>
         <Office model={model} scale={0.14} />
         <Scroll html>
           {/* DOM contents in here will scroll along */}

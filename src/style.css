@@ -10,7 +10,9 @@ body,
 }
 
 #side-bar-01 {
-    top: '40vh';
-    left: '20vh';
-    position: 'absolute'
+    top: 200vh;
+    left: 0;
+    position: absolute;
+    width: 60vw;
+    height: 100vh;
 }
