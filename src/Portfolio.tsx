@@ -1,6 +1,6 @@
 import { Scroll, ScrollControls, useGLTF, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import * as THREE from "three";
 import Section from "./Section";
 
@@ -24,14 +24,10 @@ const Portfolio = () => {
     child.material = bakedMaterial;
   });
 
-  model.scene.position.x = 0
-  model.scene.position.y = -0.8
-  model.scene.position.z = -0.5
-
   return (
     <React.Fragment>
       <ScrollControls pages={3}>
-        <Office model={model} scale={0.1} position={[0, 2.5, 0]} />
+        <Office model={model} scale={0.14} />
         <Scroll html>
           {/* DOM contents in here will scroll along */}
           <Section />
@@ -44,30 +40,15 @@ const Portfolio = () => {
 };
 
 function Office(props: any) {
-  const scroll = useScroll();
-  const [endAnimation, setEndAnimation] = useState(false);
-  const [movedRight, setMovedRight] = useState(false);
+  const scroll: any = useScroll();
+  const meshRef: any = useRef(null);
 
-  useFrame((state, delta) => {
-    if (!endAnimation) {
-      // The offset is between 0 and 1, you can apply it to your models any way you like
-      const offset = scroll.offset
-
-      if (state.scene.position.x < 1 && !movedRight) {
-        state.scene.position.x += offset;
-        state.scene.position.z += offset;
-      } else {
-        setMovedRight(true)
-        if (state.scene.position.x > -1) {
-          state.scene.position.x -= offset;
-          state.scene.position.z -= offset;
-        } else {
-          setEndAnimation(true)
-        }
-      }
-    }
+  useFrame((state) => {
+    state.scene.position.x = (Math.sin(scroll.offset * 6.2))
+    state.scene.position.z = (Math.sin(scroll.offset * 6.2))
   })
-  return <primitive object={props.model.scene} scale={props.scale} />
+
+  return <primitive object={props.model.scene} scale={props.scale} ref={meshRef} position={[0, -0.5, 0]} />
 }
 
 export default Portfolio;
