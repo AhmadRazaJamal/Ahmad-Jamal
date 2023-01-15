@@ -11,9 +11,130 @@ body,
 
 #side-bar-01 {
     top: 200vh;
-    border-top-right-radius: 50%;
+    border-top-right-radius: 30%;
     transition: border-radius 0.5s ease-in-out;
-    position: absolute;
     width: 60vw;
     height: 100vh;
+}
+
+
+/* Section Formatting */
+
+.section-margin {
+    width: 100%;
+}
+
+.section {
+    position: relative;
+    width: 50%;
+    padding-top: 100px;
+    margin: 0;
+    background-color: white;
+    overflow: hidden;
+}
+
+.left {
+    margin-right: auto;
+    border-top-right-radius: 700px 700px;
+    border-bottom-right-radius: 0px 0px;
+}
+
+.right {
+    margin-left: auto;
+    border-top-left-radius: 700px 700px;
+    border-bottom-left-radius: 0px 0px;
+}
+
+
+/* Sections */
+
+.left {
+    margin-right: auto;
+    border-top-right-radius: 700px 700px;
+    border-bottom-right-radius: 0px 0px;
+}
+
+.section-intro-wrapper {
+    position: relative;
+    padding: 20% 5%;
+    border-bottom: 2px solid pink;
+    padding-bottom: 400px;
+}
+
+.section-intro-wrapper:nth-child(3) {
+    border-bottom: 2px solid pink;
+}
+
+.section-detail-wrapper {
+    position: relative;
+    padding: 20% 5%;
+}
+
+.section-heading {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.8;
+    margin-top: 64px;
+    color: black;
+}
+
+.section-text {
+    line-height: 2;
+    margin-top: 18px;
+    font-size: 16px;
+    color: black;
+}
+
+
+/* Fancy Decoration Part of Section */
+
+.section-title {
+    position: relative;
+    color: pink
+}
+
+.section-title-text {
+    display: block;
+    font-size: 40px;
+    font-weight: 500;
+    transform-origin: left;
+    transform: skewY(25deg);
+    z-index: 5;
+    text-transform: uppercase;
+    color: pink;
+}
+
+.styleOne,
+.styleTwo,
+.styleThree {
+    position: absolute;
+    display: block;
+    width: 100%;
+    max-width: 278px;
+    height: 60px;
+    border: 1px solid pink;
+    transform-origin: left;
+    transform: skewY(-25deg);
+}
+
+.styleOne {
+    top: 0px;
+}
+
+.styleTwo {
+    top: 80px;
+}
+
+.styleThree {
+    top: 80px;
+    transform: skewY(25deg);
+    background-color: pink;
+}
+
+.section-number {
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+    color: pink;
+    font-size: 24px;
 }
