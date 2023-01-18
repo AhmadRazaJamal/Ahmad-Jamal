@@ -27,8 +27,6 @@ const Section = () => {
                     <p className="section-text"> I love creating art and playing with my cats! I also like drinking bubble tea and going for hikes! Totally hippie lol ✌️. Welcome to my portfolio!</p>
                 </div>
             </Paper>
-            <h1 style={{ top: '140vh', left: '20vh', position: 'absolute' }}>Regular overlay Text</h1>
-            <h1 style={{ top: '240vh', left: '20vh', position: 'absolute' }}>Regular overlay Text</h1>
         </div>
     )
 }

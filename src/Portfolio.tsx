@@ -1,6 +1,6 @@
 import { Scroll, ScrollControls, useGLTF, useScroll } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
-import React, { useRef } from "react";
+import { useFrame, useThree } from "@react-three/fiber";
+import React, { useRef, useState } from "react";
 import * as THREE from "three";
 import Section from "./Section";
 
@@ -42,8 +42,12 @@ const Portfolio = () => {
 function Office(props: any) {
   const scroll: any = useScroll();
   const meshRef: any = useRef(null);
+  let object = props.model.scene.getObjectByName("Monitor");
+  const { camera } = useThree();
 
-  useFrame((state) => {
+
+  useFrame((state, delta) => {
+
     state.scene.position.x = (Math.sin(scroll.offset * 6.2))
     state.scene.position.z = (Math.sin(scroll.offset * 6.2))
   })
