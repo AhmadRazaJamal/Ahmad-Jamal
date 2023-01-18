@@ -45,8 +45,11 @@ function Office(props: any) {
   let object = props.model.scene.getObjectByName("Monitor");
   const { camera } = useThree();
 
-
   useFrame((state, delta) => {
+
+    camera.zoom = scroll.offset * 500;
+    camera.updateProjectionMatrix();
+    console.log(camera.zoom)
 
     state.scene.position.x = (Math.sin(scroll.offset * 6.2))
     state.scene.position.z = (Math.sin(scroll.offset * 6.2))
