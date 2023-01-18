@@ -47,12 +47,12 @@ function Office(props: any) {
 
   useFrame((state, delta) => {
 
-    camera.zoom = scroll.offset * 500;
+    camera.zoom = scroll.offset * 1000;
     camera.updateProjectionMatrix();
-    console.log(camera.zoom)
+    // console.log(camera.zoom)
 
-    state.scene.position.x = (Math.sin(scroll.offset * 6.2))
-    state.scene.position.z = (Math.sin(scroll.offset * 6.2))
+    state.scene.position.x = (Math.sin(scroll.offset * 6.4))
+    state.scene.position.z = (Math.sin(scroll.offset * 6.4))
   })
 
   return <primitive object={props.model.scene} scale={props.scale} ref={meshRef} position={[0, -0.5, 0]} />
