@@ -137,3 +137,16 @@ body,
     color: pink;
     font-size: 24px;
 }
+
+.htmlScreen iframe {
+    width: 1030px;
+    height: 590px;
+    border: none;
+    overflow: initial;
+    top: 950vh;
+}
+
+.htmlScreen {
+    overflow: initial !important;
+    top: 950vh !important;
+}

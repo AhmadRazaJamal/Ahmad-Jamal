@@ -1,4 +1,4 @@
-import { Scroll, ScrollControls, useGLTF, useScroll } from "@react-three/drei";
+import { Html, Scroll, ScrollControls, useGLTF, useScroll } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import React, { useRef, useState } from "react";
 import * as THREE from "three";
@@ -42,20 +42,29 @@ const Portfolio = () => {
 function Office(props: any) {
   const scroll: any = useScroll();
   const meshRef: any = useRef(null);
-  let object = props.model.scene.getObjectByName("Monitor");
+  const iframeRef: any = useRef(null);
+
   const { camera } = useThree();
 
   useFrame((state, delta) => {
 
     camera.zoom = scroll.offset * 1000;
     camera.updateProjectionMatrix();
-    // console.log(camera.zoom)
 
-    state.scene.position.x = (Math.sin(scroll.offset * 6.4))
-    state.scene.position.z = (Math.sin(scroll.offset * 6.4))
+    meshRef.current.position.x = (Math.sin(scroll.offset * 6.4))
+    meshRef.current.position.z = (Math.sin(scroll.offset * 6.4))
   })
 
-  return <primitive object={props.model.scene} scale={props.scale} ref={meshRef} position={[0, -0.5, 0]} />
+  return (
+    <group ref={meshRef}>
+      <primitive object={props.model.scene} scale={props.scale} position={[0, -0.5, 0]}>
+        <Html transform position={[0.8, -0.29, -3.1]} rotation-x={-0.1} wrapperClass='htmlScreen' ref={iframeRef} distanceFactor={1.25}>
+          <iframe src="https://bruno-simon.com/html/" />
+        </Html>
+      </primitive>
+    </group>
+  )
+
 }
 
 export default Portfolio;
