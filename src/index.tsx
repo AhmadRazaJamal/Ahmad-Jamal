@@ -18,7 +18,6 @@ root.render(
       position: [-2, 2, 2],
     }}
   >
-    <axesHelper args={[2]} />
     <Portfolio />
   </Canvas>
 );

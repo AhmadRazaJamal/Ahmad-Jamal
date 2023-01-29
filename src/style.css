@@ -12,8 +12,17 @@ body,
 #side-bar-01 {
     top: 200vh;
     transition: border-radius 0.5s ease-in-out;
-    width: 60vw;
+    width: 30vw;
     height: 200vh;
+}
+
+#side-bar-02 {
+    top: 300vh;
+    transition: border-radius 0.5s ease-in-out;
+    width: 30vw;
+    height: 200vh;
+    position: relative;
+    left: 70vw;
 }
 
 
@@ -46,12 +55,6 @@ body,
 
 
 /* Sections */
-
-.left {
-    margin-right: auto;
-    border-top-right-radius: 700px 700px;
-    border-bottom-right-radius: 0px 0px;
-}
 
 .section-intro-wrapper {
     position: relative;
