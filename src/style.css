@@ -6,7 +6,9 @@ body,
     left: 0;
     width: 100%;
     height: 100%;
-    background: ivory;
+    /* background: ivory; */
+    /* Change it back to ivory later */
+    background: aqua;
 }
 
 #side-bar-01 {
@@ -152,4 +154,5 @@ body,
 .htmlScreen {
     overflow: initial !important;
     top: 950vh !important;
+    display: none;
 }

@@ -43,6 +43,8 @@ function Office(props: any) {
   const scroll: any = useScroll();
   const meshRef: any = useRef(null);
   const iframeRef: any = useRef(null);
+  const screenContainer: any = document.getElementsByClassName('htmlScreen')
+  const [screenVisible, setScreenVisible] = useState(true)
 
   const { camera } = useThree();
 
@@ -50,9 +52,13 @@ function Office(props: any) {
 
     camera.zoom = scroll.offset * 1000;
     camera.updateProjectionMatrix();
-
     meshRef.current.position.x = (Math.sin(scroll.offset * 6.4))
     meshRef.current.position.z = (Math.sin(scroll.offset * 6.4))
+
+    if (scroll.offset > 0.98 && screenVisible) {
+      setScreenVisible(false);
+      screenContainer[0].style.display = 'block';
+    }
   })
 
   return (
