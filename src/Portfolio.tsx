@@ -44,6 +44,7 @@ function Office(props: any) {
   const meshRef: any = useRef(null);
   const iframeRef: any = useRef(null);
   const screenContainer: any = document.getElementsByClassName('htmlScreen')
+  const sideBar1: any = document.getElementById('side-bar-01')
   const [screenVisible, setScreenVisible] = useState(true)
 
   const { camera } = useThree();
@@ -54,6 +55,7 @@ function Office(props: any) {
     camera.updateProjectionMatrix();
     meshRef.current.position.x = (Math.sin(scroll.offset * 6.4))
     meshRef.current.position.z = (Math.sin(scroll.offset * 6.4))
+    sideBar1.style.width = `${scroll.offset * 200}vw`
 
     if (scroll.offset > 0.98 && screenVisible) {
       setScreenVisible(false);

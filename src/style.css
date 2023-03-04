@@ -13,17 +13,16 @@ body,
 
 #side-bar-01 {
     top: 200vh;
-    transition: border-radius 0.5s ease-in-out;
     width: 30vw;
-    height: 200vh;
+    height: 150vh;
 }
 
 #side-bar-02 {
     top: 300vh;
-    transition: border-radius 0.5s ease-in-out;
     width: 30vw;
     height: 200vh;
-    position: relative;
+    position: absolute;
+    transition: border-radius 0.5s ease-in-out;
     left: 70vw;
 }
 
@@ -104,6 +103,7 @@ body,
     transform-origin: left;
     transform: skewY(25deg);
     z-index: 5;
+    margin-left: 10px;
     text-transform: uppercase;
     color: pink;
 }
@@ -114,8 +114,8 @@ body,
     position: absolute;
     display: block;
     width: 100%;
-    max-width: 278px;
-    height: 60px;
+    max-width: 40vw;
+    height: 6vh;
     border: 1px solid pink;
     transform-origin: left;
     transform: skewY(-25deg);
