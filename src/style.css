@@ -6,24 +6,21 @@ body,
     left: 0;
     width: 100%;
     height: 100%;
-    /* background: ivory; */
-    /* Change it back to ivory later */
     background: aqua;
+    /* background: ivory; */
 }
 
 #side-bar-01 {
     top: 200vh;
-    width: 30vw;
+    width: 40vw;
     height: 150vh;
 }
 
 #side-bar-02 {
     top: 300vh;
-    width: 30vw;
+    width: 40vw;
     height: 200vh;
-    position: absolute;
-    transition: border-radius 0.5s ease-in-out;
-    left: 70vw;
+    left: 60vw;
 }
 
 

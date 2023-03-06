@@ -40,22 +40,29 @@ const Portfolio = () => {
 };
 
 function Office(props: any) {
+  // Set states
   const scroll: any = useScroll();
   const meshRef: any = useRef(null);
   const iframeRef: any = useRef(null);
-  const screenContainer: any = document.getElementsByClassName('htmlScreen')
-  const sideBar1: any = document.getElementById('side-bar-01')
   const [screenVisible, setScreenVisible] = useState(true)
+
+  // Get elements
+  const sideBar1: any = document.getElementById('side-bar-01')
+  const sideBar2: any = document.getElementById('side-bar-02')
+  const screenContainer: any = document.getElementsByClassName('htmlScreen')
+
 
   const { camera } = useThree();
 
   useFrame((state, delta) => {
-
     camera.zoom = scroll.offset * 1000;
     camera.updateProjectionMatrix();
+
     meshRef.current.position.x = (Math.sin(scroll.offset * 6.4))
     meshRef.current.position.z = (Math.sin(scroll.offset * 6.4))
-    sideBar1.style.width = `${scroll.offset * 200}vw`
+
+    sideBar1.style.borderTopRightRadius = `${100 - (scroll.offset * 400)}vw`
+    sideBar2.style.borderTopLeftRadius = `${100 - (scroll.offset * 180)}vw`
 
     if (scroll.offset > 0.98 && screenVisible) {
       setScreenVisible(false);
