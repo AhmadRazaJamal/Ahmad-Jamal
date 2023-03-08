@@ -30,9 +30,17 @@ body,
     width: 100%;
 }
 
-.section {
+.section-left {
     position: relative;
     width: 50%;
+    padding-top: 100px;
+    margin: 0;
+    background-color: white;
+    overflow: hidden;
+}
+
+.section-right {
+    position: relative;
     padding-top: 100px;
     margin: 0;
     background-color: white;
@@ -83,6 +91,35 @@ body,
     margin-top: 18px;
     font-size: 16px;
     color: black;
+}
+
+
+/* Progress bars */
+
+.progress-wrapper {
+    height: 0;
+    width: 12px;
+    z-index: 9999;
+}
+
+.progress-bar-wrapper-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.progress-bar-wrapper-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 100%;
+    background-color: pink;
+    transform-origin: top center;
+    transform: scaleY(1);
 }
 
 

@@ -49,10 +49,12 @@ function Office(props: any) {
   // Get elements
   const sideBar1: any = document.getElementById('side-bar-01')
   const sideBar2: any = document.getElementById('side-bar-02')
+  const progressBarLeft: any = document.getElementsByClassName('progress-bar-wrapper-left')[0];
+  const progressBarRight: any = document.getElementsByClassName('progress-bar-wrapper-right')[0];
   const screenContainer: any = document.getElementsByClassName('htmlScreen')
 
-
   const { camera } = useThree();
+  console.log(progressBarRight)
 
   useFrame((state, delta) => {
     camera.zoom = scroll.offset * 1000;
@@ -63,6 +65,18 @@ function Office(props: any) {
 
     sideBar1.style.borderTopRightRadius = `${100 - (scroll.offset * 400)}vw`
     sideBar2.style.borderTopLeftRadius = `${100 - (scroll.offset * 180)}vw`
+
+    if (scroll.offset > 0.22 && scroll.offset < 0.35) {
+      progressBarLeft.style.height = `${1 - (0.22 - scroll.offset) * 1500}vh`;
+    } else if (scroll.offset < 0.22) {
+      progressBarLeft.style.height = `${0}vh`;
+    }
+
+    if (scroll.offset > 0.51 && scroll.offset < 0.74) {
+      progressBarRight.style.height = `${1 - (0.51 - scroll.offset) * 1000}vh`;
+    } else if (scroll.offset < 0.51) {
+      progressBarRight.style.height = `${0}vh`;
+    }
 
     if (scroll.offset > 0.98 && screenVisible) {
       setScreenVisible(false);

@@ -1,7 +1,7 @@
 const Section = () => {
     return (
         <div>
-            <div id='side-bar-01' className="first-section section left">
+            <div id='side-bar-01' className="first-section section-left left">
                 <div className="progress-wrapper progress-bar-wrapper-left">
                     <div className="progress-bar"></div>
                 </div>
@@ -24,7 +24,7 @@ const Section = () => {
                 </div>
             </div>
 
-            <div id='side-bar-02' className="first-section section right">
+            <div id='side-bar-02' className="first-section section-right right">
                 <div className="second-move section-margin"></div>
 
                 <section className="second-section section right">
