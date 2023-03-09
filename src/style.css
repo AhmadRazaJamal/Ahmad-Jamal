@@ -49,10 +49,22 @@ body,
 
 
 /*
-* Section styling
-/*
+* Intro styling
+*/
 
-/* Section Formatting */
+#intro-section {
+    font-family: ManropeRegular;
+    font-size: 24px;
+    position: relative;
+    text-align: center;
+    left: 25vw;
+    top: 35vh
+}
+
+
+/*
+* Section styling
+*/
 
 .section-margin {
     width: 100%;

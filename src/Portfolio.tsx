@@ -2,6 +2,7 @@ import { Html, Scroll, ScrollControls, useGLTF, useScroll } from "@react-three/d
 import { useFrame, useThree } from "@react-three/fiber";
 import React, { useRef, useState } from "react";
 import * as THREE from "three";
+import Intro from "./Intro";
 import Sections from "./Sections";
 
 const Portfolio = () => {
@@ -30,6 +31,7 @@ const Portfolio = () => {
         <Office model={model} scale={0.14} />
         <Scroll html>
           {/* DOM contents in here will scroll along */}
+          <Intro />
           <Sections />
         </Scroll>
       </ScrollControls>
