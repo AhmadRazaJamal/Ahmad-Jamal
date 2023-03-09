@@ -1,4 +1,4 @@
-const Section = () => {
+const Sections = () => {
     return (
         <div>
             <div id='side-bar-01' className="first-section section-left left">
@@ -56,4 +56,4 @@ const Section = () => {
     )
 }
 
-export default Section
+export default Sections

@@ -12,6 +12,11 @@
     font-style: normal;
 }
 
+
+/*
+* Page styling
+*/
+
 html,
 body,
 #root {
@@ -42,6 +47,10 @@ body,
     padding-right: 5vw;
 }
 
+
+/*
+* Section styling
+/*
 
 /* Section Formatting */
 
@@ -198,6 +207,11 @@ body,
     font-size: 24px;
     font-family: ManropeBold;
 }
+
+
+/*
+* Monitor styling
+*/
 
 .htmlScreen iframe {
     width: 1030px;
