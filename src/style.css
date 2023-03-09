@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'ManropeBold';
+    src: url('../public/fonts/Manrope/static/Manrope-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ManropeRegular';
+    src: url('../public/fonts/Manrope/static/Manrope-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html,
 body,
 #root {
@@ -6,21 +20,26 @@ body,
     left: 0;
     width: 100%;
     height: 100%;
-    background: aqua;
-    /* background: ivory; */
+    background: ivory;
 }
 
 #side-bar-01 {
     top: 200vh;
     width: 40vw;
     height: 150vh;
+    padding-top: 100vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 
 #side-bar-02 {
     top: 300vh;
     width: 40vw;
     height: 200vh;
-    left: 60vw;
+    left: 50vw;
+    padding-top: 100vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 
 
@@ -76,6 +95,7 @@ body,
 .section-detail-wrapper {
     position: relative;
     padding: 20% 5%;
+    font-family: ManropeRegular;
 }
 
 .section-heading {
@@ -139,6 +159,7 @@ body,
     z-index: 5;
     margin-left: 10px;
     text-transform: uppercase;
+    font-family: ManropeBold;
     color: pink;
 }
 
@@ -175,6 +196,7 @@ body,
     right: 0;
     color: pink;
     font-size: 24px;
+    font-family: ManropeBold;
 }
 
 .htmlScreen iframe {
