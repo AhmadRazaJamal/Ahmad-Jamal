@@ -64,7 +64,7 @@ function Office(props: any) {
     meshRef.current.position.x = (Math.sin(scroll.offset * 6.4))
     meshRef.current.position.z = (Math.sin(scroll.offset * 6.4))
 
-    screenContainer[0].style.transform = `translateY(${(scroll.offset) * 950}vh)`;
+    screenContainer[0].style.transform = `translateY(${scroll.offset * 950}vh)`;
 
     sideBar1.style.borderTopRightRadius = `${100 - (scroll.offset * 400)}vw`
     sideBar2.style.borderTopLeftRadius = `${100 - (scroll.offset * 140)}vw`
