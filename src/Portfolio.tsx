@@ -56,7 +56,6 @@ function Office(props: any) {
   const screenContainer: any = document.getElementsByClassName('htmlScreen')
 
   const { camera } = useThree();
-  console.log(progressBarRight)
 
   useFrame((state, delta) => {
     camera.zoom = scroll.offset * 1000;
@@ -66,7 +65,10 @@ function Office(props: any) {
     meshRef.current.position.z = (Math.sin(scroll.offset * 6.4))
 
     sideBar1.style.borderTopRightRadius = `${100 - (scroll.offset * 400)}vw`
-    sideBar2.style.borderTopLeftRadius = `${100 - (scroll.offset * 180)}vw`
+    sideBar2.style.borderTopLeftRadius = `${100 - (scroll.offset * 140)}vw`
+
+    sideBar1.style.borderBottomRightRadius = `${0 + Math.pow(scroll.offset * 5, 4)}vw`
+    sideBar2.style.borderBottomLeftRadius = `${0 + Math.pow(scroll.offset * 2.8, 4)}vw`
 
     if (scroll.offset > 0.22 && scroll.offset < 0.5) {
       progressBarLeft.style.height = `${1 - (0.22 - scroll.offset) * 1000}vh`;
