@@ -1,9 +1,10 @@
-import { Html, Scroll, ScrollControls, useGLTF, useScroll } from "@react-three/drei";
+import { Html, OrbitControls, Scroll, ScrollControls, useGLTF, useScroll } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import React, { useRef, useState } from "react";
 import * as THREE from "three";
 import Intro from "./Intro";
 import Sections from "./Sections";
+import { positionFrame, useMultiplier } from "./utils";
 
 const Portfolio = () => {
   const model = useGLTF("./office.glb");
@@ -28,10 +29,11 @@ const Portfolio = () => {
   return (
     <React.Fragment>
       <ScrollControls pages={10}>
+        {/* <OrbitControls /> */}
         <Office model={model} scale={0.14} />
         <Scroll html>
           {/* DOM contents in here will scroll along */}
-          <Intro />
+          {/* <Intro /> */}
           <Sections />
         </Scroll>
       </ScrollControls>
@@ -46,7 +48,10 @@ function Office(props: any) {
   const scroll: any = useScroll();
   const meshRef: any = useRef(null);
   const iframeRef: any = useRef(null);
-  const [screenVisible, setScreenVisible] = useState(true)
+  // const markedRef: any = useRef(null);
+  const [screenVisible, setScreenVisible] = useState(true);
+  const [clicked, setClick] = useState(false);
+  const vec3 = new THREE.Vector3();
 
   // Get elements
   const sideBar1: any = document.getElementById('side-bar-01')
@@ -56,15 +61,17 @@ function Office(props: any) {
   const screenContainer: any = document.getElementsByClassName('htmlScreen')
 
   const { camera } = useThree();
+  camera.zoom = window.innerWidth / 8 * useMultiplier(window.innerWidth);
 
   useFrame((state, delta) => {
-    camera.zoom = scroll.offset * 1000;
-    camera.updateProjectionMatrix();
+    if (clicked) {
+      // camera.lookAt(meshRef.current.position);
+      camera.position.lerp(vec3.set(1, 2, 3), 0.01)
+      camera.updateProjectionMatrix();
+    }
 
     meshRef.current.position.x = (Math.sin(scroll.offset * 6.4))
     meshRef.current.position.z = (Math.sin(scroll.offset * 6.4))
-
-    screenContainer[0].style.transform = `translateY(${scroll.offset * 950}vh)`;
 
     sideBar1.style.borderTopRightRadius = `${100 - (scroll.offset * 400)}vw`
     sideBar2.style.borderTopLeftRadius = `${100 - (scroll.offset * 140)}vw`
@@ -84,16 +91,18 @@ function Office(props: any) {
       progressBarRight.style.height = `${0}vh`;
     }
 
-    if (scroll.offset > 0.98 && screenVisible) {
+    if (scroll.offset > 0.99) {
       setScreenVisible(false);
       screenContainer[0].style.display = 'block';
+    } else if (scroll.offset < 0.99) {
+      screenContainer[0].style.display = 'none';
     }
   })
 
   return (
-    <group ref={meshRef}>
-      <primitive object={props.model.scene} scale={props.scale} position={[0, -0.5, 0]}>
-        <Html transform position={[0.8, -0.29, -3.1]} rotation-x={-0.1} wrapperClass='htmlScreen' ref={iframeRef} distanceFactor={1.25}>
+    <group ref={meshRef} onClick={() => setClick(!clicked)}>
+      <primitive object={props.model.scene} scale={props.scale} position={[-0.5, -0.5, 0]}>
+        <Html transform position={[0.8, 1.04, -3.1]} rotation-x={-0.1} wrapperClass='htmlScreen' ref={iframeRef} distanceFactor={1.25}>
           <iframe src="https://bruno-simon.com/html/" />
         </Html>
       </primitive>

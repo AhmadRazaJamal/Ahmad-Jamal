@@ -10,12 +10,12 @@ root.render(
     shadows
     orthographic
     camera={{
-      left: -2,
-      top: -2,
-      bottom: 2,
-      right: 2,
+      left: -1,
+      top: -1,
+      bottom: 1,
+      right: 1,
       zoom: window.innerWidth * 0.2,
-      position: [-2, 2, 2],
+      position: [-2, 1, 2],
     }}
   >
     <Portfolio />
