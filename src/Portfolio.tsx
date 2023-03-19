@@ -4,7 +4,8 @@ import React, { useRef, useState } from "react";
 import * as THREE from "three";
 import Intro from "./Intro";
 import Sections from "./Sections";
-import { positionFrame, useMultiplier } from "./utils";
+import { positionCamera, useMultiplier } from "./utils";
+import CircularProgress from '@mui/material/CircularProgress';
 
 const Portfolio = () => {
   const model = useGLTF("./office.glb");
@@ -64,12 +65,6 @@ function Office(props: any) {
   camera.zoom = window.innerWidth / 8 * useMultiplier(window.innerWidth);
 
   useFrame((state, delta) => {
-    if (clicked) {
-      // camera.lookAt(meshRef.current.position);
-      camera.position.lerp(vec3.set(1, 2, 3), 0.01)
-      camera.updateProjectionMatrix();
-    }
-
     meshRef.current.position.x = (Math.sin(scroll.offset * 6.4))
     meshRef.current.position.z = (Math.sin(scroll.offset * 6.4))
 
@@ -91,11 +86,26 @@ function Office(props: any) {
       progressBarRight.style.height = `${0}vh`;
     }
 
-    if (scroll.offset > 0.99) {
-      setScreenVisible(false);
-      screenContainer[0].style.display = 'block';
-    } else if (scroll.offset < 0.99) {
+    if (scroll.offset > 0.95) {
+      camera.position.lerp(vec3.set(-3.8, 1.7, 3.2), 0.06)
+      const zoomTarget = 500 * useMultiplier(window.innerWidth);
+      const zoomSpeed = 0.05;
+      camera.zoom = THREE.MathUtils.lerp(camera.zoom, zoomTarget, zoomSpeed);
+      camera.updateProjectionMatrix();
+
+      setTimeout(() => {
+        setScreenVisible(false);
+        screenContainer[0].style.display = 'block';
+        screenContainer[0].style.top = `${951 + positionCamera(window.innerWidth)}vh`
+      }, 2000);
+    } else if (scroll.offset < 0.95) {
       screenContainer[0].style.display = 'none';
+
+      camera.position.lerp(vec3.set(-2, 1, 2), 0.01)
+      const zoomTarget = window.innerWidth * 0.2;
+      const zoomSpeed = 0.06;
+      camera.zoom = THREE.MathUtils.lerp(camera.zoom, zoomTarget, zoomSpeed);
+      camera.updateProjectionMatrix();
     }
   })
 
@@ -103,6 +113,7 @@ function Office(props: any) {
     <group ref={meshRef} onClick={() => setClick(!clicked)}>
       <primitive object={props.model.scene} scale={props.scale} position={[-0.5, -0.5, 0]}>
         <Html transform position={[0.8, 1.04, -3.1]} rotation-x={-0.1} wrapperClass='htmlScreen' ref={iframeRef} distanceFactor={1.25}>
+          {!setScreenVisible && <CircularProgress sx={{ color: 'red' }} size={100} />}
           <iframe src="https://bruno-simon.com/html/" />
         </Html>
       </primitive>
