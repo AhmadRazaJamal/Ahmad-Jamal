@@ -92,13 +92,17 @@ function Office(props: any) {
       const zoomSpeed = 0.05;
       camera.zoom = THREE.MathUtils.lerp(camera.zoom, zoomTarget, zoomSpeed);
       camera.updateProjectionMatrix();
+      // console.log(scroll.offset)
 
-      setTimeout(() => {
-        setScreenVisible(false);
-        screenContainer[0].style.display = 'block';
-        screenContainer[0].style.top = `${951 + positionCamera(window.innerWidth)}vh`
-      }, 2000);
-    } else if (scroll.offset < 0.95) {
+      if (scroll.offset > 0.99999) {
+        // setScreenVisible(false);
+        setTimeout(() => {
+          screenContainer[0].style.display = 'block';
+          screenContainer[0].style.top = `${951 + positionCamera(window.innerWidth)}vh`
+        }, 2000)
+
+      };
+    } if (scroll.offset < 0.9999) {
       screenContainer[0].style.display = 'none';
 
       camera.position.lerp(vec3.set(-2, 1, 2), 0.01)
