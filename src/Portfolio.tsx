@@ -98,7 +98,7 @@ function Office(props: any) {
       camera.updateProjectionMatrix();
       // console.log(scroll.offset)
 
-      if (scroll.offset > 0.9999) {
+      if (scroll.offset > 0.9995) {
         if (!spinnerShown) {
           loadingRef.current.style.display = 'block';
           spinnerShown = true;
@@ -117,7 +117,7 @@ function Office(props: any) {
         frameRef.current.style.opacity = 0;
         frameRef.current.style.display = 'none';
       }
-    } else if (scroll.offset < 0.9999) {
+    } else if (scroll.offset < 0.9995) {
       frameRef.current.style.display = 'none';
       spinnerShown = false;
 
