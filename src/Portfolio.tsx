@@ -124,7 +124,6 @@ function Office(props: any) {
     <group ref={meshRef} onClick={() => setClick(!clicked)}>
       <primitive object={props.model.scene} scale={props.scale} position={[-0.5, -0.5, 0]}>
         <Html transform position={[0.8, 1.04, -3.1]} rotation-x={-0.1} wrapperClass='htmlScreen' ref={iframeRef} distanceFactor={1.25}>
-          <CircularProgress sx={{ color: 'red' }} size={100} />
           <iframe src="https://bruno-simon.com/html/" />
         </Html>
       </primitive>
