@@ -14,7 +14,7 @@ root.render(
       top: -1,
       bottom: 1,
       right: 1,
-      zoom: window.innerWidth * 0.2,
+      zoom: window.innerWidth * 0.3,
       position: [-2, 1, 2],
     }}
   >

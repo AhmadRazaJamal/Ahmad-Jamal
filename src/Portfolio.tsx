@@ -66,7 +66,6 @@ function Office(props: any) {
   const screenContainer: any = document.getElementsByClassName('htmlScreen')
 
   const { camera } = useThree();
-  camera.zoom = window.innerWidth / 8 * useMultiplier(window.innerWidth);
   useFrame((state, delta) => {
     screenContainer[0].style.top = `${951 + positionCamera(window.innerWidth)}vh`
     meshRef.current.position.x = (Math.sin(scroll.offset * 6.4))
@@ -93,7 +92,7 @@ function Office(props: any) {
     if (scroll.offset > 0.95) {
       camera.position.lerp(vec3.set(-3.8, 1.7, 3.2), 0.06)
       const zoomTarget = 500 * useMultiplier(window.innerWidth);
-      const zoomSpeed = 0.05;
+      const zoomSpeed = 0.04;
       camera.zoom = THREE.MathUtils.lerp(camera.zoom, zoomTarget, zoomSpeed);
       camera.updateProjectionMatrix();
       // console.log(scroll.offset)
@@ -122,8 +121,8 @@ function Office(props: any) {
       spinnerShown = false;
 
       camera.position.lerp(vec3.set(-2, 1, 2), 0.01)
-      const zoomTarget = window.innerWidth * 0.2;
-      const zoomSpeed = 0.06;
+      const zoomTarget = window.innerWidth * 0.3;
+      const zoomSpeed = 0.04;
       camera.zoom = THREE.MathUtils.lerp(camera.zoom, zoomTarget, zoomSpeed);
       camera.updateProjectionMatrix();
     }
