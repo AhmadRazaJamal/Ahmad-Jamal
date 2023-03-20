@@ -86,6 +86,8 @@ function Office(props: any) {
       progressBarRight.style.height = `${0}vh`;
     }
 
+    screenContainer[0].style.top = `${951 + positionCamera(window.innerWidth)}vh`
+
     if (scroll.offset > 0.95) {
       camera.position.lerp(vec3.set(-3.8, 1.7, 3.2), 0.06)
       const zoomTarget = 500 * useMultiplier(window.innerWidth);
@@ -94,14 +96,19 @@ function Office(props: any) {
       camera.updateProjectionMatrix();
       // console.log(scroll.offset)
 
-      if (scroll.offset > 0.99999) {
+      if (scroll.offset > 0.9999) {
         // setScreenVisible(false);
-        setTimeout(() => {
-          screenContainer[0].style.display = 'block';
-          screenContainer[0].style.top = `${951 + positionCamera(window.innerWidth)}vh`
-        }, 2000)
+        screenContainer[0].style.opacity = 1;
+        screenContainer[0].style.display = 'block';
 
-      };
+
+      } else {
+        screenContainer[0].classList.add('fade-out');
+        screenContainer[0].style.opacity = 0;
+        setTimeout(() => {
+          screenContainer[0].style.display = 'none';
+        }, 500);
+      }
     } else if (scroll.offset < 0.9999) {
       screenContainer[0].style.display = 'none';
 
@@ -117,7 +124,7 @@ function Office(props: any) {
     <group ref={meshRef} onClick={() => setClick(!clicked)}>
       <primitive object={props.model.scene} scale={props.scale} position={[-0.5, -0.5, 0]}>
         <Html transform position={[0.8, 1.04, -3.1]} rotation-x={-0.1} wrapperClass='htmlScreen' ref={iframeRef} distanceFactor={1.25}>
-          {!setScreenVisible && <CircularProgress sx={{ color: 'red' }} size={100} />}
+          <CircularProgress sx={{ color: 'red' }} size={100} />
           <iframe src="https://bruno-simon.com/html/" />
         </Html>
       </primitive>
