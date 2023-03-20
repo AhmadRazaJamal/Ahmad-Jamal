@@ -102,7 +102,7 @@ function Office(props: any) {
         }, 2000)
 
       };
-    } if (scroll.offset < 0.9999) {
+    } else if (scroll.offset < 0.9999) {
       screenContainer[0].style.display = 'none';
 
       camera.position.lerp(vec3.set(-2, 1, 2), 0.01)
