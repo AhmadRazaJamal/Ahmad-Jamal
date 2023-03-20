@@ -235,7 +235,7 @@ body,
 
 .htmlScreen {
     overflow: initial !important;
-    /* display: none; */
+    display: block;
 }
 
 .fade-out {

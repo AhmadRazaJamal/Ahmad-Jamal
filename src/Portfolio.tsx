@@ -49,9 +49,13 @@ function Office(props: any) {
   const scroll: any = useScroll();
   const meshRef: any = useRef(null);
   const iframeRef: any = useRef(null);
+  const frameRef: any = useRef(null);
+  const loadingRef: any = useRef(null);
   // const markedRef: any = useRef(null);
   const [screenVisible, setScreenVisible] = useState(true);
   const [clicked, setClick] = useState(false);
+  let spinnerShown = false;
+
   const vec3 = new THREE.Vector3();
 
   // Get elements
@@ -63,8 +67,8 @@ function Office(props: any) {
 
   const { camera } = useThree();
   camera.zoom = window.innerWidth / 8 * useMultiplier(window.innerWidth);
-
   useFrame((state, delta) => {
+    screenContainer[0].style.top = `${951 + positionCamera(window.innerWidth)}vh`
     meshRef.current.position.x = (Math.sin(scroll.offset * 6.4))
     meshRef.current.position.z = (Math.sin(scroll.offset * 6.4))
 
@@ -86,8 +90,6 @@ function Office(props: any) {
       progressBarRight.style.height = `${0}vh`;
     }
 
-    screenContainer[0].style.top = `${951 + positionCamera(window.innerWidth)}vh`
-
     if (scroll.offset > 0.95) {
       camera.position.lerp(vec3.set(-3.8, 1.7, 3.2), 0.06)
       const zoomTarget = 500 * useMultiplier(window.innerWidth);
@@ -97,20 +99,27 @@ function Office(props: any) {
       // console.log(scroll.offset)
 
       if (scroll.offset > 0.9999) {
-        // setScreenVisible(false);
-        screenContainer[0].style.opacity = 1;
-        screenContainer[0].style.display = 'block';
+        if (!spinnerShown) {
+          loadingRef.current.style.display = 'block';
+          spinnerShown = true;
+        }
+
+        setTimeout(() => {
+          loadingRef.current.style.display = 'none';
+          frameRef.current.style.opacity = 1;
+          frameRef.current.style.display = 'block';
+        }, 2000);
 
 
       } else {
-        screenContainer[0].classList.add('fade-out');
-        screenContainer[0].style.opacity = 0;
-        setTimeout(() => {
-          screenContainer[0].style.display = 'none';
-        }, 500);
+        spinnerShown = false;
+        frameRef.current.classList.add('fade-out');
+        frameRef.current.style.opacity = 0;
+        frameRef.current.style.display = 'none';
       }
     } else if (scroll.offset < 0.9999) {
-      screenContainer[0].style.display = 'none';
+      frameRef.current.style.display = 'none';
+      spinnerShown = false;
 
       camera.position.lerp(vec3.set(-2, 1, 2), 0.01)
       const zoomTarget = window.innerWidth * 0.2;
@@ -124,7 +133,8 @@ function Office(props: any) {
     <group ref={meshRef} onClick={() => setClick(!clicked)}>
       <primitive object={props.model.scene} scale={props.scale} position={[-0.5, -0.5, 0]}>
         <Html transform position={[0.8, 1.04, -3.1]} rotation-x={-0.1} wrapperClass='htmlScreen' ref={iframeRef} distanceFactor={1.25}>
-          <iframe src="https://bruno-simon.com/html/" />
+          <CircularProgress sx={{ color: 'red', display: 'none' }} size={100} ref={loadingRef} />
+          <iframe src="https://bruno-simon.com/html/" className="iframeScreen" ref={frameRef} />
         </Html>
       </primitive>
     </group>
