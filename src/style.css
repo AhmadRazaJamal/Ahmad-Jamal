@@ -31,8 +31,8 @@ body,
 #side-bar-01 {
     top: 200vh;
     width: 40vw;
-    height: 150vh;
-    padding-top: 100vh;
+    height: 250vh;
+    padding-top: 50vh;
     padding-left: 5vw;
     padding-right: 5vw;
 }
@@ -42,6 +42,34 @@ body,
     width: 40vw;
     height: 200vh;
     left: 50vw;
+    padding-top: 100vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+#side-bar-03 {
+    top: 400vh;
+    width: 40vw;
+    height: 150vh;
+    padding-top: 100vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+#side-bar-04 {
+    top: 600vh;
+    width: 40vw;
+    height: 200vh;
+    left: 50vw;
+    padding-top: 100vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+#side-bar-05 {
+    top: 700vh;
+    width: 40vw;
+    height: 150vh;
     padding-top: 100vh;
     padding-left: 5vw;
     padding-right: 5vw;
@@ -241,4 +269,62 @@ body,
 .fade-out {
     opacity: 0;
     transition: opacity 0.5s ease-out;
+}
+
+@media only screen and (max-width: 600px) {
+    #side-bar-01,
+    #side-bar-02,
+    #side-bar-03,
+    #side-bar-04,
+    #side-bar-05 {
+        width: 100vw;
+        left: 0;
+        margin: 0;
+    }
+}
+
+
+/*
+* Waving emoji animation CSS
+*/
+
+.wave {
+    animation-name: wave-animation;
+    /* Refers to the name of your @keyframes element below */
+    animation-duration: 2.5s;
+    /* Change to speed up or slow down */
+    animation-iteration-count: infinite;
+    /* Never stop waving :) */
+    transform-origin: 70% 70%;
+    /* Pivot around the bottom-left palm */
+    display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: rotate( 0.0deg)
+    }
+    10% {
+        transform: rotate(14.0deg)
+    }
+    /* The following five values can be played with to make the waving more or less extreme */
+    20% {
+        transform: rotate(-8.0deg)
+    }
+    30% {
+        transform: rotate(14.0deg)
+    }
+    40% {
+        transform: rotate(-4.0deg)
+    }
+    50% {
+        transform: rotate(10.0deg)
+    }
+    60% {
+        transform: rotate( 0.0deg)
+    }
+    /* Reset for the last half to pause */
+    100% {
+        transform: rotate( 0.0deg)
+    }
 }

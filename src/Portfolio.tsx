@@ -29,9 +29,9 @@ const Portfolio = () => {
 
   return (
     <React.Fragment>
-      <ScrollControls pages={10}>
+      <ScrollControls pages={30}>
         {/* <OrbitControls /> */}
-        <Office model={model} scale={0.14} />
+        <Office model={model} scale={0.08} />
         <Scroll html>
           {/* DOM contents in here will scroll along */}
           {/* <Intro /> */}
@@ -130,7 +130,7 @@ function Office(props: any) {
 
   return (
     <group ref={meshRef}>
-      <primitive object={props.model.scene} scale={props.scale} position={[-0.5, -0.5, 0]}>
+      <primitive object={props.model.scene} scale={props.scale} position={[-0.5, -0.3, 0]}>
         <Html transform position={[0.8, 1.04, -3.1]} rotation-x={-0.1} wrapperClass='htmlScreen' ref={iframeRef} distanceFactor={1.25}>
           <CircularProgress sx={{ color: 'red', display: 'none' }} size={100} ref={loadingRef} />
           <iframe src="https://bruno-simon.com/html/" className="iframeScreen" ref={frameRef} />
