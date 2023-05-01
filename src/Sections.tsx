@@ -9,9 +9,6 @@ const Sections = () => {
                 <div className="section-intro-wrapper">
                     <h1 className="section-title">
                         <span className="section-title-text">About Me</span>
-                        <div className="section-title-decoration styleOne"></div>
-                        <div className="section-title-decoration styleTwo"></div>
-                        <div className="section-title-decoration styleThree"></div>
                     </h1>
                     <span className="section-number">01</span>
                 </div>
@@ -37,9 +34,6 @@ const Sections = () => {
                     <div className="section-intro-wrapper blue-text blue-border">
                         <h1 className="section-title blue-text blue-border">
                             <span className="section-title-text blue-text">My Work</span>
-                            <div className="section-title-decoration styleOne blue-border"></div>
-                            <div className="section-title-decoration styleTwo blue-border"></div>
-                            <div className="section-title-decoration styleThree blue-background blue-border"></div>
                         </h1>
                         <span className="section-number blue-text">02</span>
                     </div>
@@ -64,9 +58,6 @@ const Sections = () => {
                 <div className="section-intro-wrapper">
                     <h1 className="section-title">
                         <span className="section-title-text">Skills</span>
-                        <div className="section-title-decoration styleOne"></div>
-                        <div className="section-title-decoration styleTwo"></div>
-                        <div className="section-title-decoration styleThree"></div>
                     </h1>
                     <span className="section-number">01</span>
                 </div>
@@ -91,9 +82,6 @@ const Sections = () => {
                     <div className="section-intro-wrapper blue-text blue-border">
                         <h1 className="section-title blue-text blue-border">
                             <span className="section-title-text blue-text">Experience</span>
-                            <div className="section-title-decoration styleOne blue-border"></div>
-                            <div className="section-title-decoration styleTwo blue-border"></div>
-                            <div className="section-title-decoration styleThree blue-background blue-border"></div>
                         </h1>
                         <span className="section-number blue-text">02</span>
                     </div>
@@ -118,9 +106,6 @@ const Sections = () => {
                 <div className="section-intro-wrapper">
                     <h1 className="section-title">
                         <span className="section-title-text">Get in touch</span>
-                        <div className="section-title-decoration styleOne"></div>
-                        <div className="section-title-decoration styleTwo"></div>
-                        <div className="section-title-decoration styleThree"></div>
                     </h1>
                     <span className="section-number">01</span>
                 </div>
