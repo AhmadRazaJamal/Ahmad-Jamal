@@ -68,8 +68,8 @@ function Office(props: any) {
   const { camera } = useThree();
   useFrame((state, delta) => {
     screenContainer[0].style.top = `${951 + positionCamera(window.innerWidth)}vh`
-    meshRef.current.position.x = (Math.sin(scroll.offset * 6.4))
-    meshRef.current.position.z = (Math.sin(scroll.offset * 6.4))
+    meshRef.current.position.x = (Math.sin(scroll.offset * 16.4) * 0.6)
+    meshRef.current.position.z = (Math.sin(scroll.offset * 16.4) * 0.6)
 
     sideBar1.style.borderTopRightRadius = `${100 - (scroll.offset * 1400)}vw`
     sideBar2.style.borderTopLeftRadius = `${100 - (scroll.offset * 140)}vw`
@@ -77,9 +77,11 @@ function Office(props: any) {
     sideBar1.style.borderBottomRightRadius = `${0 + Math.pow(scroll.offset * 12, 4)}vw`
     sideBar2.style.borderBottomLeftRadius = `${0 + Math.pow(scroll.offset * 2.8, 4)}vw`
 
-    if (scroll.offset > 0.22 && scroll.offset < 0.5) {
-      progressBarLeft.style.height = `${1 - (0.22 - scroll.offset) * 1000}vh`;
-    } else if (scroll.offset < 0.22) {
+    if (scroll.offset > 0.035 && scroll.offset < 0.5) {
+      // console.log(scroll.offset)
+      progressBarLeft.style.height = `${1 - (0.035 - scroll.offset) * 2500}vh`;
+    }
+    else if (scroll.offset < 0.22) {
       progressBarLeft.style.height = `${0}vh`;
     }
 
@@ -130,7 +132,7 @@ function Office(props: any) {
 
   return (
     <group ref={meshRef}>
-      <primitive object={props.model.scene} scale={props.scale} position={[-0.5, -0.3, 0]}>
+      <primitive object={props.model.scene} scale={props.scale} position={[-0.3, -0.3, 0]}>
         <Html transform position={[0.8, 1.04, -3.1]} rotation-x={-0.1} wrapperClass='htmlScreen' ref={iframeRef} distanceFactor={1.25}>
           <CircularProgress sx={{ color: 'red', display: 'none' }} size={100} ref={loadingRef} />
           <iframe src="https://bruno-simon.com/html/" className="iframeScreen" ref={frameRef} />
