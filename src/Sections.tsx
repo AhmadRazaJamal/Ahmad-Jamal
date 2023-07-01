@@ -1,6 +1,21 @@
-import { Example } from "./Carousel"
+import { CarouselGallery } from "./Carousel"
 
-const Sections = () => {
+const threeJsProjectContent = [
+    {
+        name: 'Galaxy Generator',
+        description: 'ThreeJS rendered galaxy generator',
+        url: `${process.env.PUBLIC_URL}/project-media/three-galaxy-generator.mp4`,
+        thumbnail: `${process.env.PUBLIC_URL}/project-media/galaxy-generator-thumbnail.png`,
+    },
+    {
+        name: 'Waves in ThreeJS',
+        description: 'ThreeJS rendered waves',
+        url: `${process.env.PUBLIC_URL}/project-media/three-waves.mp4`,
+        thumbnail: `${process.env.PUBLIC_URL}/project-media/waves-generator-thumbnail.png`,
+    },
+];
+
+export const Sections = () => {
     return (
         <div>
             <div id='side-bar-01' className="first-section section-left left">
@@ -41,13 +56,16 @@ const Sections = () => {
                     </div>
 
                     <div className="section-detail-wrapper">
-                        <h3 className="section-heading">ThreeJS Projects</h3>
+                        <h2 className="section-heading">ThreeJS Projects</h2>
                         <p className="section-text">My latest endeavor has been learning ThreeJS and creating various small projects while following the amazing course by Bruno Simons. I have worked on both small and large-scale projects such a portfolio that utilizes ThreeJs to the fullest. My portfolio goes beyond just using vanilla ThreeJS but uses React Three Fiber and includes a mini version of my home office designed in Blender.</p>
-                        <Example />
-                        <h3 className="section-heading">Rebecca's Reddish Radishes</h3>
-                        <p className="section-text">Oh what's that? Why, it's a red radish! Oop, another one! In this playful and comedy animation, Rebecca, a young farmer, decided to plant radishes for the first time, but there is a big twist!</p>
-                        <h3 className="section-heading">Flora</h3>
-                        <p className="section-text">A heartwarming story about a little orphan girl who tries to find her way back home.</p>
+                        <CarouselGallery content={threeJsProjectContent} />
+                        <h2 className="section-heading">Laurie Koss SEO Project</h2>
+                        <p className="section-text"> Laurie, an artist, aimed to showcase her talent and reach a broader audience through improved SEO and enhanced performance. Collaborating with Laurie, I improved performance statistics, optimized the website for higher Google search ranking, and set up Google Analytics and Google Console. I also provided guidance on content creation and explored additional marketing avenues for her products.
+                            <p />
+                            Here is my complete research and thought process of how I made this possible: <a href={'https://wandering-psychology-b1a.notion.site/SEO-Optimization-Analysis-41a6620719af46ee9be5636e88f38d15?pvs=4'}>Link to my Notion webpage</a>
+                        </p>
+                        <h3 className="section-heading">Canadian Train Vacations</h3>
+                        <p className="section-text">Canadian Train Vacation is my ongoing project at work. From setting up CI/CD for development, A/B testing for user testing, to creating a monorepo and building its pathways, it has been a challenging yet enjoyable project to work on.</p>
                     </div>
 
                 </section>
@@ -123,5 +141,3 @@ const Sections = () => {
         </div >
     )
 }
-
-export default Sections

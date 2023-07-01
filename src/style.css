@@ -40,7 +40,7 @@ body,
 #side-bar-02 {
     top: 400vh;
     width: 40vw;
-    height: 230vh;
+    height: 350vh;
     left: 50vw;
     padding-top: 100vh;
     padding-left: 5vw;
@@ -356,6 +356,10 @@ body,
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.playerWrapper img {
+    height: auto;
 }
 
 .carousel div:nth-child(4) {

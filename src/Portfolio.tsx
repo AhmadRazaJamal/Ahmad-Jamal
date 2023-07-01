@@ -3,7 +3,7 @@ import { useFrame, useThree } from "@react-three/fiber";
 import React, { useRef, useState } from "react";
 import * as THREE from "three";
 import Intro from "./Intro";
-import Sections from "./Sections";
+import { Sections } from "./Sections";
 import { positionCamera, useMultiplier } from "./utils";
 import CircularProgress from '@mui/material/CircularProgress';
 
