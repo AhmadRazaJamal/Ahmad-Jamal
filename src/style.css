@@ -38,9 +38,9 @@ body,
 }
 
 #side-bar-02 {
-    top: 300vh;
+    top: 400vh;
     width: 40vw;
-    height: 200vh;
+    height: 230vh;
     left: 50vw;
     padding-top: 100vh;
     padding-left: 5vw;
@@ -326,4 +326,38 @@ body,
     100% {
         transform: rotate( 0.0deg)
     }
+}
+
+
+/*
+* Video Player
+*/
+
+.playerDiv {
+    width: 100%;
+    position: relative;
+}
+
+.paper {
+    padding: 16px;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+
+/* 
+.playerWrapper div {
+    width: auto !important;
+    height: auto !important;
+} */
+
+.react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.carousel div:nth-child(4) {
+    padding-top: 40px;
 }

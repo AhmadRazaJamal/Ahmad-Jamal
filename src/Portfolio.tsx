@@ -72,22 +72,22 @@ function Office(props: any) {
     meshRef.current.position.z = (Math.sin(scroll.offset * 16.4) * 0.6)
 
     sideBar1.style.borderTopRightRadius = `${100 - (scroll.offset * 1400)}vw`
-    sideBar2.style.borderTopLeftRadius = `${100 - (scroll.offset * 140)}vw`
 
     sideBar1.style.borderBottomRightRadius = `${0 + Math.pow(scroll.offset * 12, 4)}vw`
     sideBar2.style.borderBottomLeftRadius = `${0 + Math.pow(scroll.offset * 2.8, 4)}vw`
 
-    if (scroll.offset > 0.035 && scroll.offset < 0.5) {
-      // console.log(scroll.offset)
+    if (scroll.offset > 0.035 && scroll.offset < 0.18) {
       progressBarLeft.style.height = `${1 - (0.035 - scroll.offset) * 2500}vh`;
     }
-    else if (scroll.offset < 0.22) {
-      progressBarLeft.style.height = `${0}vh`;
+
+    if (scroll.offset > 0.18 && scroll.offset < 0.33) {
+      sideBar2.style.borderTopLeftRadius = `${100 - (scroll.offset * 350)}vw`
     }
 
-    if (scroll.offset > 0.51 && scroll.offset < 0.9) {
-      progressBarRight.style.height = `${1 - (0.51 - scroll.offset) * 800}vh`;
-    } else if (scroll.offset < 0.51) {
+    if (scroll.offset > 0.21 && scroll.offset < 0.33) {
+      progressBarRight.style.height = `${1 - (0.21 - scroll.offset) * 800}vh`;
+    }
+    else if (scroll.offset < 0.51) {
       progressBarRight.style.height = `${0}vh`;
     }
 
@@ -97,7 +97,6 @@ function Office(props: any) {
       const zoomSpeed = 0.04;
       camera.zoom = THREE.MathUtils.lerp(camera.zoom, zoomTarget, zoomSpeed);
       camera.updateProjectionMatrix();
-      // console.log(scroll.offset)
 
       if (scroll.offset > 0.9995) {
         if (!spinnerShown) {

@@ -1,3 +1,5 @@
+import { Example } from "./Carousel"
+
 const Sections = () => {
     return (
         <div>
@@ -39,8 +41,9 @@ const Sections = () => {
                     </div>
 
                     <div className="section-detail-wrapper">
-                        <h3 className="section-heading">Candycane Village</h3>
-                        <p className="section-text">This project is in progress but it's about a super colorful village where the entire world including the people are candies. So far the story is that they are set out to explore their "space" only to realize it's a human that will try to destroy them.</p>
+                        <h3 className="section-heading">ThreeJS Projects</h3>
+                        <p className="section-text">My latest endeavor has been learning ThreeJS and creating various small projects while following the amazing course by Bruno Simons. I have worked on both small and large-scale projects such a portfolio that utilizes ThreeJs to the fullest. My portfolio goes beyond just using vanilla ThreeJS but uses React Three Fiber and includes a mini version of my home office designed in Blender.</p>
+                        <Example />
                         <h3 className="section-heading">Rebecca's Reddish Radishes</h3>
                         <p className="section-text">Oh what's that? Why, it's a red radish! Oop, another one! In this playful and comedy animation, Rebecca, a young farmer, decided to plant radishes for the first time, but there is a big twist!</p>
                         <h3 className="section-heading">Flora</h3>
