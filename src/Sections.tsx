@@ -1,4 +1,5 @@
 import { CarouselGallery } from "./Carousel"
+import ImageGallery from 'react-image-gallery';
 
 const threeJsProjectContent = [
     {
@@ -14,6 +15,21 @@ const threeJsProjectContent = [
         thumbnail: `${process.env.PUBLIC_URL}/project-media/waves-generator-thumbnail.png`,
     },
 ];
+
+const projectImages = [
+    {
+        original: `${process.env.PUBLIC_URL}/project-media/page1.webp`,
+    },
+    {
+        original: `${process.env.PUBLIC_URL}/project-media/page2.webp`,
+    },
+    {
+        original: `${process.env.PUBLIC_URL}/project-media/page3.webp`,
+    },
+    {
+        original: `${process.env.PUBLIC_URL}/project-media/page4.webp`,
+    },
+]
 
 export const Sections = () => {
     return (
@@ -65,7 +81,11 @@ export const Sections = () => {
                             Here is my complete research and thought process of how I made this possible: <a href={'https://wandering-psychology-b1a.notion.site/SEO-Optimization-Analysis-41a6620719af46ee9be5636e88f38d15?pvs=4'}>Link to my Notion webpage</a>
                         </p>
                         <h3 className="section-heading">Canadian Train Vacations</h3>
-                        <p className="section-text">Canadian Train Vacation is my ongoing project at work. From setting up CI/CD for development, A/B testing for user testing, to creating a monorepo and building its pathways, it has been a challenging yet enjoyable project to work on.</p>
+                        <p className="section-text">Canadian Train Vacation is my ongoing project at work. From setting up CI/CD for development, A/B testing for user testing, to creating a monorepo and building its pathways, it has been a challenging yet fun project to work on.</p>
+
+
+                        Check the website <a href={'https://canadiantrainvacations.com/'}>here</a>
+                        <ImageGallery items={projectImages} showNav={false} showFullscreenButton={false} slideInterval={2000} />
                     </div>
 
                 </section>
