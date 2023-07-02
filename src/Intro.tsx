@@ -1,12 +1,34 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react';
+import anime from 'animejs';
 
-function Intro() {
-    return (
-        <div id="intro-section">
-            <h1>Welcome to my Portfolio</h1>
-            <h1>Scroll to see more!</h1>
-        </div>
-    )
+function Intro(): JSX.Element {
+  const textRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    const textWrapper = textRef.current?.querySelector('.letters');
+    if (textWrapper) {
+      textWrapper.innerHTML = textWrapper.textContent?.replace(/\S/g, "<span class='letter'>$&</span>") || '';
+    }
+
+    anime.timeline({ loop: false })
+      .add({
+        targets: '.ml6 .letter',
+        translateY: ["1.1em", 0],
+        translateZ: 0,
+        duration: 1500,
+        delay: (el, i) => 50 * i
+      })
+  }, []);
+
+  return (
+    <div className="center-screen">
+      <h1 className="ml6" ref={textRef}>
+        <span className="text-wrapper">
+          <span className="letters">WELCOME TO MY PORTFOLIO SCROLL UP </span>
+        </span>
+      </h1>
+    </div>
+  );
 }
 
-export default Intro
+export default Intro;

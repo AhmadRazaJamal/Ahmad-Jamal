@@ -18,7 +18,7 @@ function Item(props: any) {
 
     return (
         < >
-            <h2>{item.name}</h2>
+            <h3>{item.name}</h3>
             <p>{item.description}</p>
             <div className='playerWrapper'>
                 {item.thumbnail ?

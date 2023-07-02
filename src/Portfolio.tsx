@@ -34,7 +34,7 @@ const Portfolio = () => {
         <Office model={model} scale={0.08} />
         <Scroll html>
           {/* DOM contents in here will scroll along */}
-          {/* <Intro /> */}
+          <Intro />
           <Sections />
         </Scroll>
       </ScrollControls>
@@ -122,7 +122,13 @@ function Office(props: any) {
       spinnerShown = false;
 
       camera.position.lerp(vec3.set(-2, 1, 2), 0.01)
-      const zoomTarget = window.innerWidth * 0.3;
+
+      let zoomTarget;
+      if (window.innerWidth < 757) {
+        zoomTarget = window.innerWidth * 0.5;
+      } else {
+        zoomTarget = window.innerWidth * 0.3;
+      }
       const zoomSpeed = 0.04;
       camera.zoom = THREE.MathUtils.lerp(camera.zoom, zoomTarget, zoomSpeed);
       camera.updateProjectionMatrix();
