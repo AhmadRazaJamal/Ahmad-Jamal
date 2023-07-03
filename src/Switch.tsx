@@ -1,11 +1,11 @@
 import SwipeIcon from '@mui/icons-material/Swipe';
 
-export const Switch = ({ isOn, handleToggle }: any) => {
+export const Switch = ({ isOn, setInteractive }: any) => {
     return (
         <>
             <input
                 checked={isOn}
-                onChange={handleToggle}
+                onChange={() => setInteractive(!isOn)}
                 className='react-switch-checkbox'
                 id={'react-switch-new'}
                 type='checkbox'

@@ -10,6 +10,7 @@ import { Switch } from "./Switch";
 
 const Portfolio = () => {
   const model = useGLTF("./office.glb");
+  const [interactiveMode, setInteractiveMode] = useState(false);
 
   // Texture
   const textureLoader = new THREE.TextureLoader();
@@ -31,12 +32,12 @@ const Portfolio = () => {
   return (
     <React.Fragment>
       <ScrollControls pages={30}>
-        {/* <OrbitControls /> */}
+        {interactiveMode && <OrbitControls />}
         <Office model={model} scale={0.08} />
         <Scroll html>
           {/* DOM contents in here will scroll along */}
           <div className="switch-container">
-            <Switch aria-label="interactive-mode-switch" />
+            <Switch aria-label="interactive-mode-switch" setInteractive={setInteractiveMode} isOn={interactiveMode} />
           </div>
           <Intro />
           <Sections />
