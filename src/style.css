@@ -6,6 +6,13 @@
 }
 
 @font-face {
+    font-family: 'ManropeExtraBold';
+    src: url('../public/fonts/Manrope/static/Manrope-ExtraBold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'ManropeRegular';
     src: url('../public/fonts/Manrope/static/Manrope-Regular.ttf');
     font-weight: normal;
@@ -397,13 +404,13 @@ body,
 }
 
 .ml6 {
-    margin-bottom: 58px;
     text-align: center;
     position: relative;
-    font-weight: 900;
-    font-family: ManropeBold;
+    font-weight: 800;
+    font-family: 'ManropeExtraBold';
     font-size: 1.5em;
-    width: 80%
+    width: 80vw;
+    margin-bottom: 60px;
 }
 
 .ml6 .text-wrapper {
@@ -418,4 +425,55 @@ body,
 .ml6 .letter {
     display: inline-block;
     line-height: 1em;
+}
+
+.switch-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 60px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.react-switch-checkbox {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.react-switch-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    background: grey;
+    border-radius: 100px;
+    transition: background-color .2s;
+}
+
+.react-switch-button {
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left: 2px;
+    border-radius: 20px;
+    transition: 0.2s;
+    background: #fff;
+    box-shadow: 0 0wpx 0 rgba(10, 10, 10, 0.29);
+}
+
+.react-switch-checkbox:checked+.react-switch-label .react-switch-button {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+}
+
+.react-switch-checkbox:checked+.react-switch-label {
+    background: #c1d1e5;
+}
+
+.react-switch-label:active .react-switch-button {
+    width: 16px;
 }

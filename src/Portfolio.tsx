@@ -6,6 +6,7 @@ import Intro from "./Intro";
 import { Sections } from "./Sections";
 import { positionCamera, useMultiplier } from "./utils";
 import CircularProgress from '@mui/material/CircularProgress';
+import { Switch } from "./Switch";
 
 const Portfolio = () => {
   const model = useGLTF("./office.glb");
@@ -34,6 +35,9 @@ const Portfolio = () => {
         <Office model={model} scale={0.08} />
         <Scroll html>
           {/* DOM contents in here will scroll along */}
+          <div className="switch-container">
+            <Switch aria-label="interactive-mode-switch" />
+          </div>
           <Intro />
           <Sections />
         </Scroll>
