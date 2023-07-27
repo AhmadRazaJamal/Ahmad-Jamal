@@ -60,13 +60,13 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ children }) => {
                         <ambientLight />
                         <pointLight position={[10, 10, 10]} />
                         <group>
-                            <MorphObject position={[0, 0.5, 0]} color="#e0ffff" size={1} />
+                            <MorphObject position={[0, 0.5, 0]} color="#1E90FF" size={1} />
                         </group>
                         <Text
                             position={[0, -1, 0]}
                             rotation={[0, 0, 0]}
                             fontSize={0.3}
-                            color="#e0ffff"
+                            color="#1E90FF"
                             anchorX="center"
                             anchorY="middle"
                             font={`${process.env.PUBLIC_URL}/fonts/Manrope/static/Manrope-Bold.ttf`}
