@@ -7,31 +7,35 @@ function Intro(): JSX.Element {
   const iconRef = useRef<SVGSVGElement | null>(null);
 
   useEffect(() => {
-    const textWrapper = textRef.current?.querySelector('.letters');
-    if (textWrapper) {
-      textWrapper.innerHTML = textWrapper.textContent?.replace(/\S/g, "<span class='letter'>$&</span>") || '';
-    }
+    setTimeout(() => {
+      const textWrapper = textRef.current?.querySelector('.letters');
+      if (textWrapper) {
+        textWrapper.innerHTML = textWrapper.textContent?.replace(/\S/g, "<span class='letter'>$&</span>") || '';
+      }
 
-    anime.timeline({ loop: false })
-      .add({
-        targets: '.ml6 .letter',
-        translateY: ["1.1em", 0],
-        translateZ: 0,
-        duration: 1500,
-        delay: (el, i) => 50 * i
-      });
-    anime.timeline({ loop: false })
-      .add({
-        targets: iconRef.current!,
-        translateY: ["1.1em", 0],
-        opacity: [0, 1],
-        duration: 1000,
-        delay: 1500,
-        begin: () => {
-          iconRef.current!.style.display = 'inline-block';
-        }
-      });
+      anime.timeline({ loop: false })
+        .add({
+          targets: '.ml6 .letter',
+          translateY: ["1.1em", 0],
+          translateZ: 0,
+          duration: 1500,
+          delay: (el, i) => 50 * i
+        });
+
+      anime.timeline({ loop: false })
+        .add({
+          targets: iconRef.current!,
+          translateY: ["1.1em", 0],
+          opacity: [0, 1],
+          duration: 1000,
+          delay: 1500,
+          begin: () => {
+            iconRef.current!.style.display = 'inline-block';
+          }
+        });
+    }, 5000);  // Delay of 5 seconds
   }, []);
+
 
   return (
     <div className="center-screen">

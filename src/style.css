@@ -33,7 +33,7 @@ body,
     left: 0;
     width: 100%;
     height: 100%;
-    background: silver;
+    background: "#02075D";
 }
 
 #side-bar-01 {
@@ -411,6 +411,7 @@ body,
     font-size: 1.5em;
     width: 80vw;
     margin-bottom: 60px;
+    color: lightcyan;
 }
 
 .ml6 .text-wrapper {
