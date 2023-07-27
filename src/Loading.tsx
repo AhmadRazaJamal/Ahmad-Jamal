@@ -39,7 +39,6 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ children }) => {
         const timer = setInterval(() => {
             if (i < loadingFullText.length) {
                 setLoadingText(loadingFullText.substring(0, i + 1));
-                console.log(loadingText)
                 i++;
             } else {
                 setIsLoading(false);

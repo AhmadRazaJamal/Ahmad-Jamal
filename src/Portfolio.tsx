@@ -33,7 +33,7 @@ const Portfolio = () => {
     <React.Fragment>
       <ScrollControls pages={30}>
         {interactiveMode && <OrbitControls />}
-        <Office model={model} scale={0.08} />
+        <Office model={model} scale={0.08} isInteractiveMode={interactiveMode} />
         <Scroll html>
           {/* DOM contents in here will scroll along */}
           <div className="switch-container">
@@ -72,71 +72,73 @@ function Office(props: any) {
 
   const { camera } = useThree();
   useFrame((state, delta) => {
-    screenContainer[0].style.top = `${951 + positionCamera(window.innerWidth)}vh`
-    meshRef.current.position.x = (Math.sin(scroll.offset * 16.4) * 0.6)
-    meshRef.current.position.z = (Math.sin(scroll.offset * 16.4) * 0.6)
+    if (!props.isInteractiveMode) {
+      screenContainer[0].style.top = `${951 + positionCamera(window.innerWidth)}vh`
+      meshRef.current.position.x = (Math.sin(scroll.offset * 16.4) * 0.6)
+      meshRef.current.position.z = (Math.sin(scroll.offset * 16.4) * 0.6)
 
-    sideBar1.style.borderTopRightRadius = `${100 - (scroll.offset * 1400)}vw`
+      sideBar1.style.borderTopRightRadius = `${100 - (scroll.offset * 1400)}vw`
 
-    sideBar1.style.borderBottomRightRadius = `${0 + Math.pow(scroll.offset * 12, 4)}vw`
-    sideBar2.style.borderBottomLeftRadius = `${0 + Math.pow(scroll.offset * 2.8, 4)}vw`
+      sideBar1.style.borderBottomRightRadius = `${0 + Math.pow(scroll.offset * 12, 4)}vw`
+      sideBar2.style.borderBottomLeftRadius = `${0 + Math.pow(scroll.offset * 2.8, 4)}vw`
 
-    if (scroll.offset > 0.035 && scroll.offset < 0.18) {
-      progressBarLeft.style.height = `${1 - (0.035 - scroll.offset) * 2500}vh`;
-    }
+      if (scroll.offset > 0.035 && scroll.offset < 0.18) {
+        progressBarLeft.style.height = `${1 - (0.035 - scroll.offset) * 2500}vh`;
+      }
 
-    if (scroll.offset > 0.18 && scroll.offset < 0.33) {
-      sideBar2.style.borderTopLeftRadius = `${100 - (scroll.offset * 350)}vw`
-    }
+      if (scroll.offset > 0.18 && scroll.offset < 0.33) {
+        sideBar2.style.borderTopLeftRadius = `${100 - (scroll.offset * 350)}vw`
+      }
 
-    if (scroll.offset > 0.21 && scroll.offset < 0.33) {
-      progressBarRight.style.height = `${1 - (0.21 - scroll.offset) * 800}vh`;
-    }
-    else if (scroll.offset < 0.51) {
-      progressBarRight.style.height = `${0}vh`;
-    }
+      if (scroll.offset > 0.21 && scroll.offset < 0.33) {
+        progressBarRight.style.height = `${1 - (0.21 - scroll.offset) * 800}vh`;
+      }
+      else if (scroll.offset < 0.51) {
+        progressBarRight.style.height = `${0}vh`;
+      }
 
-    if (scroll.offset > 0.95) {
-      camera.position.lerp(vec3.set(-3.8, 1.7, 3.2), 0.06)
-      const zoomTarget = 500 * useMultiplier(window.innerWidth);
-      const zoomSpeed = 0.04;
-      camera.zoom = THREE.MathUtils.lerp(camera.zoom, zoomTarget, zoomSpeed);
-      camera.updateProjectionMatrix();
+      if (scroll.offset > 0.95) {
+        camera.position.lerp(vec3.set(-3.8, 1.7, 3.2), 0.06)
+        const zoomTarget = 500 * useMultiplier(window.innerWidth);
+        const zoomSpeed = 0.04;
+        camera.zoom = THREE.MathUtils.lerp(camera.zoom, zoomTarget, zoomSpeed);
+        camera.updateProjectionMatrix();
 
-      if (scroll.offset > 0.9995) {
-        if (!spinnerShown) {
-          loadingRef.current.style.display = 'block';
-          spinnerShown = true;
+        if (scroll.offset > 0.9995) {
+          if (!spinnerShown) {
+            loadingRef.current.style.display = 'block';
+            spinnerShown = true;
+          }
+
+          setTimeout(() => {
+            loadingRef.current.style.display = 'none';
+            frameRef.current.style.opacity = 1;
+            frameRef.current.style.display = 'block';
+          }, 2000);
+
+
+        } else {
+          spinnerShown = false;
+          frameRef.current.classList.add('fade-out');
+          frameRef.current.style.opacity = 0;
+          frameRef.current.style.display = 'none';
         }
-
-        setTimeout(() => {
-          loadingRef.current.style.display = 'none';
-          frameRef.current.style.opacity = 1;
-          frameRef.current.style.display = 'block';
-        }, 2000);
-
-
-      } else {
-        spinnerShown = false;
-        frameRef.current.classList.add('fade-out');
-        frameRef.current.style.opacity = 0;
+      } else if (scroll.offset < 0.9995) {
         frameRef.current.style.display = 'none';
-      }
-    } else if (scroll.offset < 0.9995) {
-      frameRef.current.style.display = 'none';
-      spinnerShown = false;
+        spinnerShown = false;
 
-      camera.position.lerp(vec3.set(-2, 1, 2), 0.01)
+        camera.position.lerp(vec3.set(-2, 1, 2), 0.01)
 
-      let zoomTarget;
-      if (window.innerWidth < 757) {
-        zoomTarget = window.innerWidth * 0.5;
-      } else {
-        zoomTarget = window.innerWidth * 0.3;
+        let zoomTarget;
+        if (window.innerWidth < 757) {
+          zoomTarget = window.innerWidth * 0.5;
+        } else {
+          zoomTarget = window.innerWidth * 0.3;
+        }
+        const zoomSpeed = 0.04;
+        camera.zoom = THREE.MathUtils.lerp(camera.zoom, zoomTarget, zoomSpeed);
+        camera.updateProjectionMatrix();
       }
-      const zoomSpeed = 0.04;
-      camera.zoom = THREE.MathUtils.lerp(camera.zoom, zoomTarget, zoomSpeed);
-      camera.updateProjectionMatrix();
     }
   })
 
