@@ -141,12 +141,12 @@ body,
 .section-intro-wrapper {
     position: relative;
     padding: 0% 5%;
-    border-bottom: 2px solid pink;
+    border-bottom: 2px solid #1E90FF;
     padding-bottom: -50px;
 }
 
 .section-intro-wrapper:nth-child(3) {
-    border-bottom: 2px solid pink;
+    border-bottom: 2px solid #1E90FF;
 }
 
 .section-detail-wrapper {
@@ -194,7 +194,7 @@ body,
 .progress-bar {
     height: 100%;
     width: 100%;
-    background-color: pink;
+    background-color: #1E90FF;
     transform-origin: top center;
     transform: scaleY(1);
 }
@@ -204,7 +204,7 @@ body,
 
 .section-title {
     position: relative;
-    color: pink
+    color: #1E90FF
 }
 
 .section-title-text {
@@ -216,7 +216,7 @@ body,
     margin-left: 10px;
     text-transform: uppercase;
     font-family: ManropeBold;
-    color: pink;
+    color: #1E90FF;
 }
 
 .styleOne,
@@ -227,7 +227,7 @@ body,
     width: 100%;
     max-width: 40vw;
     height: 6vh;
-    border: 1px solid pink;
+    border: 1px solid #1E90FF;
     transform-origin: left;
     transform: skewY(-25deg);
 }
@@ -243,14 +243,14 @@ body,
 .styleThree {
     top: 80px;
     transform: skewY(25deg);
-    background-color: pink;
+    background-color: #1E90FF;
 }
 
 .section-number {
     position: absolute;
     bottom: 15px;
     right: 0;
-    color: pink;
+    color: #1E90FF;
     font-size: 24px;
     font-family: ManropeBold;
 }

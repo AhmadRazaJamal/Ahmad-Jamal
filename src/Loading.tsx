@@ -54,7 +54,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ children }) => {
 
     return (
         <>{
-            isLoading && <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: '#87CEEB' }}>
+            isLoading && <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: '#89c2d9' }}>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
                     <Canvas>
                         <ambientLight />
@@ -78,7 +78,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ children }) => {
             </div>
         }
             <div style={{
-                position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: '#87CEEB', opacity: isLoading ? 0 : 1,
+                position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: '#89c2d9', opacity: isLoading ? 0 : 1,
                 transition: 'opacity 1s ease-in-out'
             }}>
                 {children}
