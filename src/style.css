@@ -449,7 +449,7 @@ body,
     justify-content: space-between;
     cursor: pointer;
     width: 50px;
-    height: 25px;
+    height: 30px;
     background: grey;
     border-radius: 100px;
     transition: background-color .2s;
