@@ -39,8 +39,8 @@ body,
 #side-bar-01 {
     top: 200vh;
     width: 40vw;
-    height: 230vh;
-    padding-top: 100vh;
+    height: 220vh;
+    padding-top: 50vh;
     padding-left: 5vw;
     padding-right: 5vw;
 }
@@ -49,16 +49,16 @@ body,
     top: 400vh;
     width: 40vw;
     height: 400vh;
-    left: 50vw;
-    padding-top: 100vh;
+    /* left: 50vw; */
+    padding-top: 50vh;
     padding-left: 5vw;
     padding-right: 5vw;
 }
 
 #side-bar-03 {
-    top: 400vh;
+    top: 550vh;
     width: 40vw;
-    height: 150vh;
+    height: 355vh;
     padding-top: 100vh;
     padding-left: 5vw;
     padding-right: 5vw;
@@ -67,7 +67,7 @@ body,
 #side-bar-04 {
     top: 600vh;
     width: 40vw;
-    height: 200vh;
+    height: 390vh;
     left: 50vw;
     padding-top: 100vh;
     padding-left: 5vw;
@@ -77,7 +77,7 @@ body,
 #side-bar-05 {
     top: 700vh;
     width: 40vw;
-    height: 150vh;
+    height: 300vh;
     padding-top: 100vh;
     padding-left: 5vw;
     padding-right: 5vw;
@@ -298,7 +298,7 @@ body,
         margin-right: 12vw;
     }
     .playerWrapper>div {
-        height: 58vw !important;
+        height: 43vw !important;
     }
 }
 
@@ -383,7 +383,7 @@ body,
 }
 
 .carousel div:nth-child(4) {
-    padding-top: 40px;
+    padding-top: 24px;
 }
 
 .image-gallery {
