@@ -48,6 +48,7 @@ body {
 
 .scene {
     position: relative;
+    perspective: 1000px;
     z-index: 2;
     height: calc(var(--size) * 2.75);
     width: calc(var(--size) * 2.75);
