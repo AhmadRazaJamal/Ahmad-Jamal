@@ -1,5 +1,4 @@
-import SwipeIcon from '@mui/icons-material/Swipe';
-
+import ViewInArIcon from '@mui/icons-material/ViewInAr';
 export const Switch = ({ isOn, setInteractive }: any) => {
     return (
         <>
@@ -16,7 +15,7 @@ export const Switch = ({ isOn, setInteractive }: any) => {
             >
                 <span className={'react-switch-button'} />
             </label>
-            <SwipeIcon className={'interactive-icon'} style={{ color: 'white', marginLeft: 10 }} />
+            <ViewInArIcon className={'interactive-icon'} style={{ color: 'white', marginLeft: 10 }} />
         </>
     );
 }
