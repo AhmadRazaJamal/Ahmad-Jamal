@@ -55,24 +55,21 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ children }) => {
         <>{
             isLoading && <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: '#89c2d9' }}>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-                    <Canvas>
-                        <ambientLight />
-                        <pointLight position={[10, 10, 10]} />
-                        <group>
-                            <MorphObject position={[0, 0.5, 0]} color="#1E90FF" size={1} />
-                        </group>
-                        <Text
-                            position={[0, -1, 0]}
-                            rotation={[0, 0, 0]}
-                            fontSize={0.3}
-                            color="#1E90FF"
-                            anchorX="center"
-                            anchorY="middle"
-                            font={`${process.env.PUBLIC_URL}/fonts/Manrope/static/Manrope-Bold.ttf`}
-                        >
-                            {loadingText}
-                        </Text>
-                    </Canvas>
+                    <div className="scene">
+                        <div className="cube-wrapper">
+                            <div className="cube">
+                                <div className="cube-faces">
+                                    <div className="cube-face shadow"></div>
+                                    <div className="cube-face face-bottom"></div>
+                                    <div className="cube-face face-top"></div>
+                                    <div className="cube-face face-left"></div>
+                                    <div className="cube-face face-right"></div>
+                                    <div className="cube-face face-back"></div>
+                                    <div className="cube-face face-front"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         }
