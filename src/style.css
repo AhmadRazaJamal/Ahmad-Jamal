@@ -319,7 +319,9 @@ body,
     z-index: 9999;
 }
 
-.progress-bar-wrapper-left {
+.section-one-progress-bar {
+    /* Eases out the height change via JS */
+    transition: height 0.2s ease-out;
     position: absolute;
     top: 0;
     left: 0;

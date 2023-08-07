@@ -66,7 +66,7 @@ function Office(props: any) {
   // Get elements
   const sideBar1: any = document.getElementById('side-bar-01')
   const sideBar2: any = document.getElementById('side-bar-02')
-  const progressBarLeft: any = document.getElementsByClassName('progress-bar-wrapper-left')[0];
+  const progressBarLeft: any = document.getElementsByClassName('section-one-progress-bar')[0];
   const progressBarRight: any = document.getElementsByClassName('progress-bar-wrapper-right')[0];
   const screenContainer: any = document.getElementsByClassName('htmlScreen')
 
@@ -82,8 +82,11 @@ function Office(props: any) {
       sideBar1.style.borderBottomRightRadius = `${0 + Math.pow(scroll.offset * 12, 4)}vw`
       sideBar2.style.borderBottomLeftRadius = `${0 + Math.pow(scroll.offset * 2.8, 4)}vw`
 
-      if (scroll.offset > 0.035 && scroll.offset < 0.18) {
-        progressBarLeft.style.height = `${1 - (0.035 - scroll.offset) * 2500}vh`;
+      if (scroll.offset > 0.09 && scroll.offset < 0.2) {
+        progressBarLeft.style.height = `${1 - (0.1 - scroll.offset) * 3000}vh`;
+      }
+      else if (scroll.offset < 0.09) {
+        progressBarLeft.style.height = `${0}vh`;
       }
 
       if (scroll.offset > 0.18 && scroll.offset < 0.33) {

@@ -53,7 +53,7 @@ export const Sections = () => {
     return (
         <div>
             <div id='side-bar-01' className="first-section section-left left">
-                <div className="progress-wrapper progress-bar-wrapper-left">
+                <div className="progress-wrapper section-one-progress-bar">
                     <div className="progress-bar"></div>
                 </div>
 
@@ -110,7 +110,7 @@ export const Sections = () => {
             </div>
 
             <div id='side-bar-03' className="first-section section-left left">
-                <div className="progress-wrapper progress-bar-wrapper-left">
+                <div className="progress-wrapper section-one-progress-bar">
                     <div className="progress-bar"></div>
                 </div>
 
@@ -220,7 +220,7 @@ export const Sections = () => {
             </div >
 
             <div id='side-bar-05' className="first-section section-left left">
-                <div className="progress-wrapper progress-bar-wrapper-left">
+                <div className="progress-wrapper section-one-progress-bar">
                     <div className="progress-bar"></div>
                 </div>
 
