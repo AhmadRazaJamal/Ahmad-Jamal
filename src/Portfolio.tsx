@@ -1,4 +1,4 @@
-import { Html, OrbitControls, Scroll, ScrollControls, useGLTF, useScroll } from "@react-three/drei";
+import { Html, OrbitControls, Scroll, ScrollControls, ScrollControlsState, useGLTF, useScroll } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import React, { useRef, useState } from "react";
 import * as THREE from "three";
@@ -7,6 +7,7 @@ import { Sections } from "./Sections";
 import { positionCamera, useMultiplier } from "./utils";
 import CircularProgress from '@mui/material/CircularProgress';
 import { Switch } from "./Switch";
+import { changeProgressBarHeight } from "./helpers";
 
 const Portfolio = () => {
   const model = useGLTF("./office.glb");
@@ -51,7 +52,7 @@ const Portfolio = () => {
 
 function Office(props: any) {
   // Set states
-  const scroll: any = useScroll();
+  const scroll: ScrollControlsState = useScroll();
   const meshRef: any = useRef(null);
   const iframeRef: any = useRef(null);
   const frameRef: any = useRef(null);
@@ -66,8 +67,6 @@ function Office(props: any) {
   // Get elements
   const sideBar1: any = document.getElementById('side-bar-01')
   const sideBar2: any = document.getElementById('side-bar-02')
-  const sectionOneProgressBar: any = document.getElementsByClassName('section-one-progress-bar')[0];
-  const sectionTwoProgressBar: any = document.getElementsByClassName('section-two-progress-bar')[0];
   const screenContainer: any = document.getElementsByClassName('htmlScreen')
 
   const { camera } = useThree();
@@ -82,24 +81,15 @@ function Office(props: any) {
       sideBar1.style.borderBottomRightRadius = `${0 + Math.pow(scroll.offset * 12, 4)}vw`
       sideBar2.style.borderBottomLeftRadius = `${0 + Math.pow(scroll.offset * 2.8, 4)}vw`
 
-      if (scroll.offset > 0.09 && scroll.offset < 0.2) {
-        sectionOneProgressBar.style.height = `${1 - (0.09 - scroll.offset) * 3000}vh`;
-      }
-      else if (scroll.offset < 0.09) {
-        sectionOneProgressBar.style.height = `${0}vh`;
-      }
+      const sectionOneProgressBarRange = scroll.offset > 0.09 && scroll.offset < 0.2;
+      changeProgressBarHeight('section-one-progress-bar', scroll.offset, 0.09, 3000, sectionOneProgressBarRange)
 
       if (scroll.offset > 0.18 && scroll.offset < 0.33) {
         sideBar2.style.borderTopLeftRadius = `${100 - (scroll.offset * 350)}vw`
       }
 
-      console.log(scroll.offset)
-      if (scroll.offset > 0.24 && scroll.offset < 0.42) {
-        sectionTwoProgressBar.style.height = `${1 - (0.1 - scroll.offset) * 300}vh`;
-      }
-      else if (scroll.offset < 0.24) {
-        sectionTwoProgressBar.style.height = `${0}vh`;
-      }
+      const sectionTwoProgressBarRange = scroll.offset > 0.24 && scroll.offset < 0.42;
+      changeProgressBarHeight('section-two-progress-bar', scroll.offset, 0.25, 3000, sectionTwoProgressBarRange)
 
       if (scroll.offset > 0.95) {
         camera.position.lerp(vec3.set(-3.8, 1.7, 3.2), 0.06)
