@@ -78,7 +78,7 @@ export const Sections = () => {
                 <div className="second-move section-margin"></div>
 
                 <section className="second-section section right">
-                    <div className="progress-wrapper progress-bar-wrapper-right">
+                    <div className="progress-wrapper section-two-progress-bar">
                         <div className="progress-bar blue-background"></div>
                     </div>
 
@@ -184,7 +184,7 @@ export const Sections = () => {
                 <div className="second-move section-margin"></div>
 
                 <section className="second-section section right">
-                    <div className="progress-wrapper progress-bar-wrapper-right">
+                    <div className="progress-wrapper section-two-progress-bar">
                         <div className="progress-bar blue-background"></div>
                     </div>
 

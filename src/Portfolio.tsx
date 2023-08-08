@@ -66,8 +66,8 @@ function Office(props: any) {
   // Get elements
   const sideBar1: any = document.getElementById('side-bar-01')
   const sideBar2: any = document.getElementById('side-bar-02')
-  const progressBarLeft: any = document.getElementsByClassName('section-one-progress-bar')[0];
-  const progressBarRight: any = document.getElementsByClassName('progress-bar-wrapper-right')[0];
+  const sectionOneProgressBar: any = document.getElementsByClassName('section-one-progress-bar')[0];
+  const sectionTwoProgressBar: any = document.getElementsByClassName('section-two-progress-bar')[0];
   const screenContainer: any = document.getElementsByClassName('htmlScreen')
 
   const { camera } = useThree();
@@ -83,21 +83,22 @@ function Office(props: any) {
       sideBar2.style.borderBottomLeftRadius = `${0 + Math.pow(scroll.offset * 2.8, 4)}vw`
 
       if (scroll.offset > 0.09 && scroll.offset < 0.2) {
-        progressBarLeft.style.height = `${1 - (0.1 - scroll.offset) * 3000}vh`;
+        sectionOneProgressBar.style.height = `${1 - (0.09 - scroll.offset) * 3000}vh`;
       }
       else if (scroll.offset < 0.09) {
-        progressBarLeft.style.height = `${0}vh`;
+        sectionOneProgressBar.style.height = `${0}vh`;
       }
 
       if (scroll.offset > 0.18 && scroll.offset < 0.33) {
         sideBar2.style.borderTopLeftRadius = `${100 - (scroll.offset * 350)}vw`
       }
 
-      if (scroll.offset > 0.21 && scroll.offset < 0.33) {
-        progressBarRight.style.height = `${1 - (0.21 - scroll.offset) * 800}vh`;
+      console.log(scroll.offset)
+      if (scroll.offset > 0.24 && scroll.offset < 0.42) {
+        sectionTwoProgressBar.style.height = `${1 - (0.1 - scroll.offset) * 300}vh`;
       }
-      else if (scroll.offset < 0.51) {
-        progressBarRight.style.height = `${0}vh`;
+      else if (scroll.offset < 0.24) {
+        sectionTwoProgressBar.style.height = `${0}vh`;
       }
 
       if (scroll.offset > 0.95) {

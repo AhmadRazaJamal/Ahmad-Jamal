@@ -327,7 +327,9 @@ body,
     left: 0;
 }
 
-.progress-bar-wrapper-right {
+.section-two-progress-bar {
+    /* Eases out the height change via JS */
+    transition: height 0.2s ease-out;
     position: absolute;
     top: 0;
     right: 0;
@@ -441,6 +443,9 @@ body,
     }
     .playerWrapper>div {
         height: 43vw !important;
+    }
+    .section-two-progress-bar {
+        right: 10vw;
     }
 }
 
