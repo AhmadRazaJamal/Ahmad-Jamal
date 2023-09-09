@@ -72,7 +72,7 @@ function Office(props: any) {
   const { camera } = useThree();
   useFrame((state, delta) => {
     if (!props.isInteractiveMode) {
-      screenContainer[0].style.top = `${951 + positionCamera(window.innerWidth)}vh`
+      screenContainer[0].style.top = `${3000 + positionCamera(window.innerWidth)}vh`
       meshRef.current.position.x = (Math.sin(scroll.offset * 16.4) * 0.6)
       meshRef.current.position.z = (Math.sin(scroll.offset * 16.4) * 0.6)
 
@@ -92,7 +92,7 @@ function Office(props: any) {
       changeProgressBarHeight('section-two-progress-bar', scroll.offset, 0.25, 3000, sectionTwoProgressBarRange)
 
       if (scroll.offset > 0.95) {
-        camera.position.lerp(vec3.set(-3.8, 1.7, 3.2), 0.06)
+        camera.position.lerp(vec3.set(-4.1, 1.9, 3.2), 0.06)
         const zoomTarget = 500 * useMultiplier(window.innerWidth);
         const zoomSpeed = 0.04;
         camera.zoom = THREE.MathUtils.lerp(camera.zoom, zoomTarget, zoomSpeed);
@@ -106,19 +106,19 @@ function Office(props: any) {
 
           setTimeout(() => {
             loadingRef.current.style.display = 'none';
-            frameRef.current.style.opacity = 1;
-            frameRef.current.style.display = 'block';
+            // frameRef.current.style.opacity = 1;
+            // frameRef.current.style.display = 'block';
           }, 2000);
 
 
         } else {
           spinnerShown = false;
-          frameRef.current.classList.add('fade-out');
-          frameRef.current.style.opacity = 0;
-          frameRef.current.style.display = 'none';
+          // frameRef.current.classList.add('fade-out');
+          // frameRef.current.style.opacity = 0;
+          // frameRef.current.style.display = 'none';
         }
       } else if (scroll.offset < 0.9995) {
-        frameRef.current.style.display = 'none';
+        // frameRef.current.style.display = 'none';
         spinnerShown = false;
 
         camera.position.lerp(vec3.set(-2, 1, 2), 0.01)
@@ -139,8 +139,11 @@ function Office(props: any) {
   return (
     <group ref={meshRef}>
       <primitive object={props.model.scene} scale={props.scale} position={[-0.3, -0.3, 0]}>
-        <Html transform position={[0.8, 1.04, -3.1]} rotation-x={-0.1} wrapperClass='htmlScreen' ref={iframeRef} distanceFactor={1.25}>
+        <Html transform position={[0.8, 3.64, -3.1]} rotation-x={-0.1} wrapperClass='htmlScreen' ref={iframeRef} distanceFactor={1.25}>
           <CircularProgress sx={{ color: 'red', display: 'none' }} size={100} ref={loadingRef} />
+          <div>
+
+          </div>
           <iframe src="https://bruno-simon.com/html/" className="iframeScreen" ref={frameRef} />
         </Html>
       </primitive>
