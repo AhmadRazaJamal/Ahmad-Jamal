@@ -56,11 +56,9 @@ function Office(props: any) {
   const meshRef: any = useRef(null);
   const iframeRef: any = useRef(null);
   const frameRef: any = useRef(null);
-  const loadingRef: any = useRef(null);
   // const markedRef: any = useRef(null);
   const [screenVisible, setScreenVisible] = useState(true);
   const [clicked, setClick] = useState(false);
-  let spinnerShown = false;
 
   const vec3 = new THREE.Vector3();
 
@@ -99,27 +97,16 @@ function Office(props: any) {
         camera.updateProjectionMatrix();
 
         if (scroll.offset > 0.9995) {
-          if (!spinnerShown) {
-            loadingRef.current.style.display = 'block';
-            spinnerShown = true;
-          }
-
           setTimeout(() => {
-            loadingRef.current.style.display = 'none';
-            // frameRef.current.style.opacity = 1;
-            // frameRef.current.style.display = 'block';
+            setScreenVisible(true);
           }, 2000);
 
 
         } else {
-          spinnerShown = false;
-          // frameRef.current.classList.add('fade-out');
-          // frameRef.current.style.opacity = 0;
-          // frameRef.current.style.display = 'none';
+          setScreenVisible(false);
         }
       } else if (scroll.offset < 0.9995) {
-        // frameRef.current.style.display = 'none';
-        spinnerShown = false;
+        setScreenVisible(false);
 
         camera.position.lerp(vec3.set(-2, 1, 2), 0.01)
 
@@ -140,11 +127,10 @@ function Office(props: any) {
     <group ref={meshRef}>
       <primitive object={props.model.scene} scale={props.scale} position={[-0.3, -0.3, 0]}>
         <Html transform position={[0.8, 3.64, -3.1]} rotation-x={-0.1} wrapperClass='htmlScreen' ref={iframeRef} distanceFactor={1.25}>
-          <CircularProgress sx={{ color: 'red', display: 'none' }} size={100} ref={loadingRef} />
-          <div>
-
-          </div>
-          <iframe src="https://bruno-simon.com/html/" className="iframeScreen" ref={frameRef} />
+          {screenVisible && <img
+            src={'https://media4.giphy.com/media/bcKmIWkUMCjVm/giphy.gif?cid=ecf05e47ttf63o75aoryn5f642znotplu7lvwnb4739g2mpa&ep=v1_gifs_search&rid=giphy.gif&ct=g'}
+            style={{ objectFit: 'cover', width: '1026px', height: '586px', objectPosition: 'bottom' }}
+            alt="Giphy GIF" />}
         </Html>
       </primitive>
     </group>

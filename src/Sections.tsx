@@ -67,7 +67,7 @@ export const Sections = () => {
 
                 <div className="section-detail-wrapper">
 
-                    <p className="section-text">Hello internet <span className="wave">👋!</span> My name is Ahmad Jamal, but you can call me Jamal. I'm a Full-Stack Developer based in Calgary, and I'm currently working remotely for an awesome travel company FreshTracks, located in the heart of Vancouver downtown.</p>
+                    <p className="section-text">Hello internet <span className="wave">👋</span>! My name is Ahmad Jamal, but you can call me Jamal. I'm a Full-Stack Developer based in Calgary, and I'm currently working remotely for an awesome travel company FreshTracks, located in the heart of Vancouver downtown.</p>
                     <p className="section-text">Having worked professionally as a developer for almost 4 years, I've had the pleasure of collaborating with some exciting startups, including HigherGround, FreshGrade, and Fresh Tracks Canada. These experiences have allowed me to hone my development skills and gain valuable insights into the industry.</p>
                     <p className="section-text">I'm a big believer in always pushing myself to learn new things, which is why I've poured my heart and soul into the revamp of my old portfolio. I've used some fantastic tools like NextJS, Tailwind, and ThreeJS to make it stand out visually and functionally.</p>
                     <p className="section-text">So, dive in and have fun exploring my office!</p>
