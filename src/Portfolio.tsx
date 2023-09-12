@@ -96,17 +96,14 @@ function Office(props: any) {
         camera.zoom = THREE.MathUtils.lerp(camera.zoom, zoomTarget, zoomSpeed);
         camera.updateProjectionMatrix();
 
-        if (scroll.offset > 0.9995) {
-          setTimeout(() => {
-            setScreenVisible(true);
-          }, 2000);
-
-
+        if (scroll.offset > 0.99999) {
+          frameRef.current.style.opacity = 0.85;
+          frameRef.current.style.display = 'block';
         } else {
-          setScreenVisible(false);
+          frameRef.current.style.display = 'none';
         }
-      } else if (scroll.offset < 0.9995) {
-        setScreenVisible(false);
+      } else if (scroll.offset < 0.99999) {
+        frameRef.current.style.display = 'none';
 
         camera.position.lerp(vec3.set(-2, 1, 2), 0.01)
 
@@ -127,10 +124,12 @@ function Office(props: any) {
     <group ref={meshRef}>
       <primitive object={props.model.scene} scale={props.scale} position={[-0.3, -0.3, 0]}>
         <Html transform position={[0.8, 3.64, -3.1]} rotation-x={-0.1} wrapperClass='htmlScreen' ref={iframeRef} distanceFactor={1.25}>
-          {screenVisible && <img
+          {<img
             src={'https://media4.giphy.com/media/bcKmIWkUMCjVm/giphy.gif?cid=ecf05e47ttf63o75aoryn5f642znotplu7lvwnb4739g2mpa&ep=v1_gifs_search&rid=giphy.gif&ct=g'}
             style={{ objectFit: 'cover', width: '1026px', height: '586px', objectPosition: 'bottom' }}
-            alt="Giphy GIF" />}
+            alt="dog waving gif by GIFHY"
+            ref={frameRef}
+          />}
         </Html>
       </primitive>
     </group>
