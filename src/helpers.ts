@@ -10,3 +10,5 @@ export const changeProgressBarHeight = (className: string, offset: number, speed
         progressBar.style.height = '0vh';
     }
 }
+
+export const isSmallScreen = window.innerWidth < 757;

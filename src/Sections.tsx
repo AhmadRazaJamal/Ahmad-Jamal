@@ -215,9 +215,10 @@ export const Sections = () => {
 
                         <p className="section-text">For further information about what I do and where I’ve worked, please check out my <a href="https://www.linkedin.com/in/ahmadjamal/">LinkedIn</a></p>
                     </div>
-
                 </section>
             </div >
         </div >
+
+
     )
 }

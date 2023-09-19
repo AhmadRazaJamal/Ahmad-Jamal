@@ -214,6 +214,15 @@ body,
 }
 
 #side-bar-05 {
+    top: 1500vh;
+    width: 40vw;
+    height: 390vh;
+    padding-top: 100vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+#side-bar-05 {
     top: 700vh;
     width: 40vw;
     height: 300vh;
@@ -409,6 +418,19 @@ body,
     border: none;
     overflow: initial;
     top: 950vh;
+}
+
+.form iframe {
+    width: 1030px;
+    height: 590px;
+    border: none;
+    overflow: initial;
+    top: 950vh;
+}
+
+.form {
+    overflow: initial !important;
+    display: block;
 }
 
 .htmlScreen {

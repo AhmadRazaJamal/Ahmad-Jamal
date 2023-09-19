@@ -8,6 +8,7 @@ import { positionCamera, useMultiplier } from "./utils";
 import CircularProgress from '@mui/material/CircularProgress';
 import { Switch } from "./Switch";
 import { changeProgressBarHeight } from "./helpers";
+import { Form } from "./Form/Form";
 
 const Portfolio = () => {
   const model = useGLTF("./office.glb");
@@ -66,11 +67,13 @@ function Office(props: any) {
   const sideBar1: any = document.getElementById('side-bar-01')
   const sideBar2: any = document.getElementById('side-bar-02')
   const screenContainer: any = document.getElementsByClassName('htmlScreen')
+  const formContainer: any = document.getElementsByClassName('form')
 
   const { camera } = useThree();
   useFrame((state, delta) => {
     if (!props.isInteractiveMode) {
       screenContainer[0].style.top = `${3000 + positionCamera(window.innerWidth)}vh`
+      formContainer[0].style.top = `${3000 + positionCamera(window.innerWidth)}vh`
       meshRef.current.position.x = (Math.sin(scroll.offset * 16.4) * 0.6)
       meshRef.current.position.z = (Math.sin(scroll.offset * 16.4) * 0.6)
 
@@ -119,7 +122,7 @@ function Office(props: any) {
       }
     }
   })
-
+  // [0.3, 8.5, 3.8]
   return (
     <group ref={meshRef}>
       <primitive object={props.model.scene} scale={props.scale} position={[-0.3, -0.3, 0]}>
@@ -130,6 +133,11 @@ function Office(props: any) {
             alt="dog waving gif by GIFHY"
             ref={frameRef}
           />}
+        </Html>
+        <Html transform position={[-1, 9.5, 3.8]} rotation-x={0} rotation-y={-0.8} wrapperClass='form' ref={iframeRef} distanceFactor={3}>
+          {
+            <Form />
+          }
         </Html>
       </primitive>
     </group>
