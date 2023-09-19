@@ -74,8 +74,6 @@ function Office(props: any) {
     if (!props.isInteractiveMode) {
       screenContainer[0].style.top = `${3000 + positionCamera(window.innerWidth)}vh`
       formContainer[0].style.top = `${3000 + positionCamera(window.innerWidth)}vh`
-      meshRef.current.position.x = (Math.sin(scroll.offset * 16.4) * 0.6)
-      meshRef.current.position.z = (Math.sin(scroll.offset * 16.4) * 0.6)
 
       sideBar1.style.borderTopRightRadius = `${100 - (scroll.offset * 1400)}vw`
 
@@ -125,7 +123,7 @@ function Office(props: any) {
   // [0.3, 8.5, 3.8]
   return (
     <group ref={meshRef}>
-      <primitive object={props.model.scene} scale={props.scale} position={[-0.3, -0.3, 0]}>
+      <primitive object={props.model.scene} scale={props.scale} position={[-1.3, -0.2, 0]}>
         <Html transform position={[0.8, 3.64, -3.1]} rotation-x={-0.1} wrapperClass='htmlScreen' ref={iframeRef} distanceFactor={1.25}>
           {<img
             src={'https://media4.giphy.com/media/bcKmIWkUMCjVm/giphy.gif?cid=ecf05e47ttf63o75aoryn5f642znotplu7lvwnb4739g2mpa&ep=v1_gifs_search&rid=giphy.gif&ct=g'}
