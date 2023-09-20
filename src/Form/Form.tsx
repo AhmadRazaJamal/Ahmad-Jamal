@@ -10,7 +10,7 @@ export const Form = () => {
         formState: { errors },
         handleSubmit
     } = useForm({
-        mode: "onBlur" // "onChange"
+        mode: "onBlur"
     });
     const onSubmit = (data: any) => {
         alert(JSON.stringify(data));

@@ -1,4 +1,5 @@
 import { CarouselGallery } from "./Carousel"
+import { Section } from './Section/Section'
 import ImageGallery from 'react-image-gallery';
 
 const threeJsProjectContent = [
@@ -52,132 +53,85 @@ const laurieKossProjectImages = [
 export const Sections = () => {
     return (
         <div>
-            <div id='side-bar-01' className="first-section section-left left">
-                <div className="progress-wrapper section-one-progress-bar">
-                    <div className="progress-bar"></div>
-                </div>
+            <Section id="one" title="About Me" number="01">
+                <p className="section-text">Hello internet <span className="wave">👋</span>! My name is Ahmad Jamal, but you can call me Jamal. I'm a Full-Stack Developer based in Calgary, and I'm currently working remotely for an awesome travel company FreshTracks, located in the heart of Vancouver downtown.</p>
+                <p className="section-text">Having worked professionally as a developer for almost 4 years, I've had the pleasure of collaborating with some exciting startups, including HigherGround, FreshGrade, and Fresh Tracks Canada. These experiences have allowed me to hone my development skills and gain valuable insights into the industry.</p>
+                <p className="section-text">I'm a big believer in always pushing myself to learn new things, which is why I've poured my heart and soul into the revamp of my old portfolio. I've used some fantastic tools like NextJS, Tailwind, and ThreeJS to make it stand out visually and functionally.</p>
+                <p className="section-text">So, dive in and have fun exploring my office!</p>
+            </Section>
 
-                <div className="section-intro-wrapper">
-                    <h1 className="section-title">
-                        <span className="section-title-text">About Me</span>
-                    </h1>
-                    <span className="section-number">01</span>
-                </div>
+            <Section id="two" title="My Work" number="02">
+                <h2 className="section-heading">ThreeJS Projects</h2>
+                <p className="section-text">My latest endeavour has been learning ThreeJS, and creating fun small projects while following this amazing <a href={'https://threejs-journey.com/'}>course by Bruno Simons</a>. I have worked on both small and large-scale projects such as my portfolio that utilizes ThreeJS to the fullest. My portfolio goes beyond just using vanilla ThreeJS but uses React Three Fiber and includes a mini version of my home office designed in Blender.</p>
+                <CarouselGallery content={threeJsProjectContent} />
 
+                <h2 className="section-heading">Canadian Train Vacations</h2>
+                <p className="section-text">Canadian Train Vacation is my ongoing project at work. From being responsible for setting up CI/CD for development, A/B testing for user testing, and creating a monorepo and building its pathways, it has been a challenging yet fun project to work on.</p>
+                Check the website <a href={'https://canadiantrainvacations.com/'}>here</a>
 
-                <div className="section-detail-wrapper">
+                <ImageGallery items={projectImages} showNav={false} showFullscreenButton={false} slideInterval={2000} />
+                <h2 className="section-heading">Laurie Koss SEO Project</h2>
+                <p className="section-text"> Laurie, an artist, aimed to showcase her talent and reach a broader audience through improved SEO and enhanced performance. Collaborating with Laurie, I improved performance statistics, optimized the website for Google search ranking, and also helped set up Google Analytics and Google Console. I also provided guidance on content creation and explored additional marketing avenues for her products.
+                    <p />
+                    Here is my complete research and thought process of how I made this possible: <a href={'https://wandering-psychology-b1a.notion.site/SEO-Optimization-Analysis-41a6620719af46ee9be5636e88f38d15?pvs=4'}>SEO Optimization Analysis on Notion</a>
+                </p>
+            </Section>
 
-                    <p className="section-text">Hello internet <span className="wave">👋</span>! My name is Ahmad Jamal, but you can call me Jamal. I'm a Full-Stack Developer based in Calgary, and I'm currently working remotely for an awesome travel company FreshTracks, located in the heart of Vancouver downtown.</p>
-                    <p className="section-text">Having worked professionally as a developer for almost 4 years, I've had the pleasure of collaborating with some exciting startups, including HigherGround, FreshGrade, and Fresh Tracks Canada. These experiences have allowed me to hone my development skills and gain valuable insights into the industry.</p>
-                    <p className="section-text">I'm a big believer in always pushing myself to learn new things, which is why I've poured my heart and soul into the revamp of my old portfolio. I've used some fantastic tools like NextJS, Tailwind, and ThreeJS to make it stand out visually and functionally.</p>
-                    <p className="section-text">So, dive in and have fun exploring my office!</p>
-                </div>
-            </div>
-
-            <div id='side-bar-02' className="first-section section-right right">
-                <div className="second-move section-margin"></div>
-
-                <section className="second-section section right">
-                    <div className="progress-wrapper section-two-progress-bar">
-                        <div className="progress-bar blue-background"></div>
-                    </div>
-
-                    <div className="section-intro-wrapper blue-text blue-border">
-                        <h1 className="section-title blue-text blue-border">
-                            <span className="section-title-text blue-text">My Work</span>
-                        </h1>
-                        <span className="section-number blue-text">02</span>
-                    </div>
-
-                    <div className="section-detail-wrapper">
-                        <h2 className="section-heading">ThreeJS Projects</h2>
-                        <p className="section-text">My latest endeavour has been learning ThreeJS, and creating fun small projects while following this amazing <a href={'https://threejs-journey.com/'}>course by Bruno Simons</a>. I have worked on both small and large-scale projects such as my portfolio that utilizes ThreeJS to the fullest. My portfolio goes beyond just using vanilla ThreeJS but uses React Three Fiber and includes a mini version of my home office designed in Blender.</p>
-                        <CarouselGallery content={threeJsProjectContent} />
-
-                        <h2 className="section-heading">Canadian Train Vacations</h2>
-                        <p className="section-text">Canadian Train Vacation is my ongoing project at work. From being responsible for setting up CI/CD for development, A/B testing for user testing, and creating a monorepo and building its pathways, it has been a challenging yet fun project to work on.</p>
-                        Check the website <a href={'https://canadiantrainvacations.com/'}>here</a>
-
-                        <ImageGallery items={projectImages} showNav={false} showFullscreenButton={false} slideInterval={2000} />
-                        <h2 className="section-heading">Laurie Koss SEO Project</h2>
-                        <p className="section-text"> Laurie, an artist, aimed to showcase her talent and reach a broader audience through improved SEO and enhanced performance. Collaborating with Laurie, I improved performance statistics, optimized the website for Google search ranking, and also helped set up Google Analytics and Google Console. I also provided guidance on content creation and explored additional marketing avenues for her products.
-                            <p />
-                            Here is my complete research and thought process of how I made this possible: <a href={'https://wandering-psychology-b1a.notion.site/SEO-Optimization-Analysis-41a6620719af46ee9be5636e88f38d15?pvs=4'}>SEO Optimization Analysis on Notion</a>
-                        </p>
-                    </div>
-
-                </section>
-            </div>
-
-            <div id='side-bar-03' className="first-section section-left left">
-                <div className="progress-wrapper section-one-progress-bar">
-                    <div className="progress-bar"></div>
-                </div>
-
-                <div className="section-intro-wrapper">
-                    <h1 className="section-title">
-                        <span className="section-title-text">What can I do for you?</span>
-                    </h1>
-                    <span className="section-number">03</span>
-                </div>
-
-
-                <div className="section-detail-wrapper">
-                    <h2 className="section-heading">1. Web Development</h2>
-                    <p className="section-text"></p>
-                    <ul className="section-text">
-                        <li>
-                            Full-Stack Wizard: From the front end to the back end, I conjure up a complete web environment.
-                        </li>
-                        <li>
-                            Your site's personal health guru: I'm all about keeping things updated, fixed, and running smoothly.
-                        </li>
-                    </ul>
-                    <h2 className="section-heading">2. Search Engine Optimization</h2>
-                    <p className="section-text"></p>
-                    <ul className="section-text">
-                        <li>
-                            Improving Core Web Vitals for your website, so you can rank higher.
-                        </li>
-                        <li>
-                            Google Analytics and Search Console: I don't just set it up, but act as your guide in understanding data.
-                        </li>
-                        <li>
-                            Providing guidance on areas where you can improve your Google rankings.
-                        </li>
-                    </ul>
-                    <h2 className="section-heading">3. CMS Management</h2>
-                    <p className="section-text"></p>
-                    <ul className="section-text">
-                        <li>
-                            Setting up, updating, and maintaining your CMS. Be it headless or not.
-                        </li>
-                        <li>
-                            Ensuring your project's plugins are always on their latest and greatest form.
-                        </li>
-                    </ul>
-                    <h2 className="section-heading">4. Continuous Integration/Deployment</h2>
-                    <p className="section-text"></p>
-                    <ul className="section-text">
-                        <li>
-                            Automating, testing and deploying to make your life easier and your code robust.
-                        </li>
-                        <li>
-                            Cut down on coffee breaks waiting for code deployment. Let's make it swift and reliable.
-                        </li>
-                    </ul>
-                    <h2 className="section-heading">5. Solution Architect</h2>
-                    <p className="section-text"></p>
-                    <ul className="section-text">
-                        <li>
-                            Designing solutions for tough problems.
-                        </li>
-                        <li>
-                            Research, test and implement best way to solve problems keeping you up at night.
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <Section id="three" title="What can I do for you" number="03">
+                <h2 className="section-heading">1. Web Development</h2>
+                <p className="section-text"></p>
+                <ul className="section-text">
+                    <li>
+                        Full-Stack Wizard: From the front end to the back end, I conjure up a complete web environment.
+                    </li>
+                    <li>
+                        Your site's personal health guru: I'm all about keeping things updated, fixed, and running smoothly.
+                    </li>
+                </ul>
+                <h2 className="section-heading">2. Search Engine Optimization</h2>
+                <p className="section-text"></p>
+                <ul className="section-text">
+                    <li>
+                        Improving Core Web Vitals for your website, so you can rank higher.
+                    </li>
+                    <li>
+                        Google Analytics and Search Console: I don't just set it up, but act as your guide in understanding data.
+                    </li>
+                    <li>
+                        Providing guidance on areas where you can improve your Google rankings.
+                    </li>
+                </ul>
+                <h2 className="section-heading">3. CMS Management</h2>
+                <p className="section-text"></p>
+                <ul className="section-text">
+                    <li>
+                        Setting up, updating, and maintaining your CMS. Be it headless or not.
+                    </li>
+                    <li>
+                        Ensuring your project's plugins are always on their latest and greatest form.
+                    </li>
+                </ul>
+                <h2 className="section-heading">4. Continuous Integration/Deployment</h2>
+                <p className="section-text"></p>
+                <ul className="section-text">
+                    <li>
+                        Automating, testing and deploying to make your life easier and your code robust.
+                    </li>
+                    <li>
+                        Cut down on coffee breaks waiting for code deployment. Let's make it swift and reliable.
+                    </li>
+                </ul>
+                <h2 className="section-heading">5. Solution Architect</h2>
+                <p className="section-text"></p>
+                <ul className="section-text">
+                    <li>
+                        Designing solutions for tough problems.
+                    </li>
+                    <li>
+                        Research, test and implement best way to solve problems keeping you up at night.
+                    </li>
+                </ul>
+            </Section>
 
 
             <div id='side-bar-04' className="first-section section-right right">

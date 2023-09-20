@@ -63,9 +63,10 @@ function Office(props: any) {
 
   const vec3 = new THREE.Vector3();
 
-  // Get elements
-  const sideBar1: any = document.getElementById('side-bar-01')
-  const sideBar2: any = document.getElementById('side-bar-02')
+  // Get elements and store them in a variable to animate
+  const sectionOne: any = document.getElementById('section-one')
+  const sectionTwo: any = document.getElementById('section-two')
+  const sectionThree: any = document.getElementById('section-three')
   const screenContainer: any = document.getElementsByClassName('htmlScreen')
   const formContainer: any = document.getElementsByClassName('form')
 
@@ -75,20 +76,22 @@ function Office(props: any) {
       screenContainer[0].style.top = `${3000 + positionCamera(window.innerWidth)}vh`
       formContainer[0].style.top = `${3000 + positionCamera(window.innerWidth)}vh`
 
-      sideBar1.style.borderTopRightRadius = `${100 - (scroll.offset * 1400)}vw`
+      // Controls border animation for section blocks
+      sectionOne.style.borderTopLeftRadius = `${100 - (scroll.offset * 900)}rem`
+      sectionOne.style.borderBottomLeftRadius = `${0 + Math.pow(scroll.offset * 12, 4)}rem`
 
-      sideBar1.style.borderBottomRightRadius = `${0 + Math.pow(scroll.offset * 12, 4)}vw`
-      sideBar2.style.borderBottomLeftRadius = `${0 + Math.pow(scroll.offset * 2.8, 4)}vw`
+      sectionTwo.style.borderTopLeftRadius = `${230 - (scroll.offset * 900)}rem`
+      sectionTwo.style.borderBottomLeftRadius = `${0 + Math.pow(scroll.offset * 12, 2)}rem`
+
+      sectionThree.style.borderTopLeftRadius = `${230 - (scroll.offset * 900)}rem`
+      sectionThree.style.borderBottomLeftRadius = `${0 + Math.pow(scroll.offset * 12, 2)}rem`
+
 
       const sectionOneProgressBarRange = scroll.offset > 0.09 && scroll.offset < 0.2;
-      changeProgressBarHeight('section-one-progress-bar', scroll.offset, 0.09, 3000, sectionOneProgressBarRange)
-
-      if (scroll.offset > 0.18 && scroll.offset < 0.33) {
-        sideBar2.style.borderTopLeftRadius = `${100 - (scroll.offset * 350)}vw`
-      }
+      changeProgressBarHeight('progress-bar-one', scroll.offset, 0.09, 3000, sectionOneProgressBarRange)
 
       const sectionTwoProgressBarRange = scroll.offset > 0.24 && scroll.offset < 0.42;
-      changeProgressBarHeight('section-two-progress-bar', scroll.offset, 0.25, 3000, sectionTwoProgressBarRange)
+      changeProgressBarHeight('progress-bar-two', scroll.offset, 0.25, 3000, sectionTwoProgressBarRange)
 
       if (scroll.offset > 0.95) {
         camera.position.lerp(vec3.set(-4.1, 1.9, 3.2), 0.06)
@@ -123,7 +126,7 @@ function Office(props: any) {
   // [0.3, 8.5, 3.8]
   return (
     <group ref={meshRef}>
-      <primitive object={props.model.scene} scale={props.scale} position={[-1.3, -0.2, 0]}>
+      <primitive object={props.model.scene} scale={props.scale} position={[-1.5, -0.18, 0]}>
         <Html transform position={[0.8, 3.64, -3.1]} rotation-x={-0.1} wrapperClass='htmlScreen' ref={iframeRef} distanceFactor={1.25}>
           {<img
             src={'https://media4.giphy.com/media/bcKmIWkUMCjVm/giphy.gif?cid=ecf05e47ttf63o75aoryn5f642znotplu7lvwnb4739g2mpa&ep=v1_gifs_search&rid=giphy.gif&ct=g'}
