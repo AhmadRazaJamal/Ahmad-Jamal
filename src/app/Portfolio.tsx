@@ -5,10 +5,10 @@ import { useFrame, useThree } from "@react-three/fiber";
 import React, { useRef, useState } from "react";
 import * as THREE from "three";
 import { Sections } from "./Sections";
-import { Switch } from "./Switch";
 import { changeProgressBarHeight } from "./helpers";
 import ScrollingSurface from "./ScrollingSurface/ScrollingSurface";
 import ScrollUp from "./ScrollUp/ScrollUp";
+import Switch from "./Switch/Switch";
 
 const Portfolio = () => {
   const model = useGLTF("./office.glb");
@@ -41,9 +41,7 @@ const Portfolio = () => {
         <Office model={model} scale={0.08} isInteractiveMode={interactiveMode} />
         <Scroll html>
           {/* DOM contents in here will scroll along */}
-          <div className="switch-container">
             <Switch aria-label="interactive-mode-switch" setInteractive={setInteractiveMode} isOn={interactiveMode} />
-          </div>
           <ScrollUp />
           <Sections />
         </Scroll>
