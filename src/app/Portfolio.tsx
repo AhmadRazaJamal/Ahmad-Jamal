@@ -8,7 +8,7 @@ import { Sections } from "./Sections";
 import { Switch } from "./Switch";
 import { changeProgressBarHeight } from "./helpers";
 import ScrollingSurface from "./ScrollingSurface/ScrollingSurface";
-import Intro from "./ScrollUpArrow/ScrollUpArrow";
+import ScrollUp from "./ScrollUp/ScrollUp";
 
 const Portfolio = () => {
   const model = useGLTF("./office.glb");
@@ -44,7 +44,7 @@ const Portfolio = () => {
           <div className="switch-container">
             <Switch aria-label="interactive-mode-switch" setInteractive={setInteractiveMode} isOn={interactiveMode} />
           </div>
-          <Intro />
+          <ScrollUp />
           <Sections />
         </Scroll>
       </ScrollControls>
@@ -65,7 +65,6 @@ function Office(props: any) {
 
   // Get elements and store them in a variable to animate
   const sectionOne: any = document.getElementById('section-one')
-  console.log(sectionOne)
   const sectionTwo: any = document.getElementById('section-two')
   const sectionThree: any = document.getElementById('section-three')
   const sectionFour: any = document.getElementById('section-four')

@@ -6,6 +6,7 @@ import LoadingScreen from "./Loading";
 import Portfolio from "./Portfolio";
 
 export default function Home() {
+  console.log(window.innerWidth)
   return (
     <NextUIProvider>
       <LoadingScreen>
@@ -17,7 +18,7 @@ export default function Home() {
             top: -1,
             bottom: 1,
             right: 1,
-            zoom: window.innerWidth * 0.5,
+            zoom: window.innerWidth * 0.4,
             position: [-2, 1, 2],
           }}
         >
