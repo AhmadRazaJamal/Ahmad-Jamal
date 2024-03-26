@@ -4,11 +4,11 @@ import { OrbitControls, Scroll, ScrollControls, ScrollControlsState, useGLTF, us
 import { useFrame, useThree } from "@react-three/fiber";
 import React, { useRef, useState } from "react";
 import * as THREE from "three";
-import Intro from "./Intro";
 import { Sections } from "./Sections";
 import { Switch } from "./Switch";
 import { changeProgressBarHeight } from "./helpers";
 import ScrollingSurface from "./ScrollingSurface/ScrollingSurface";
+import Intro from "./ScrollUpArrow/ScrollUpArrow";
 
 const Portfolio = () => {
   const model = useGLTF("./office.glb");
