@@ -24,7 +24,7 @@
 
 @import "~react-image-gallery/styles/css/image-gallery.css";
 
-/* Colors */
+/* Global CSS  */
 
 :root {
     --light-cyan: #d6fff6ff;
@@ -182,58 +182,7 @@ body,
     height: 100%;
 }
 
-
-/*
-* Monitor styling
-*/
-
-.htmlScreen iframe {
-    width: 1030px;
-    height: 590px;
-    border: none;
-    overflow: initial;
-    top: 950vh;
-}
-
-.form iframe {
-    width: 1030px;
-    height: 590px;
-    border: none;
-    overflow: initial;
-    top: 950vh;
-}
-
-.form {
-    overflow: initial !important;
-    display: block;
-}
-
-.htmlScreen {
-    overflow: initial !important;
-    display: block;
-}
-
-.fade-out {
-    opacity: 0;
-    transition: opacity 0.5s ease-out;
-}
-
-
-/*
-* Waving emoji animation CSS
-*/
-
-.wave {
-    animation-name: wave-animation;
-    /* Refers to the name of your @keyframes element below */
-    animation-duration: 2.5s;
-    /* Change to speed up or slow down */
-    animation-iteration-count: infinite;
-    /* Never stop waving :) */
-    transform-origin: 70% 70%;
-    /* Pivot around the bottom-left palm */
-    display: inline-block;
-}
+/* Waving animation */
 
 @keyframes wave-animation {
     0% {
@@ -242,7 +191,6 @@ body,
     10% {
         transform: rotate(14.0deg)
     }
-    /* The following five values can be played with to make the waving more or less extreme */
     20% {
         transform: rotate(-8.0deg)
     }
@@ -258,60 +206,7 @@ body,
     60% {
         transform: rotate( 0.0deg)
     }
-    /* Reset for the last half to pause */
     100% {
         transform: rotate( 0.0deg)
     }
-}
-
-
-/*
-* Video Player
-*/
-
-.playerDiv {
-    width: 100%;
-    position: relative;
-}
-
-.paper {
-    padding: 16px;
-    text-align: center;
-    color: white;
-    background-color: black;
-}
-
-.react-player {
-    height: '120%';
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.react-player__preview {
-    height: 120% !important;
-}
-
-.playerWrapper img {
-    height: auto;
-}
-
-.carousel div:nth-child(4) {
-    padding-top: 60px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.carousel div:nth-child(4) button {
-    width: 20px;
-    padding: 1px;
-}
-
-.image-gallery {
-    margin-top: 42px;
-}
-
-.carousel p {
-    color: #1E90FF;
 }

@@ -1,7 +1,7 @@
 import React from "react";
-import { useForm } from "react-hook-form";
-
+import { FieldValues, useForm } from "react-hook-form";
 import { Input, Textarea } from "@nextui-org/react";
+import { StyledForm, FormWrapper } from './Form.styles'; 
 
 export const Form = () => {
     const {
@@ -11,17 +11,19 @@ export const Form = () => {
     } = useForm({
         mode: "onBlur"
     });
-    const onSubmit = (data: any) => {
+    const onSubmit = (data: FieldValues) => {
         alert(JSON.stringify(data));
     };
 
-    const { control } = useForm();
+    // If you're using `control` from useForm(), make sure it's being used or remove this declaration.
+    // const { control } = useForm();
 
     return (
-        <div className="mx-auto">
-            <form onSubmit={handleSubmit(onSubmit)}>
+        <FormWrapper>
+            <StyledForm onSubmit={handleSubmit(onSubmit)}>
 
                 <Input
+                    {...register("name", { required: true })}
                     isRequired
                     type="text"
                     label="Name"
@@ -30,6 +32,7 @@ export const Form = () => {
                 />
 
                 <Input
+                    {...register("email", { required: true })}
                     isRequired
                     type="email"
                     label="Email"
@@ -38,13 +41,13 @@ export const Form = () => {
                 />
 
                 <Textarea
+                    {...register("message", { required: true })}
                     isRequired
                     label="Message"
                     placeholder="What can I help you with?"
                 />
 
-
-            </form>
-        </div>
+            </StyledForm>
+        </FormWrapper>
     );
-}
+};

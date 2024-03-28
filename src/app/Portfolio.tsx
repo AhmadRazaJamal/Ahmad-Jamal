@@ -4,8 +4,8 @@ import { OrbitControls, Scroll, ScrollControls, ScrollControlsState, useGLTF, us
 import { useFrame, useThree } from "@react-three/fiber";
 import React, { useRef, useState } from "react";
 import * as THREE from "three";
-import { Sections } from "./Sections";
-import { changeProgressBarHeight } from "./helpers";
+import { Sections } from "./Sections/Sections";
+import { changeProgressBarHeight } from "./utils/helpers";
 import ScrollingSurface from "./ScrollingSurface/ScrollingSurface";
 import ScrollUp from "./ScrollUp/ScrollUp";
 import Switch from "./Switch/Switch";
@@ -57,7 +57,7 @@ function Office(props: any) {
   const meshRef: any = useRef(null);
   const frameRef: any = useRef(null);
 
-  const isMobile = window.innerWidth <= 767;
+  const isMobile = window?.innerWidth <= 767;
 
   const vec3 = new THREE.Vector3();
 
