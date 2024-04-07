@@ -2,7 +2,7 @@
 
 import { NextUIProvider } from "@nextui-org/react";
 import { Canvas } from "@react-three/fiber";
-import LoadingScreen from "./Loading";
+import LoadingScreen from "./Loading/Loading";
 import Portfolio from "./Portfolio";
 
 export default function Home() {
