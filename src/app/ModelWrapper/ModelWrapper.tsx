@@ -49,6 +49,8 @@ function Office(props: any) {
   const sectionThree: any = document.getElementById('section-three')
   const sectionFour: any = document.getElementById('section-four')
 
+  const scrollIcon = document.getElementById('scroll-icon');
+
   const { camera } = useThree();
   useFrame((state, delta) => {
     if (!props.isInteractiveMode && sectionOne && sectionTwo) {
@@ -58,6 +60,11 @@ function Office(props: any) {
         meshRef.current.position.z = - scroll.offset * 12
       } else {
         camera.zoom = scroll.offset * 150 + 200;
+      }
+
+      // console.log(scroll.offset)
+      if(scroll.offset >= 0.001 && scroll.offset <= 0.015 && scrollIcon){
+        scrollIcon.style.opacity = `${1 - scroll.offset * 100}`;
       }
 
       // Define the target position, zoom, and look-at point

@@ -22,6 +22,7 @@ const ScrollUpContent = styled.div`
 `
 
 const StyledIcon = styled(KeyboardArrowUpIcon)`
+  opacity: 1;
   width: 24px;
   position: relative;
   top: 8px;
@@ -31,7 +32,7 @@ const StyledIcon = styled(KeyboardArrowUpIcon)`
 const ScrollUp = () => (
   <Wrapper>
     <ScrollUpContent>
-      <StyledIcon fontSize="large" width={100}/>
+      <StyledIcon fontSize="large" width={100} id='scroll-icon'/>
     </ScrollUpContent>
   </Wrapper>
 );
