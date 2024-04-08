@@ -9,6 +9,7 @@ import { changeProgressBarHeight, loadModelWithTextures } from "../utils/helpers
 import ScrollingSurface from "../ScrollingSurface/ScrollingSurface";
 import ScrollUp from "../ScrollUp/ScrollUp";
 import Switch from "../Switch/Switch";
+import { isSmallScreen } from "../utils/constants";
 
 const Portfolio = () => {
   const [interactiveMode, setInteractiveMode] = useState(false);
@@ -18,7 +19,7 @@ const Portfolio = () => {
     <React.Fragment>
       <ScrollControls pages={34}>
         {interactiveMode && <OrbitControls />}
-        <ScrollingSurface start={0} color="#FDD835" yPosition={-0.8} />
+        <ScrollingSurface start={0} color="#FDD835" yPosition={-2} />
         <ScrollingSurface start={0.3} color="#4682B4" yPosition={-0.79} />
         <ScrollingSurface start={0.7} color="#FDD835" yPosition={-0.78} />
         <Office model={model} scale={0.08} isInteractiveMode={interactiveMode} />

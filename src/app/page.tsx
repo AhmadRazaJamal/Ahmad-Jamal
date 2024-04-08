@@ -4,6 +4,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import { Canvas } from "@react-three/fiber";
 import LoadingScreen from "./Loading/Loading";
 import Portfolio from "./ModelWrapper/ModelWrapper";
+import { isSmallScreen } from "./utils/constants";
 
 export default function Home() {
   console.log(window.innerWidth)
@@ -14,11 +15,7 @@ export default function Home() {
           shadows
           orthographic
           camera={{
-            left: -1,
-            top: -1,
-            bottom: 1,
-            right: 1,
-            zoom: window.innerWidth * 0.4,
+            zoom: isSmallScreen ?  window.innerWidth * 0.4 : window.innerWidth * 0.25,
             position: [-2, 1, 2],
           }}
         >

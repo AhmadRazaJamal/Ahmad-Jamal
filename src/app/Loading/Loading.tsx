@@ -8,7 +8,7 @@ interface LoadingScreenProps {
 }
 
 const LoadingScreen: React.FC<LoadingScreenProps> = ({ children }) => {
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -20,7 +20,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ children }) => {
 
     return (
         <>
-            {isLoading && (
+            {/* {isLoading && (
                 <FullScreenWrapper>
                     <LoadingContainer>
                         <CubeWrapper>
@@ -38,7 +38,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ children }) => {
                         </CubeWrapper>
                     </LoadingContainer>
                 </FullScreenWrapper>
-            )}
+            )} */}
             <FullScreenWrapper isLoading={isLoading}>
                 {children}
             </FullScreenWrapper>
