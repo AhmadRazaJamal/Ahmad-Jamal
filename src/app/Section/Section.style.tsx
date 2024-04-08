@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { isSmallScreen } from '../utils/constants';
 
 export const SectionContainer = styled.div<{ id: string }>`
     position: absolute;
@@ -20,7 +21,7 @@ ${({ id }) => {
             case 'section-one':
                 return css`
           ${baseStyles}
-          top: 300vh;
+          ${isSmallScreen ? `top: 350vh;`: `top: 400vh;`}
           height: 200vh;
         `;
             case 'section-two':

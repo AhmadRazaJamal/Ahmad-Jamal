@@ -19,7 +19,7 @@ const Portfolio = () => {
     <React.Fragment>
       <ScrollControls pages={34}>
         {interactiveMode && <OrbitControls />}
-        <ScrollingSurface start={0} color="#FDD835" yPosition={-2} />
+        <ScrollingSurface start={0} color="#FDD835" yPosition={isSmallScreen ? -0.8 : -2} />
         <ScrollingSurface start={0.3} color="#4682B4" yPosition={-0.79} />
         <ScrollingSurface start={0.7} color="#FDD835" yPosition={-0.78} />
         <Office model={model} scale={0.08} isInteractiveMode={interactiveMode} />
@@ -146,7 +146,7 @@ function Office(props: any) {
 
   return (
     <group ref={meshRef}>
-      <primitive object={props.model.scene} scale={props.scale} position={[-0.3, -0.4, 0]}>
+      <primitive object={props.model.scene} scale={props.scale} position={[-0.3, -0.3, 0]}>
       </primitive>
     </group>
   )
