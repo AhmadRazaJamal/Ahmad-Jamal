@@ -1,3 +1,6 @@
+import { useGLTF } from "@react-three/drei"
+import * as THREE from "three";
+
 export const useMultiplier = (screenSize: number) => {
     if(screenSize >= 768){
         return 2
@@ -29,5 +32,26 @@ export const changeProgressBarHeight = (
       progressBar.style.height = "0rem";
     }
   };
+
+export const loadModelWithTextures = (modelPath: string, texturePath: string ) => {
+    const model = useGLTF(modelPath);
   
-  export const isSmallScreen = window?.innerWidth < 757;
+    // Loads the textures
+    const textureLoader = new THREE.TextureLoader();
+    const bakedTexture = textureLoader.load(texturePath);
+  
+    // Loads the baked material to apply onto the model
+    const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture });
+    bakedTexture.flipY = false;
+    bakedTexture.encoding = THREE.sRGBEncoding;
+  
+    bakedTexture.wrapS = THREE.ClampToEdgeWrapping;
+    bakedTexture.wrapT = THREE.ClampToEdgeWrapping;
+  
+    // Apply material to model
+    model.scene.traverse((child: any) => {
+      child.material = bakedMaterial;
+    });
+
+    return model;
+}

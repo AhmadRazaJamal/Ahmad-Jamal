@@ -4,33 +4,16 @@ import { OrbitControls, Scroll, ScrollControls, ScrollControlsState, useGLTF, us
 import { useFrame, useThree } from "@react-three/fiber";
 import React, { useRef, useState } from "react";
 import * as THREE from "three";
-import { Sections } from "./Sections/Sections";
-import { changeProgressBarHeight } from "./utils/helpers";
-import ScrollingSurface from "./ScrollingSurface/ScrollingSurface";
-import ScrollUp from "./ScrollUp/ScrollUp";
-import Switch from "./Switch/Switch";
+import { Sections } from "../Sections/Sections";
+import { changeProgressBarHeight, loadModelWithTextures } from "../utils/helpers";
+import ScrollingSurface from "../ScrollingSurface/ScrollingSurface";
+import ScrollUp from "../ScrollUp/ScrollUp";
+import Switch from "../Switch/Switch";
 
 const Portfolio = () => {
-  const model = useGLTF("./office.glb");
   const [interactiveMode, setInteractiveMode] = useState(false);
-
-  // Texture
-  const textureLoader = new THREE.TextureLoader();
-  const bakedTexture = textureLoader.load("baked-office-textures.png");
-
-  // Material
-  const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture });
-  bakedTexture.flipY = false;
-  bakedTexture.encoding = THREE.sRGBEncoding;
-
-  bakedTexture.wrapS = THREE.ClampToEdgeWrapping;
-  bakedTexture.wrapT = THREE.ClampToEdgeWrapping;
-
-  // Assign material to model
-  model.scene.traverse((child: any) => {
-    child.material = bakedMaterial;
-  });
-
+  const model = loadModelWithTextures('office.glb', 'baked-office-textures.png')
+  
   return (
     <React.Fragment>
       <ScrollControls pages={34}>
@@ -58,8 +41,6 @@ function Office(props: any) {
   const frameRef: any = useRef(null);
 
   const isMobile = window?.innerWidth <= 767;
-
-  const vec3 = new THREE.Vector3();
 
   // Get elements and store them in a variable to animate
   const sectionOne: any = document.getElementById('section-one')

@@ -3,7 +3,7 @@
 import { NextUIProvider } from "@nextui-org/react";
 import { Canvas } from "@react-three/fiber";
 import LoadingScreen from "./Loading/Loading";
-import Portfolio from "./Portfolio";
+import Portfolio from "./ModelWrapper/ModelWrapper";
 
 export default function Home() {
   console.log(window.innerWidth)
