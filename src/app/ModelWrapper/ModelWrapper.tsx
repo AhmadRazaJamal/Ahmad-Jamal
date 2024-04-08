@@ -53,9 +53,9 @@ function Office(props: any) {
   useFrame((state, delta) => {
     if (!props.isInteractiveMode && sectionOne && sectionTwo) {
       // Moves the office model to the left when on Desktop
-      if (scroll.offset <= 0.065 && !isMobile) {
-        // meshRef.current.position.x = - scroll.offset * 10
-        // meshRef.current.position.z = - scroll.offset * 10
+      if (scroll.offset <= 0.065 && !isSmallScreen) {
+        meshRef.current.position.x = - scroll.offset * 12
+        meshRef.current.position.z = - scroll.offset * 12
       } else {
         camera.zoom = scroll.offset * 150 + 200;
       }
@@ -73,7 +73,7 @@ function Office(props: any) {
 
       const currentLookAt = new THREE.Vector3(); // To store the interpolated look-at position
 
-      if (scroll.offset >= startTransition && scroll.offset <= endTransition) {
+      if (isSmallScreen && scroll.offset >= startTransition && scroll.offset <= endTransition) {
         // Calculate a normalized factor based on scroll position within the transition range
         const normalizedFactor = (scroll.offset - startTransition) / (endTransition - startTransition);
 
@@ -88,12 +88,12 @@ function Office(props: any) {
         camera.updateProjectionMatrix();
       }
 
-      // Zooming out logic (new)
+      // Zooming out logic
       const startZoomOut = 0.4;
       const endZoomOut = 1; // Adjust this as needed
       const targetZoomOut = 200; // Adjust this as needed
 
-      if (scroll.offset > startZoomOut && scroll.offset < endZoomOut) {
+      if (isSmallScreen && scroll.offset > startZoomOut && scroll.offset < endZoomOut) {
         // Calculate a normalized factor for the zoom out phase
         const normalizedFactor = (scroll.offset - startZoomOut) / (endZoomOut - startZoomOut);
 
