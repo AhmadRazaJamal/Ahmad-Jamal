@@ -2,7 +2,7 @@
 
 import { OrbitControls, Scroll, ScrollControls, ScrollControlsState, useGLTF, useScroll } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
-import React, { useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { Sections } from "../Sections/Sections";
 import { changeProgressBarHeight, loadModelWithTextures } from "../utils/helpers";
@@ -12,8 +12,47 @@ import Switch from "../Switch/Switch";
 import { isSmallScreen } from "../utils/constants";
 
 const Portfolio = () => {
+  const { camera } = useThree();
   const [interactiveMode, setInteractiveMode] = useState(false);
   const model = loadModelWithTextures('office.glb', 'baked-office-textures.png')
+
+  const [transitionCamera, setTransitionCamera] = useState(false);
+
+  const originalZoom = isSmallScreen ?  window.innerWidth * 0.4 : window.innerWidth * 0.23;
+
+  useLayoutEffect(() => {
+    if (!interactiveMode) {
+      // Enable camera transition when exiting interactive mode
+      setTransitionCamera(true);
+    }
+  }, [interactiveMode]);
+
+  useFrame(() => {
+    if (transitionCamera) {
+      // Target position
+      const targetPosition = new THREE.Vector3(-2, 1, 2);
+      // Smoothly move the camera to the target position
+      camera.position.lerp(targetPosition, 0.05); // Adjust 0.05 to control the speed of the transition
+
+      camera.zoom = THREE.MathUtils.lerp(camera.zoom, originalZoom, 0.05);
+
+      // When the camera is close enough to the target position, stop the transition
+      if (camera.position.distanceTo(targetPosition) < 0.1) {
+        camera.position.set(targetPosition.x, targetPosition.y, targetPosition.z);
+        camera.zoom = originalZoom;
+        setTransitionCamera(false); // Stop the transition
+      }
+
+      // Optionally, smoothly adjust the camera's lookAt position
+      const targetLookAt = new THREE.Vector3(0, 0, 0); // Assuming the target lookAt position is the origin
+      const currentLookAt = new THREE.Vector3();
+      camera.getWorldDirection(currentLookAt);
+      currentLookAt.lerp(targetLookAt, 0.05); // Adjust 0.05 to control the speed of the transition
+      camera.lookAt(currentLookAt);
+      camera.updateProjectionMatrix(); // Update the camera's projection matrix after changing its position and direction
+    }
+  });
+
   
   return (
     <React.Fragment>
@@ -22,7 +61,7 @@ const Portfolio = () => {
         <ScrollingSurface start={0} color="#FDD835" yPosition={isSmallScreen ? -0.8 : -2} />
         <ScrollingSurface start={0.3} color="#4682B4" yPosition={-0.79} />
         <ScrollingSurface start={0.7} color="#FDD835" yPosition={-0.78} />
-        <Office model={model} scale={0.08} isInteractiveMode={interactiveMode} />
+        <Office model={model} scale={0.08} isInteractiveMode={interactiveMode}/>
         <Scroll html>
           {/* DOM contents in here will scroll along */}
             <Switch aria-label="interactive-mode-switch" setInteractive={setInteractiveMode} isOn={interactiveMode} />
@@ -40,8 +79,6 @@ function Office(props: any) {
   const scroll: ScrollControlsState = useScroll();
   const meshRef: any = useRef(null);
   const frameRef: any = useRef(null);
-
-  const isMobile = window?.innerWidth <= 767;
 
   // Get elements and store them in a variable to animate
   const sectionOne: any = document.getElementById('section-one')
@@ -64,7 +101,7 @@ function Office(props: any) {
 
       // console.log(scroll.offset)
       if(scroll.offset >= 0.001 && scroll.offset <= 0.015 && scrollIcon){
-        scrollIcon.style.opacity = `${1 - scroll.offset * 100}`;
+        scrollIcon.style.opacity = `${1 - scroll.offset * 250}`;
       }
 
       // Define the target position, zoom, and look-at point
@@ -153,7 +190,7 @@ function Office(props: any) {
 
   return (
     <group ref={meshRef}>
-      <primitive object={props.model.scene} scale={props.scale} position={[-0.3, -0.3, 0]}>
+      <primitive object={props.model.scene} scale={props.scale} position={[-0.28, -0.3, 0]}>
       </primitive>
     </group>
   )
