@@ -8,7 +8,7 @@ import { Sections } from "../Sections/Sections";
 import { changeProgressBarHeight, loadModelWithTextures } from "../utils/helpers";
 import ScrollingSurface from "../ScrollingSurface/ScrollingSurface";
 import ScrollUp from "../ScrollUp/ScrollUp";
-import Switch from "../Switch/Switch";
+import InteractiveButton from "../InteractiveButton/InteractiveButton";
 import { isSmallScreen } from "../utils/constants";
 
 const Portfolio = () => {
@@ -64,7 +64,7 @@ const Portfolio = () => {
         <Office model={model} scale={0.08} isInteractiveMode={interactiveMode}/>
         <Scroll html>
           {/* DOM contents in here will scroll along */}
-            <Switch aria-label="interactive-mode-switch" setInteractive={setInteractiveMode} isOn={interactiveMode} />
+            <InteractiveButton aria-label="interactive-mode-switch" setInteractive={setInteractiveMode} isOn={interactiveMode} />
           <ScrollUp />
           <Sections />
         </Scroll>
