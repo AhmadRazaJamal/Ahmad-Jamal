@@ -14,10 +14,9 @@ import { isSmallScreen } from "../utils/constants";
 const Portfolio = () => {
   const { camera } = useThree();
   const [interactiveMode, setInteractiveMode] = useState(false);
-  const model = loadModelWithTextures('office.glb', 'baked-office-textures.png')
-
   const [transitionCamera, setTransitionCamera] = useState(false);
 
+  const model = loadModelWithTextures('office.glb', 'baked-office-textures.png')
   const originalZoom = isSmallScreen ?  window.innerWidth * 0.4 : window.innerWidth * 0.23;
 
   useLayoutEffect(() => {
