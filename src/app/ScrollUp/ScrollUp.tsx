@@ -25,7 +25,7 @@ const StyledIcon = styled(KeyboardArrowUpIcon)`
   opacity: 1;
   width: 24px;
   position: relative;
-  top: 20px;
+  top: 60px;
   left: 8px;
 `;
 
