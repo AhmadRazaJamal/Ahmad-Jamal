@@ -83,12 +83,18 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
   const groupRef = useRef<THREE.Group>(null);
   const scroll = useScroll();
 
+  const scrollIcon = document.getElementById('scroll-icon');
+
   useFrame(() => {
     if (!isInteractiveMode && groupRef.current && scroll.offset <= 0.08) {
       const xPosition = scroll.offset * -12;
       groupRef.current.position.x = xPosition;
       groupRef.current.position.z = xPosition;
       camera.updateProjectionMatrix();
+    }
+
+    if(scroll.offset >= 0.001 && scroll.offset <= 0.015 && scrollIcon){
+      scrollIcon.style.opacity = `${1 - scroll.offset * 250}`;
     }
   });
 
