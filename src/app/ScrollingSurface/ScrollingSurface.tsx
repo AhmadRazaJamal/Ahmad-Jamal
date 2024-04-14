@@ -25,7 +25,7 @@ const ScrollingSurface: React.FC<ScrollingSurfaceProps> = ({ start, color, yPosi
 
     return (
         <mesh ref={ref} rotation={[-Math.PI / 2, 0, 0]} position={[0, yPosition, 0]}>
-            <circleGeometry args={[1, 32]} />
+            <circleGeometry args={[1, 64]} />
             <meshStandardMaterial color={color} />
         </mesh>
     );

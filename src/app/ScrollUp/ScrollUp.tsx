@@ -26,7 +26,7 @@ const StyledIcon = styled(KeyboardArrowUpIcon)`
   width: 24px;
   position: relative;
   top: 60px;
-  left: 8px;
+  left: 0px;
 `;
 
 const ScrollUp = () => (
