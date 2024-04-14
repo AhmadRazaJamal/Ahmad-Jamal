@@ -4,7 +4,7 @@ import { OrbitControls, Scroll, ScrollControls, useScroll } from '@react-three/d
 import * as THREE from 'three';
 
 import { isSmallScreen } from '../utils/constants';
-import { loadModelWithTextures } from '../utils/helpers';
+import { animateSectionBorders, changeProgressBarHeight, loadModelWithTextures } from '../utils/helpers';
 import ScrollingSurface from '../ScrollingSurface/ScrollingSurface';
 import ScrollUp from '../ScrollUp/ScrollUp';
 import InteractiveButton from '../InteractiveButton/InteractiveButton';
@@ -86,7 +86,7 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
   const scrollIcon = document.getElementById('scroll-icon');
 
   useFrame(() => {
-    if (!isInteractiveMode && groupRef.current && scroll.offset <= 0.08) {
+    if (!isInteractiveMode && groupRef.current && scroll.offset <= 0.07) {
       const xPosition = scroll.offset * -12;
       groupRef.current.position.x = xPosition;
       groupRef.current.position.z = xPosition;
@@ -96,6 +96,11 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
     if(scroll.offset >= 0.001 && scroll.offset <= 0.015 && scrollIcon){
       scrollIcon.style.opacity = `${1 - scroll.offset * 250}`;
     }
+
+    animateSectionBorders('section-one', scroll.offset, 87, 700, 8, 8)
+
+    const sectionOneProgressBarRange = scroll.offset > 0.11 && scroll.offset < 0.18;
+    changeProgressBarHeight('progress-bar-one', scroll.offset, 0.11, sectionOneProgressBarRange);
   });
 
   return (
