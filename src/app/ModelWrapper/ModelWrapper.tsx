@@ -99,25 +99,25 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
 
     console.log(scroll.offset)
     animateSectionBorders(
-      'section-one', 
-      scroll.offset, 
+      'section-one',
+      scroll.offset,
       300, 0,
-      0, 250, 
+      0, 250,
       0.092, 0.15,
       0.15, 0.2
-  );
+    );
 
-  animateSectionBorders(
-    'section-two', 
-    scroll.offset, 
-    300, 0,
-    0, 250, 
-    0.25, 0.3,
-    0.37, 0.39
-);
+    animateSectionBorders(
+      'section-two',
+      scroll.offset,
+      300, 0,
+      0, 250,
+      0.25, 0.3,
+      0.37, 0.39
+    );
 
-    const sectionOneProgressBarRange = scroll.offset > 0.11 && scroll.offset < 0.2;
-    changeProgressBarHeight('progress-bar-one', scroll.offset, 0.11, sectionOneProgressBarRange);
+    changeProgressBarHeight('progress-bar-one', scroll.offset, 0.11, scroll.offset > 0.11 && scroll.offset < 0.2);
+    changeProgressBarHeight('progress-bar-two', scroll.offset, 0.26, scroll.offset > 0.26 && scroll.offset < 0.4, 1700);
   });
 
   return (

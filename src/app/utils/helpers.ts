@@ -18,17 +18,20 @@ export const positionCamera = (screenSize: number) => {
 }
 
 export const changeProgressBarHeight = (
-    id: string,
-    offset: number,
-    rangeStart: number,
-    range: boolean
-) => {
-    const progressBar = document.getElementById(id) as HTMLElement;
+    progressBarId: string,
+    scrollOffset: number,
+    activationStart: number,
+    isActive: boolean,
+    heightMultiplier: number = 2000
+): void => {
+    const progressBar = document.getElementById(progressBarId) as HTMLElement | null;
 
-    if (progressBar && range) {
-        const heightIncrement = (offset - rangeStart) * 2000;
-        progressBar.style.height = `${1 + heightIncrement}rem`;
-    } else if (progressBar) {
+    if (!progressBar) return;
+
+    if (isActive) {
+        const heightIncrement = Math.max(0, (scrollOffset - activationStart) * heightMultiplier);
+        progressBar.style.height = `${Math.max(1, heightIncrement)}rem`;
+    } else {
         progressBar.style.height = "0rem";
     }
 };
