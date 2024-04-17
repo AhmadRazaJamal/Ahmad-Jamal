@@ -28,7 +28,7 @@ ${({ id }) => {
                 return css`
           ${baseStyles}
           ${isSmallScreen ? `top: 1000vh;`: `top: 900vh;`}
-          height: 385vh;
+          height: 350vh;
         `;
             case 'section-three':
                 return css`

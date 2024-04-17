@@ -113,7 +113,7 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
       300, 0,
       0, 250,
       0.25, 0.3,
-      0.37, 0.39
+      0.36, 0.39
     );
 
     changeProgressBarHeight('progress-bar-one', scroll.offset, 0.11, scroll.offset > 0.11 && scroll.offset < 0.2);
