@@ -56,11 +56,46 @@ export const loadModelWithTextures = (modelPath: string, texturePath: string) =>
     return model;
 }
 
-export const animateSectionBorders = (id: string, offset: number, topPrefix: number, topMultiplier: number, bottomPrefix: number, bottomMultiplier: number) => {
+export const animateSectionBorders = (
+    id: string, 
+    scrollOffset: number, 
+    initialTopRadius: number, 
+    finalTopRadius: number, 
+    initialBottomRadius: number, 
+    finalBottomRadius: number,
+    topStart: number,    // Scroll offset to start animating the top radius
+    topEnd: number,      // Scroll offset to end animating the top radius
+    bottomStart: number, // Scroll offset to start animating the bottom radius
+    bottomEnd: number    // Scroll offset to end animating the bottom radius
+) => {
     const section = document.getElementById(id) as HTMLElement;
+    if (!section) return;
 
-    if(!section) return;
+    const lerp = (start: number, end: number, t: number): number => (1 - t) * start + t * end;
+    const easeOutCubic = (t: number): number => --t * t * t + 1;
 
-    section.style.borderTopLeftRadius = `${topPrefix - (offset * topMultiplier)}rem`;
-    section.style.borderBottomLeftRadius = `${Math.pow(offset * bottomMultiplier, bottomPrefix)}rem`
+    // Normalize scrollOffset for top border radius animation
+    if (scrollOffset >= topStart && scrollOffset <= topEnd) {
+        const normalizedTopProgress = (scrollOffset - topStart) / (topEnd - topStart);
+        const progressTop = easeOutCubic(normalizedTopProgress);
+        const newTopRadius = lerp(initialTopRadius, finalTopRadius, progressTop);
+        section.style.borderTopLeftRadius = `${newTopRadius}px`;
+    } else if (scrollOffset < topStart) {
+        section.style.borderTopLeftRadius = `${initialTopRadius}px`;
+    } else {
+        section.style.borderTopLeftRadius = `${finalTopRadius}px`;
+    }
+
+    // Normalize scrollOffset for bottom border radius animation
+    if (scrollOffset >= bottomStart && scrollOffset <= bottomEnd) {
+        const normalizedBottomProgress = (scrollOffset - bottomStart) / (bottomEnd - bottomStart);
+        const progressBottom = easeOutCubic(normalizedBottomProgress);
+        const newBottomRadius = lerp(initialBottomRadius, finalBottomRadius, progressBottom);
+        section.style.borderBottomLeftRadius = `${newBottomRadius}px`;
+    } else if (scrollOffset < bottomStart) {
+        section.style.borderBottomLeftRadius = `${initialBottomRadius}px`;
+    } else {
+        section.style.borderBottomLeftRadius = `${finalBottomRadius}px`;
+    }
 }
+

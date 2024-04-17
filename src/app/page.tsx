@@ -7,7 +7,6 @@ import Portfolio from "./ModelWrapper/ModelWrapper";
 import { isSmallScreen } from "./utils/constants";
 
 export default function Home() {
-  console.log(window.innerWidth)
   return (
     <NextUIProvider>
       <LoadingScreen>

@@ -73,7 +73,7 @@ const handleCameraTransition = (camera: THREE.PerspectiveCamera, originalZoom: n
 const ScrollingSurfaces: React.FC = () => (
   <>
     <ScrollingSurface start={0} color="#FDD835" yPosition={isSmallScreen ? -0.8 : -1} />
-    <ScrollingSurface start={0.3} color="#4682B4" yPosition={-0.79} />
+    <ScrollingSurface start={0.25} color="#4682B4" yPosition={-0.79} />
     <ScrollingSurface start={0.7} color="#FDD835" yPosition={-0.78} />
   </>
 );
@@ -93,13 +93,20 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
       camera.updateProjectionMatrix();
     }
 
-    if(scroll.offset >= 0.001 && scroll.offset <= 0.015 && scrollIcon){
+    if (scroll.offset >= 0.001 && scroll.offset <= 0.015 && scrollIcon) {
       scrollIcon.style.opacity = `${1 - scroll.offset * 250}`;
     }
 
-    animateSectionBorders('section-one', scroll.offset, 87, 700, 8, 8)
+    animateSectionBorders(
+      'section-one', 
+      scroll.offset, 
+      300, 0,
+      0, 250, 
+      0.1, 0.15,
+      0.15, 0.2
+  );
 
-    const sectionOneProgressBarRange = scroll.offset > 0.11 && scroll.offset < 0.18;
+    const sectionOneProgressBarRange = scroll.offset > 0.11 && scroll.offset < 0.2;
     changeProgressBarHeight('progress-bar-one', scroll.offset, 0.11, sectionOneProgressBarRange);
   });
 

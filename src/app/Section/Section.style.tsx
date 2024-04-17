@@ -4,7 +4,7 @@ import { isSmallScreen } from '../utils/constants';
 export const SectionContainer = styled.div<{ id: string }>`
     position: absolute;
     right: 0;
-    border-top-left-radius: 700px 700px;
+    border-top-left-radius: 300px 300px;
     border-bottom-left-radius: 0px 0px;
     padding-top: 100px;
     margin: 0;
@@ -27,13 +27,13 @@ ${({ id }) => {
             case 'section-two':
                 return css`
           ${baseStyles}
-          top: 1000vh;
+          ${isSmallScreen ? `top: 1000vh;`: `top: 850vh;`}
           height: 385vh;
         `;
             case 'section-three':
                 return css`
           ${baseStyles}
-          top: 1800vh;
+          top: 1500vh;
           height: 305vh;
         `;
             case 'section-four':
