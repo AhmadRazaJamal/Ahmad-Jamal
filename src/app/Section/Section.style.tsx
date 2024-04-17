@@ -22,12 +22,12 @@ ${({ id }) => {
                 return css`
           ${baseStyles}
           ${isSmallScreen ? `top: 350vh;`: `top: 400vh;`}
-          height: 150vh;
+          height: 180vh;
         `;
             case 'section-two':
                 return css`
           ${baseStyles}
-          ${isSmallScreen ? `top: 1000vh;`: `top: 850vh;`}
+          ${isSmallScreen ? `top: 1000vh;`: `top: 900vh;`}
           height: 385vh;
         `;
             case 'section-three':
