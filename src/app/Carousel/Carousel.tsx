@@ -1,8 +1,9 @@
 
 import React from 'react';
-import Carousel from 'react-material-ui-carousel';
 import ReactPlayer from 'react-player';
-import { PlayerWrapper, ReactPlayerStyled } from './Carousel.styles';
+import { CarouselCustom, PlayerWrapper, ReactPlayerStyled } from './Carousel.styles';
+import screenfull from 'screenfull';
+import { isSmallScreen } from '../utils/constants';
 
 interface CarouselItem {
     name: string;
@@ -17,17 +18,18 @@ interface CarouselGalleryProps {
 
 interface ItemProps {
     item: CarouselItem;
+    className: string;
 }
 
 export function CarouselGallery({ content }: CarouselGalleryProps) {
     return (
-        <Carousel className='carousel'>
-            {content.map((item, index) => <Item key={index} item={item} />)}
-        </Carousel>
+        <CarouselCustom>
+            {content.map((item, index) => <Item key={index} item={item} className={`react-player-${index}`} />)}
+        </CarouselCustom>
     );
 }
 
-function Item({ item }: ItemProps) {
+function Item({ item, className }: ItemProps) {
     return (
         <>
             <h3>{item.name}</h3>
@@ -36,12 +38,13 @@ function Item({ item }: ItemProps) {
                 {item.thumbnail ?
                     <ReactPlayerStyled>
                         <ReactPlayer
+                            className={className}
+                            playing={true}
                             url={item.url}
                             light={item.thumbnail}
                             controls={true}
-                            playing={true}
-                            width={'auto'}
-                            height={'20vw'}
+                            width='100%'
+                            onPlay={() => isSmallScreen && screenfull.request(document.querySelector(`.${className}`) as Element)}
                         />
                     </ReactPlayerStyled>
                     :

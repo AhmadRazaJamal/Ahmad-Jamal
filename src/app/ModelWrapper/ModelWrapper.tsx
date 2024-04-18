@@ -97,7 +97,6 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
       scrollIcon.style.opacity = `${1 - scroll.offset * 250}`;
     }
 
-    console.log(scroll.offset)
     animateSectionBorders(
       'section-one',
       scroll.offset,

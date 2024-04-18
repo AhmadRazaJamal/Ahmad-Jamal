@@ -1,15 +1,6 @@
 import styled from 'styled-components';
 
 export const ReactPlayerStyled = styled.div`
-  .react-player {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  .react-player__preview {
-    height: 200% !important;
-  }
 `;
 
 export const PlayerWrapper = styled.div`
@@ -29,6 +20,9 @@ export const CarouselCustom = styled.div`
       width: 1.25rem;
       padding: 1px;
     }
+  }
+
+  div:nth-child(2) {
   }
 
   p {
