@@ -1,1 +1,1 @@
-export const isSmallScreen = window?.innerWidth < 757;
+export const isSmallScreen = window && window.innerWidth <= 768;
