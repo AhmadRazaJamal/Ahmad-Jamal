@@ -39,7 +39,7 @@ const Portfolio: React.FC = () => {
 
   return (
     <React.Fragment>
-      <ScrollControls pages={34}>
+      <ScrollControls pages={30}>
         {interactiveMode && <OrbitControls />}
         <ScrollingSurfaces />
         <Office model={model} scale={0.08} isInteractiveMode={interactiveMode} />
@@ -97,6 +97,7 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
       scrollIcon.style.opacity = `${1 - scroll.offset * 250}`;
     }
 
+    console.log(scroll.offset)
     animateSectionBorders(
       'section-one',
       scroll.offset,
@@ -115,8 +116,27 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
       0.36, 0.39
     );
 
+    animateSectionBorders(
+      'section-three',
+      scroll.offset,
+      300, 0,
+      0, 250,
+      0.47, 0.5,
+      0.53, 0.62
+    );
+
+    animateSectionBorders(
+      'section-four',
+      scroll.offset,
+      300, 0,
+      0, 250,
+      0.64, 0.7,
+      0.765, 0.8
+    );
+
     changeProgressBarHeight('progress-bar-one', scroll.offset, 0.11, scroll.offset > 0.11 && scroll.offset < 0.2);
     changeProgressBarHeight('progress-bar-two', scroll.offset, 0.26, scroll.offset > 0.26 && scroll.offset < 0.4, 1700);
+    changeProgressBarHeight('progress-bar-three', scroll.offset, 0.47, scroll.offset > 0.47 && scroll.offset < 0.62, 1700);
   });
 
   return (

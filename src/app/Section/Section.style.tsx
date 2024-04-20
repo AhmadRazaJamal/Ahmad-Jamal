@@ -3,7 +3,6 @@ import { isSmallScreen } from '../utils/constants';
 
 export const SectionContainer = styled.div<{ id: string }>`
     position: absolute;
-    right: 0;
     border-top-left-radius: 300px 300px;
     border-bottom-left-radius: 0px 0px;
     padding-top: 100px;
@@ -23,31 +22,37 @@ ${({ id }) => {
           ${baseStyles}
           ${isSmallScreen ? `top: 350vh;`: `top: 400vh;`}
           height: 180vh;
+          right: 0;
         `;
             case 'section-two':
                 return css`
           ${baseStyles}
           ${isSmallScreen ? `top: 1000vh;`: `top: 900vh;`}
           height: 350vh;
+          right: 0;
         `;
             case 'section-three':
                 return css`
           ${baseStyles}
-          top: 1500vh;
-          height: 305vh;
+          ${isSmallScreen ? `top: 1500vh;`: `top: 1600vh;`}
+          height: 240vh;
+          right: 0;
         `;
             case 'section-four':
                 return css`
           ${baseStyles}
-          top: 2700vh;
+          ${isSmallScreen ? `top: 1500vh;`: `top: 2200vh;`}
           height: 390vh;
+          right: 0;
         `;
             case 'section-five':
                 return css`
-          width: 100vw;
-          top: 3000vh;
-          height: 390vh;
+          width:80vw;
+          ${isSmallScreen ? `top: 2800vh;`: `top: 2900vh;`}
+          height: 100vh;
           padding-top: 15vh;
+          padding-left: 10vw;
+          padding-right: 10vw;
           border-top-left-radius: 0;
         `;
             default:

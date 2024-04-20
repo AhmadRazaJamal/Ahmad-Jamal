@@ -22,9 +22,6 @@ export const CarouselCustom = styled.div`
     }
   }
 
-  div:nth-child(2) {
-  }
-
   p {
     color: #3b82f6;
   }
