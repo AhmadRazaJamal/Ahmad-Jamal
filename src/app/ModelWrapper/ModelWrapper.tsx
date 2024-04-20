@@ -102,9 +102,9 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
       'section-one',
       scroll.offset,
       300, 0,
-      0, 250,
-      0.092, 0.15,
-      0.15, 0.2
+      0, 300,
+      0.11, 0.15,
+      0.17, 0.2
     );
 
     animateSectionBorders(

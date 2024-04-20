@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledForm = styled.form`
-  min-width: 60vw;
+  min-width: 100vw;
   min-height: 40vh;
   margin: 0 auto;
 `;

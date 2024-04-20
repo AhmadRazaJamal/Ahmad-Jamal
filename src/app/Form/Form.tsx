@@ -46,7 +46,6 @@ export const Form = () => {
                     label="Message"
                     placeholder="What can I help you with?"
                 />
-
             </StyledForm>
         </FormWrapper>
     );
