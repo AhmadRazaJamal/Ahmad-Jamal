@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { isSmallScreen } from '../utils/constants';
 
 export const WavingHand = styled.span`
   animation-name: wave-animation;
@@ -12,6 +13,7 @@ export const Text = styled.p`
   line-height: 2;
   margin-top: 18px;
   font-size: 16px;
+  ${isSmallScreen ? `font-size: 14px;`: `font-size: 16px;`}
   color: black;
 `;
 

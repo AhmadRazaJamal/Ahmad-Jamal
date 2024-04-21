@@ -30,9 +30,9 @@ export const changeProgressBarHeight = (
 
     if (isActive) {
         const heightIncrement = Math.max(0, (scrollOffset - activationStart) * heightMultiplier);
-        progressBar.style.height = `${Math.max(1, heightIncrement)}rem`;
+        progressBar.style.height = `${Math.max(1, heightIncrement)}vh`;
     } else {
-        progressBar.style.height = "0rem";
+        progressBar.style.height = "0vh";
     }
 };
 
