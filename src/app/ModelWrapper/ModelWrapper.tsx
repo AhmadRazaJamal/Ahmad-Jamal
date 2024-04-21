@@ -134,9 +134,9 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
       0.765, 0.8
     );
 
-    changeProgressBarHeight('progress-bar-one', scroll.offset, 0.12, scroll.offset > 0.11 && scroll.offset < 0.24, 4000);
-    changeProgressBarHeight('progress-bar-two', scroll.offset, 0.26, scroll.offset > 0.26 && scroll.offset < 0.4, 1700);
-    changeProgressBarHeight('progress-bar-three', scroll.offset, 0.47, scroll.offset > 0.47 && scroll.offset < 0.62, 1700);
+    changeProgressBarHeight('progress-bar-one', scroll.offset, 0.12, scroll.offset > 0.11 && scroll.offset < 0.24, 4000, 'rgb(253, 216, 53, 0.5)');
+    changeProgressBarHeight('progress-bar-two', scroll.offset, 0.26, scroll.offset > 0.26 && scroll.offset < 0.4, 1700, 'rgb(253, 216, 53, 0.1)');
+    changeProgressBarHeight('progress-bar-three', scroll.offset, 0.47, scroll.offset > 0.47 && scroll.offset < 0.62, 1700, 'rgb(253, 216, 53, 0.1)');
   });
 
   return (

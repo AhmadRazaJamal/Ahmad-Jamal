@@ -80,7 +80,6 @@ export const ProgressBarWrapper = styled.div`
 export const ProgressBar = styled.div`
   height: 100%;
   width: 100%;
-  background-color: #1E90FF;
   transform-origin: top center;
   transform: scaleY(1);
 `;

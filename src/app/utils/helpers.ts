@@ -22,12 +22,14 @@ export const changeProgressBarHeight = (
     scrollOffset: number,
     activationStart: number,
     isActive: boolean,
-    heightMultiplier: number = 2000
+    heightMultiplier: number = 2000,
+    color: string,
 ): void => {
     const progressBar = document.getElementById(progressBarId) as HTMLElement | null;
 
     if (!progressBar) return;
 
+    progressBar.style.backgroundColor = color;
     if (isActive) {
         const heightIncrement = Math.max(0, (scrollOffset - activationStart) * heightMultiplier);
         progressBar.style.height = `${Math.max(1, heightIncrement)}vh`;
