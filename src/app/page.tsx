@@ -13,10 +13,6 @@ export default function Home() {
         <Canvas
           shadows
           orthographic
-          camera={{
-            zoom: isSmallScreen ?  window.innerWidth * 0.4 : window.innerWidth * 0.23,
-            position: [-2, 1, 2],
-          }}
         >
           <Portfolio />
         </Canvas>

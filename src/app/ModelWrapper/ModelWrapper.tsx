@@ -25,7 +25,7 @@ const Portfolio: React.FC = () => {
   const [interactiveMode, setInteractiveMode] = useState<boolean>(false);
   const [transitionCamera, setTransitionCamera] = useState<boolean>(false);
   const model = loadModelWithTextures('office.glb', 'baked-office-textures.png') as IModel;
-  const originalZoom = isSmallScreen ? window.innerWidth * 0.4 : window.innerWidth * 0.23;
+  const originalZoom = isSmallScreen ? window.innerWidth * 0.5 : window.innerWidth * 0.23;
 
   useLayoutEffect(() => {
     setTransitionCamera(!interactiveMode);
@@ -72,7 +72,7 @@ const handleCameraTransition = (camera: THREE.PerspectiveCamera, originalZoom: n
 
 const ScrollingSurfaces: React.FC = () => (
   <>
-    <ScrollingSurface start={0} color="#FDD835" yPosition={isSmallScreen ? -0.8 : -1} />
+    <ScrollingSurface start={0} color="#FDD835" yPosition={-1} />
     <ScrollingSurface start={0.25} color="#4682B4" yPosition={-0.79} />
     <ScrollingSurface start={0.7} color="#FDD835" yPosition={-0.78} />
   </>
@@ -86,7 +86,7 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
   const scrollIcon = document.getElementById('scroll-icon');
 
   useFrame(() => {
-    if (!isInteractiveMode && groupRef.current && scroll.offset <= 0.0675) {
+    if (!isInteractiveMode && groupRef.current && scroll.offset <= 0.0675 && !isSmallScreen) {
       const xPosition = scroll.offset * -12;
       groupRef.current.position.x = xPosition;
       groupRef.current.position.z = xPosition;
