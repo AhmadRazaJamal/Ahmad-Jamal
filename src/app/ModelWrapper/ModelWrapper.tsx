@@ -25,7 +25,7 @@ const Portfolio: React.FC = () => {
   const [interactiveMode, setInteractiveMode] = useState<boolean>(false);
   const [transitionCamera, setTransitionCamera] = useState<boolean>(false);
   const model = loadModelWithTextures('office.glb', 'baked-office-textures.png') as IModel;
-  const originalZoom = isSmallScreen ? window.innerWidth * 0.5 : window.innerWidth * 0.23;
+  const originalZoom = isSmallScreen ? window.innerWidth * 0.5 : window.innerWidth * 0.25;
 
   useLayoutEffect(() => {
     setTransitionCamera(!interactiveMode);
@@ -87,7 +87,7 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
 
   useFrame(() => {
     if (!isInteractiveMode && groupRef.current && scroll.offset <= 0.0675 && !isSmallScreen) {
-      const xPosition = scroll.offset * -12;
+      const xPosition = scroll.offset * -11.2;
       groupRef.current.position.x = xPosition;
       groupRef.current.position.z = xPosition;
       camera.updateProjectionMatrix();
@@ -135,7 +135,7 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
     );
 
     changeProgressBarHeight('progress-bar-one', scroll.offset, 0.12, scroll.offset > 0.11 && scroll.offset < 0.24, 4000, 'rgb(253, 216, 53, 0.5)');
-    changeProgressBarHeight('progress-bar-two', scroll.offset, 0.26, scroll.offset > 0.26 && scroll.offset < 0.4, 1700, 'rgb(253, 216, 53, 0.1)');
+    changeProgressBarHeight('progress-bar-two', scroll.offset, 0.29, scroll.offset > 0.29 && scroll.offset < 0.45, 3200, 'rgb(70, 130, 180, 0.5)');
     changeProgressBarHeight('progress-bar-three', scroll.offset, 0.47, scroll.offset > 0.47 && scroll.offset < 0.62, 1700, 'rgb(253, 216, 53, 0.1)');
   });
 

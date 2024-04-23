@@ -11,7 +11,6 @@ export const SectionContainer = styled.div<{ id: string }>`
     overflow: hidden;
 ${({ id }) => {
         const baseStyles = css`
-      width: 40%;
       padding-top: 300px;
       padding-left: 5vw;
       padding-right: 5vw;
@@ -21,6 +20,7 @@ ${({ id }) => {
                 return css`
           ${baseStyles}
           ${isSmallScreen ? `top: 350vh;`: `top: 400vh;`}
+          ${isSmallScreen ? `width: 90%;`: `width: 40%;`}
           height: 1150px;
           right: 0;
         `;
@@ -28,6 +28,7 @@ ${({ id }) => {
                 return css`
           ${baseStyles}
           ${isSmallScreen ? `top: 1000vh;`: `top: 900vh;`}
+          ${isSmallScreen ? `width: 90%;`: `width: 40%;`}
           height: 350vh;
           right: 0;
         `;
