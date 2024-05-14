@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Heading, ListItem, SectionList, ListHeading, WavingHand } from './Sections.styles';
+import { Text, Heading, ListItem, SectionList, ListHeading, WavingHand, ImageGalleryWrapper } from './Sections.styles';
 import { CarouselGallery } from "../Carousel/Carousel";
 import { Form } from "../Form/Form";
 import ReactImageGallery from 'react-image-gallery';
@@ -31,18 +31,48 @@ const threeJsProjectContent: ProjectContent[] = [
     },
 ];
 
-const projectImages = [
+const ctvImages = [
     {
-        original: `/project-media/page1.webp`,
+        original: `/project-media/ctv-1.webp`,
     },
     {
-        original: `/project-media/page2.webp`,
+        original: `/project-media/ctv-2.webp`,
     },
     {
-        original: `/project-media/page3.webp`,
+        original: `/project-media/ctv-3.webp`,
     },
     {
-        original: `/project-media/page4.webp`,
+        original: `/project-media/ctv-4.webp`,
+    },
+];
+
+const nlcImages = [
+    {
+        original: `/project-media/nlc-1.webp`,
+    },
+    {
+        original: `/project-media/nlc-2.webp`,
+    },
+    {
+        original: `/project-media/nlc-3.webp`,
+    },
+    {
+        original: `/project-media/nlc-4.webp`,
+    },
+];
+
+const cpbImages = [
+    {
+        original: `/project-media/cpb-1.webp`,
+    },
+    {
+        original: `/project-media/cpb-2.webp`,
+    },
+    {
+        original: `/project-media/cpb-3.webp`,
+    },
+    {
+        original: `/project-media/cpb-4.webp`,
     },
 ];
 
@@ -62,11 +92,22 @@ export const Sections: React.FC = () => {
                 <Text>My latest endeavour has been learning ThreeJS, and creating fun small projects while following this amazing <a href={'https://threejs-journey.com/'}>course by Bruno Simons</a>. I have worked on both small and large-scale projects such as my portfolio that utilizes ThreeJS to the fullest. My portfolio goes beyond just using vanilla ThreeJS but uses React Three Fiber and includes a mini version of my home office designed in Blender.</Text>
                 <CarouselGallery content={threeJsProjectContent} />
 
-                <Heading>Canadian Train Vacations</Heading>
-                <Text>Canadian Train Vacation is my ongoing project at work. From being responsible for setting up CI/CD for development, A/B testing for user testing, and creating a monorepo and building its pathways, it has been a challenging yet fun project to work on.</Text>
-                Check the website <a href={'https://canadiantrainvacations.com/'}>here</a>
+                <Heading>Fresh Tracks Canada Websites</Heading>
+                <Text>These are my projects from work. From creating new pages, components - to being responsible for setting up CI/CD for development, A/B testing for user testing, and creating a monorepo and building its pathways, it has been a challenging yet fun project to work on.</Text>
+                <ImageGalleryWrapper>
+                <a href={'https://canadiantrainvacations.com/'}>Canadian Train Vacations</a>
+                <ImageGallery items={ctvImages} showFullscreenButton={false} slideInterval={2000}/>
+                </ImageGalleryWrapper>
+                <ImageGalleryWrapper>
+                <a href={'https://northernlightscanada.com/'}>Northern Lights Canada</a>
+                <ImageGallery items={nlcImages} showFullscreenButton={false} slideInterval={2000}/>
+                </ImageGalleryWrapper>
+                <ImageGalleryWrapper>
+                <a href={'https://canadapolarbears.com/'}>Canada Polar Bears</a>
+                <ImageGallery items={cpbImages} showFullscreenButton={false} slideInterval={2000}/>
+                </ImageGalleryWrapper>
 
-                <ImageGallery items={projectImages} showNav={false} showFullscreenButton={false} slideInterval={2000}/>
+              
                 <Heading>Laurie Koss SEO Project</Heading>
                 <Text> Laurie, an artist, aimed to showcase her talent and reach a broader audience through improved SEO and enhanced performance. Collaborating with Laurie, I improved performance statistics, optimized the website for Google search ranking, and also helped set up Google Analytics and Google Console. I also provided guidance on content creation and explored additional marketing avenues for her products.
                     <Text />

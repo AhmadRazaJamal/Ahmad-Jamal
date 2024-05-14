@@ -9,6 +9,16 @@ export const WavingHand = styled.span`
   display: inline-block;
 `;
 
+export const ImageGalleryWrapper = styled.div`
+  > div {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  .image-gallery-svg {
+    width: 18px;
+  }
+`
+
 export const Text = styled.p`
   line-height: 2;
   margin-top: 18px;

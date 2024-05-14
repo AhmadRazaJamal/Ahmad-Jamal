@@ -29,7 +29,7 @@ ${({ id }) => {
           ${baseStyles}
           ${isSmallScreen ? `top: 1000vh;`: `top: 900vh;`}
           ${isSmallScreen ? `width: 90%;`: `width: 40%;`}
-          height: 350vh;
+          height: 525vh;
           right: 0;
         `;
             case 'section-three':
