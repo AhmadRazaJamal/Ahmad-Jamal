@@ -22,7 +22,14 @@ export const CarouselCustom = styled.div`
     }
   }
 
+  h3{
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+
   p {
-    color: #3b82f6;
+    color: gray;
+    font-size: 14px;
+    margin-top:0;
   }
 `;

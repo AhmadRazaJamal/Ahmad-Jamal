@@ -17,6 +17,9 @@ export const ImageGalleryWrapper = styled.div`
   .image-gallery-svg {
     width: 18px;
   }
+  .image-gallery-play-button{
+    display: none;
+  }
 `
 
 export const Text = styled.p`

@@ -93,7 +93,7 @@ export const Sections: React.FC = () => {
                 <CarouselGallery content={threeJsProjectContent} />
 
                 <Heading>Fresh Tracks Canada Websites</Heading>
-                <Text>These are my projects from work. From creating new pages, components - to being responsible for setting up CI/CD for development, A/B testing for user testing, and creating a monorepo and building its pathways, it has been a challenging yet fun project to work on.</Text>
+                <Text>These are my projects from work. From creating new pages and components to owning the CI/CD setup for smooth development, A/B testing for user testing with Personalization for curating user content, and crafting a monorepo with all its intricate pathways.</Text> <Text>It has been challenging yet fun to work on it all!</Text>
                 <ImageGalleryWrapper>
                 <a href={'https://canadiantrainvacations.com/'}>Canadian Train Vacations</a>
                 <ImageGallery items={ctvImages} showFullscreenButton={false} slideInterval={2000}/>
@@ -113,6 +113,7 @@ export const Sections: React.FC = () => {
                     <Text />
                     Here is my complete research and thought process of how I made this possible: <a href={'https://wandering-psychology-b1a.notion.site/SEO-Optimization-Analysis-41a6620719af46ee9be5636e88f38d15?pvs=4'}>SEO Optimization Analysis on Notion</a>
                 </Text>
+                <Text>And you can check her website {'->'}<a href={'https://www.lauriekoss.com/'}> here</a></Text>
             </Section>
 
             <Section id="three" title="What I can do for you" number="03">
