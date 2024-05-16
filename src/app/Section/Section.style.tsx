@@ -19,7 +19,7 @@ ${({ id }) => {
             case 'section-one':
                 return css`
           ${baseStyles}
-          ${isSmallScreen ? `top: 350vh;`: `top: 400vh;`}
+          ${isSmallScreen ? `top: 350vh;`: `top: 2700px;`}
           ${isSmallScreen ? `width: 90%;`: `width: 40%;`}
           height: 1150px;
           right: 0;
@@ -27,30 +27,24 @@ ${({ id }) => {
             case 'section-two':
                 return css`
           ${baseStyles}
-          ${isSmallScreen ? `top: 1000vh;`: `top: 900vh;`}
+          ${isSmallScreen ? `top: 1000vh;`: `top: 7400px;`}
           ${isSmallScreen ? `width: 90%;`: `width: 40%;`}
-          height: 525vh;
+          height: 3700px;
           right: 0;
         `;
             case 'section-three':
                 return css`
           ${baseStyles}
-          ${isSmallScreen ? `top: 1500vh;`: `top: 1600vh;`}
-          height: 240vh;
+          ${isSmallScreen ? `top: 1500vh;`: `top: 14650px;`}
+          ${isSmallScreen ? `width: 90%;`: `width: 40%;`}
+          height: 1900px;
           right: 0;
         `;
             case 'section-four':
                 return css`
-          ${baseStyles}
-          ${isSmallScreen ? `top: 1500vh;`: `top: 2200vh;`}
-          height: 390vh;
-          right: 0;
-        `;
-            case 'section-five':
-                return css`
           width:80vw;
-          ${isSmallScreen ? `top: 2800vh;`: `top: 2900vh;`}
-          height: 100vh;
+          ${isSmallScreen ? `top: 2800vh;`: `top: 20050px;`}
+          height: 100%;
           padding-top: 15vh;
           padding-left: 10vw;
           padding-right: 10vw;

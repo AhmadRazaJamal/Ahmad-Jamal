@@ -74,7 +74,7 @@ const ScrollingSurfaces: React.FC = () => (
   <>
     <ScrollingSurface start={0} color="#FDD835" yPosition={-1} />
     <ScrollingSurface start={0.25} color="#4682B4" yPosition={-0.79} />
-    <ScrollingSurface start={0.7} color="#FDD835" yPosition={-0.78} />
+    <ScrollingSurface start={0.6} color="#FDD835" yPosition={-0.78} />
   </>
 );
 
@@ -97,7 +97,7 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
       scrollIcon.style.opacity = `${1 - scroll.offset * 250}`;
     }
 
-    console.log(scroll.offset)
+    // console.log(scroll.offset)
     animateSectionBorders(
       'section-one',
       scroll.offset,
@@ -112,8 +112,8 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
       scroll.offset,
       300, 0,
       0, 250,
-      0.28, 0.32,
-      0.47, 0.51
+      0.34, 0.38,
+      0.53, 0.57
     );
 
     animateSectionBorders(
@@ -121,22 +121,13 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
       scroll.offset,
       300, 0,
       0, 250,
-      0.47, 0.5,
-      0.53, 0.62
-    );
-
-    animateSectionBorders(
-      'section-four',
-      scroll.offset,
-      300, 0,
-      0, 250,
-      0.64, 0.7,
-      0.765, 0.8
+      0.7, 0.74,
+      0.8, 0.85
     );
 
     changeProgressBarHeight('progress-bar-one', scroll.offset, 0.12, scroll.offset > 0.11 && scroll.offset < 0.24, 4000, 'rgb(253, 216, 53, 0.5)');
-    changeProgressBarHeight('progress-bar-two', scroll.offset, 0.29, scroll.offset > 0.29 && scroll.offset < 0.51, 3100, 'rgb(70, 130, 180, 0.5)');
-    changeProgressBarHeight('progress-bar-three', scroll.offset, 0.47, scroll.offset > 0.47 && scroll.offset < 0.62, 1700, 'rgb(253, 216, 53, 0.1)');
+    changeProgressBarHeight('progress-bar-two', scroll.offset, 0.36, scroll.offset > 0.34 && scroll.offset < 0.57, 3300, 'rgb(70, 130, 180, 0.5)');
+    changeProgressBarHeight('progress-bar-three', scroll.offset, 0.72, scroll.offset > 0.72 && scroll.offset < 0.85, 3800, 'rgb(253, 216, 53, 0.5)');
   });
 
   return (

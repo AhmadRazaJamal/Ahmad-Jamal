@@ -170,28 +170,7 @@ export const Sections: React.FC = () => {
                 </ol>
             </Section>
 
-            <Section id="four" title="Experience" number="04">
-                <Heading>FreshTracks</Heading>
-                <Text>FreshTracks is where I am currently working! (unless it's been years since my last update yikes!).</Text>
-                <Text>It's a Vancouver-based company that has been creating personalized Canadian vacations since 1996. My role here is that of a Full Stack Developer. I have, so far, completed the creation and deployment of 3 full scale websites:</Text>
-                <SectionList>
-                    <ListItem><a href="https://freshtrackscanada.com/" target="_blank">Fresh Tracks Canada</a></ListItem>
-                    <ListItem><a href="https://canadiantrainvacations.com/" target="_blank">Canadian Train Vacations</a></ListItem>
-                    <ListItem><a href="https://northernlightscanada.com/" target="_blank">Northern Lights Canada</a></ListItem>
-                </SectionList>
-                <Text>These websites were developed using NextJS, utilizing a headless CMS model for content management along with a CI/CD pipeline to automate deployments</Text>
-                <Heading className="section-heading">FreshGrade </Heading>
-                <Text>At FreshGrade, an ed-tech startup, I created student portfolios on our web-based platform with an interactive feed for communication and cross-collaboration between parents, students, and teachers. I developed user-friendly features to enhance
-                    the product's functionality while meeting the needs of educators and students.
-                </Text>
-                <Text>This experience allowed me to gain a deep understanding of the intersection between education and technology, and to hone my skills in product development, user experience, and collaboration.</Text>
-                <Heading className="section-heading">Higher Ground</Heading>
-                <Text>FreshGrade was later acquired by HigherGround which is a Montessori-inspired educational offering. During my time at HigherGround, I worked on improving the scalability and website performance of the existing infrastructure. I also collaborated with a team of designers and developers to create new features and functionalities for the product. All of this allowed me to further enhance my skills in software engineering, teamwork, and project management.</Text>
-
-                <Text>For further information about what I do and where I’ve worked, please check out my <a href="https://www.linkedin.com/in/ahmadjamal/">LinkedIn</a></Text>
-            </Section>
-
-            <Section id="five" title="Get in touch!" number="05">
+            <Section id="four" title="Get in touch!" number="04">
                 <Form />
             </Section>
         </div>
