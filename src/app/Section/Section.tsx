@@ -6,8 +6,7 @@ import {
     SectionTitle,
     SectionNumber,
     SectionDetailWrapper,
-    ProgressBarWrapper,
-    SectionTitleText
+    ProgressBarWrapper
 } from './Section.style';
 
 interface SectionProps {
@@ -25,7 +24,7 @@ export const Section: React.FC<SectionProps> = ({ id, title, number, children })
 
         <SectionIntroWrapper>
             <SectionTitle>
-                <SectionTitleText>{title}</SectionTitleText>
+                {title}
             </SectionTitle>
             <SectionNumber>{number}</SectionNumber>
         </SectionIntroWrapper>

@@ -58,6 +58,8 @@ ${({ id }) => {
 `;
 
 export const SectionIntroWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
   position: relative;
   padding: 0 5%;
   border-bottom: 2px solid #1E90FF;
@@ -82,18 +84,8 @@ export const ProgressBar = styled.div`
 export const SectionTitle = styled.h1`
   font-family: 'ManropeRegular';
   font-weight: bolder;
+  font-size: 28px;
   position: relative;
-  color: #1E90FF;
-`;
-
-export const SectionTitleText = styled.h2`
-  font-size: 40px;
-  font-weight: bolder;
-  transform-origin: left;
-  z-index: 5;
-  margin: 0;
-  margin-left: -20px;
-  font-family: 'ManropeRegular';
   color: #1E90FF;
 `;
 
