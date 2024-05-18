@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { isSmallScreen } from '../utils/constants';
 
+export const ListWrapper = styled.ol`
+  padding-left: 22px;
+`
+
 export const WavingHand = styled.span`
   animation-name: wave-animation;
   animation-duration: 2.5s;
@@ -51,6 +55,7 @@ export const SectionList = styled.ul`
   margin-top: 18px;
   font-size: 16px;
   color: black;
+  padding-left: 0;
 `;
 
 export const ListItem = styled.li`

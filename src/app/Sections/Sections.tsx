@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Heading, ListItem, SectionList, ListHeading, WavingHand, ImageGalleryWrapper } from './Sections.styles';
+import { Text, Heading, ListItem, SectionList, ListHeading, WavingHand, ImageGalleryWrapper, ListWrapper } from './Sections.styles';
 import { CarouselGallery } from "../Carousel/Carousel";
 import { Form } from "../Form/Form";
 import ReactImageGallery from 'react-image-gallery';
@@ -117,57 +117,57 @@ export const Sections: React.FC = () => {
             </Section>
 
             <Section id="three" title="What I can do for you" number="03">
-                <ol>
+                <ListWrapper>
                     <ListHeading>Web Development</ListHeading>
                     <SectionList>
                         <ListItem>
-                            Full-Stack Wizard: From the front end to the back end, I conjure up a complete web environment.
+                            Full-Stack Wizard: From the front end to the back end, I can conjure up websites that are functional, performant yet pleasing to look at
                         </ListItem>
                         <ListItem>
-                            Your site's personal health guru: I'm all about keeping things updated, fixed, and running smoothly.
+                            Web Solutions Architect: Create full scale solutions for your bussiness needs like Personalization, A/B testing, and Analytics etc.
                         </ListItem>
                     </SectionList>
                     <ListHeading>Search Engine Optimization</ListHeading>
                     
                     <SectionList>
                         <ListItem>
-                            Improving Core Web Vitals for your website, so you can rank higher.
+                            Optimize the Core Web Vitals for your website so your website can rise from the trenches of Google rankings
                         </ListItem>
                         <ListItem>
-                            Google Analytics and Search Console: I don't just set it up, but act as your guide in understanding data.
+                            Set up Google Analytics and Search Console. I don't just set it up, but act as your guide in understanding the data as well
                         </ListItem>
                         <ListItem>
-                            Providing guidance on areas where you can improve your Google rankings.
-                        </ListItem>
-                    </SectionList>
-                    <ListHeading>CMS Management</ListHeading>
-                    <SectionList>
-                        <ListItem>
-                            Setting up, updating, and maintaining your CMS. Be it headless or not.
-                        </ListItem>
-                        <ListItem>
-                            Ensuring your project's plugins are always on their latest and greatest form.
+                            Provide guidance on areas to help you improve your Google ranking through keywords, blogs, intentful content etc
                         </ListItem>
                     </SectionList>
                     <ListHeading>CI/CD</ListHeading>
                     <SectionList>
                         <ListItem>
-                            Automating, testing and deploying to make your life easier and your code robust.
+                            Automate, test and deploy to make your life easier and your code robust
                         </ListItem>
                         <ListItem>
-                            Cut down on coffee breaks waiting for code deployment. Let's make it swift and reliable.
+                            Optimize your deployments and ensure everything flows smoothly to help you cut down on coffee breaks while waiting for your code to deploy
                         </ListItem>
                     </SectionList>
                     <ListHeading>Solution Architect</ListHeading>
                     <SectionList>
                         <ListItem>
-                            Designing solutions for tough problems.
+                            Design solutions for every day web problems
                         </ListItem>
                         <ListItem>
-                            Research, test and implement best way to solve problems keeping you up at night.
+                            Research, test and implement the best ways to solve problems that keep you up at night
                         </ListItem>
                     </SectionList>
-                </ol>
+                    <ListHeading>CMS Management</ListHeading>
+                    <SectionList>
+                        <ListItem>
+                            Set up, update, and maintain your CMS.
+                        </ListItem>
+                        <ListItem>
+                            Ensure your project's plugins are always on their latest and greatest versions
+                        </ListItem>
+                    </SectionList>
+                </ListWrapper>
             </Section>
 
             <Section id="four" title="Get in touch!" number="04">
