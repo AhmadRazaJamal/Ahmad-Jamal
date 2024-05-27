@@ -1,7 +1,7 @@
 import React from "react";
 import { FieldValues, useForm } from "react-hook-form";
-import { Input, Textarea } from "@nextui-org/react";
-import { StyledForm, FormWrapper } from './Form.styles'; 
+import { Button, Input, Textarea } from "@nextui-org/react";
+import { StyledForm, FormWrapper } from './Form.styles';
 
 export const Form = () => {
     const {
@@ -21,14 +21,14 @@ export const Form = () => {
     return (
         <FormWrapper>
             <StyledForm onSubmit={handleSubmit(onSubmit)}>
-
                 <Input
                     {...register("name", { required: true })}
                     isRequired
                     type="text"
                     label="Name"
-                    placeholder="Your name? (君の名は)"
-                    className="mb-10 "
+                    placeholder="What should I call you?"
+                    fullWidth={true}
+                    style={{ marginBottom: 12 }}
                 />
 
                 <Input
@@ -37,15 +37,22 @@ export const Form = () => {
                     type="email"
                     label="Email"
                     placeholder="tetris@icloud.com"
-                    className="mb-10"
+                    fullWidth={true}
+                    style={{ marginBottom: 12 }}
                 />
 
                 <Textarea
                     {...register("message", { required: true })}
                     isRequired
                     label="Message"
-                    placeholder="What can I help you with?"
+                    placeholder="And what can I help you with?"
+                    fullWidth={true}
+                    style={{ marginBottom: 12 }}
+                    minRows={6}
                 />
+                <Button radius="md">
+                    Lets Talk
+                </Button>
             </StyledForm>
         </FormWrapper>
     );

@@ -170,7 +170,7 @@ export const Sections: React.FC = () => {
                 </ListWrapper>
             </Section>
 
-            <Section id="four" title="Get in touch!" number="04">
+            <Section id="four" title="Get In Touch" number="04">
                 <Form />
             </Section>
         </div>

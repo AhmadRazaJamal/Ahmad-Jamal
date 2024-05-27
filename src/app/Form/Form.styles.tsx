@@ -1,17 +1,33 @@
 import styled from 'styled-components';
 
 export const StyledForm = styled.form`
-  min-width: 100vw;
-  min-height: 40vh;
-  margin: 0 auto;
+  width: 60%;
 `;
 
 export const FormWrapper = styled.div`
-  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  background: white;
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 24px;
-`;
+  margin-top: 24px;
+  height: 390px;
+
+  input{
+    width: 80%;
+  }
+  textarea{
+    width: 80%;
+    height: 180px !important;
+  }
+  button {
+    background-color: #1E90FF;
+    color: white;
+    border: 1px;
+    border-radius: 10px;
+    width: 120px;
+    padding: 8px;
+  }
+`
