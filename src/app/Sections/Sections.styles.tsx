@@ -6,6 +6,7 @@ export const ListWrapper = styled.ol`
 `
 
 export const WavingHand = styled.span`
+  margin-left: 4px;
   animation-name: wave-animation;
   animation-duration: 2.5s;
   animation-iteration-count: infinite;
@@ -30,7 +31,7 @@ export const Text = styled.p`
   line-height: 2;
   margin-top: 18px;
   font-size: 16px;
-  ${isSmallScreen ? `font-size: 14px;`: `font-size: 16px;`}
+  ${isSmallScreen ? `font-size: 16px;`: `font-size: 18px;`}
   color: black;
 `;
 

@@ -57,11 +57,11 @@ ${({ id }) => {
     
 `;
 
-export const SectionIntroWrapper = styled.div`
+export const SectionIntroWrapper = styled.div` 
+  margin: 0 12px;
   display: flex;
   justify-content: space-between;
   position: relative;
-  padding: 0 5%;
   border-bottom: 2px solid #1E90FF;
 `;
 
@@ -83,25 +83,23 @@ export const ProgressBar = styled.div`
 
 export const SectionTitle = styled.h1`
   font-family: 'ManropeRegular';
-  font-weight: bolder;
   font-size: 28px;
-  position: relative;
+  padding-left: 12px;
   color: #1E90FF;
 `;
 
 export const SectionNumber = styled.span`
   position: absolute;
-  bottom: 15px;
-  right: 0;
+  bottom: 22px;
+  right: 24px;
   color: #1E90FF;
   font-size: 24px;
-  font-family: 'ManropeRegular';
-  font-weight: bolder;
+  font-family: 'ManropeBold';
 `;
 
 export const SectionDetailWrapper = styled.div`
   line-height: 2;
   position: relative;
-  padding: 20px 5px;
-  font-family: 'ManropeRegular';
+  padding: 20px 24px;
+  font-family: 'Poppins-Regular';
 `;
