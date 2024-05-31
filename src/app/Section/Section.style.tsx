@@ -27,15 +27,15 @@ ${({ id }) => {
             case 'section-two':
                 return css`
           ${baseStyles}
-          ${isSmallScreen ? `top: 1000vh;`: `top: 7400px;`}
+          ${isSmallScreen ? `top: 7200px;`: `top: 7400px;`}
           ${isSmallScreen ? `width: 90%;`: `width: 40%;`}
-          height: 3700px;
+          ${isSmallScreen ? `height: 3900px;`: `height: 3700px;`}
           right: 0;
         `;
             case 'section-three':
                 return css`
           ${baseStyles}
-          ${isSmallScreen ? `top: 1500vh;`: `top: 14650px;`}
+          ${isSmallScreen ? `top: 14450vh;`: `top: 14650px;`}
           ${isSmallScreen ? `width: 90%;`: `width: 40%;`}
           height: 1900px;
           right: 0;

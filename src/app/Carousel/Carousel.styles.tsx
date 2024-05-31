@@ -31,5 +31,6 @@ export const CarouselCustom = styled.div`
     color: gray;
     font-size: 14px;
     margin-top:0;
+    margin-bottom:24px;
   }
 `;
