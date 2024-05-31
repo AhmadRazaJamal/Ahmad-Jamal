@@ -12,14 +12,16 @@ export const FormWrapper = styled.div`
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 24px;
-  margin-top: 24px;
-  height: 390px;
+  margin-top: 8px;
+  height: 424px;
 
   input{
     width: 80%;
+    padding: 8px;
   }
   textarea{
     width: 80%;
+    padding: 8px;
     height: 180px !important;
   }
   button {
