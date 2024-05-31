@@ -19,9 +19,9 @@ ${({ id }) => {
             case 'section-one':
                 return css`
           ${baseStyles}
-          ${isSmallScreen ? `top: 350vh;`: `top: 2700px;`}
+          ${isSmallScreen ? `top: 2500px;`: `top: 2700px;`}
           ${isSmallScreen ? `width: 90%;`: `width: 40%;`}
-          height: 1150px;
+          ${isSmallScreen ? `height: 1300px;`: `height: 1150px;`}
           right: 0;
         `;
             case 'section-two':
