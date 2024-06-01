@@ -21,7 +21,7 @@ ${({ id }) => {
           ${baseStyles}
           ${isSmallScreen ? `top: 2500px;`: `top: 2700px;`}
           ${isSmallScreen ? `width: 90%;`: `width: 40%;`}
-          ${isSmallScreen ? `height: 1300px;`: `height: 1150px;`}
+          ${isSmallScreen ? `height: 1300px;`: `height: 1350px;`}
           right: 0;
         `;
             case 'section-two':
@@ -29,21 +29,21 @@ ${({ id }) => {
           ${baseStyles}
           ${isSmallScreen ? `top: 7200px;`: `top: 7400px;`}
           ${isSmallScreen ? `width: 90%;`: `width: 40%;`}
-          ${isSmallScreen ? `height: 3900px;`: `height: 3700px;`}
+          ${isSmallScreen ? `height: 3900px;`: `height: 4000px;`}
           right: 0;
         `;
             case 'section-three':
                 return css`
           ${baseStyles}
-          ${isSmallScreen ? `top: 14450vh;`: `top: 14650px;`}
+          ${isSmallScreen ? `top: 14450px;`: `top: 14650px;`}
           ${isSmallScreen ? `width: 90%;`: `width: 40%;`}
-          height: 1900px;
+          ${isSmallScreen ? `height: 2300px;`: `height: 2200px;`}
           right: 0;
         `;
             case 'section-four':
                 return css`
           width:80vw;
-          ${isSmallScreen ? `top: 2800vh;`: `top: 20050px;`}
+          ${isSmallScreen ? `top: 20050px;`: `top: 20050px;`}
           height: 100%;
           padding-top: 15vh;
           padding-left: 10vw;

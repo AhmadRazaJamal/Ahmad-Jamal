@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+import { isSmallScreen } from '../utils/constants';
 
 export const StyledForm = styled.form`
   width: 60%;
+  ${isSmallScreen ? `width: 100%;`: `width: 60%;`}
 `;
 
 export const FormWrapper = styled.div`
@@ -16,11 +18,11 @@ export const FormWrapper = styled.div`
   height: 424px;
 
   input{
-    width: 80%;
     padding: 8px;
+    ${isSmallScreen ? `width: 92.5%;`: `width: 80%;`}
   }
   textarea{
-    width: 80%;
+    ${isSmallScreen ? `width: 92.5%;`: `width: 80%;`}
     padding: 8px;
     height: 180px !important;
   }
