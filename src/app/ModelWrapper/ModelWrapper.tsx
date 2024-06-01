@@ -113,7 +113,7 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
       300, 0,
       0, 250,
       0.34, 0.38,
-      0.55, 0.59
+      0.54, 0.58
     );
 
     animateSectionBorders(

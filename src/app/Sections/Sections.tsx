@@ -92,7 +92,8 @@ export const Sections: React.FC = () => {
 
             <Section id="two" title="My Work" number="02">
                 <Heading>ThreeJS Projects</Heading>
-                <Text>My latest endeavour has been learning ThreeJS, and creating fun small projects while following this amazing <a href={'https://threejs-journey.com/'}>course by Bruno Simons</a>. I have worked on both small and large-scale projects such as my portfolio that utilizes ThreeJS to the fullest. My portfolio goes beyond just using vanilla ThreeJS but uses React Three Fiber and includes a mini version of my home office designed in Blender.</Text>
+                <Text>My latest endeavour has been learning ThreeJS, and creating fun small projects while following this amazing <a href={'https://threejs-journey.com/'}>course by Bruno Simons</a>. I have worked on both small and large-scale projects such as my portfolio that utilizes ThreeJS to the fullest. </Text>
+                <Text>My portfolio goes beyond just using vanilla ThreeJS but uses React Three Fiber and includes a mini version of my home office designed by me in Blender.</Text>
                 <CarouselGallery content={threeJsProjectContent} />
 
                 <Heading>Fresh Tracks Canada Websites</Heading>

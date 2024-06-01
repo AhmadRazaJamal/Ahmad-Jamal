@@ -37,7 +37,7 @@ ${({ id }) => {
           ${baseStyles}
           ${isSmallScreen ? `top: 14450px;`: `top: 14650px;`}
           ${isSmallScreen ? `width: 90%;`: `width: 40%;`}
-          ${isSmallScreen ? `height: 2300px;`: `height: 2200px;`}
+          ${isSmallScreen ? `height: 2100px;`: `height: 2200px;`}
           right: 0;
         `;
             case 'section-four':
