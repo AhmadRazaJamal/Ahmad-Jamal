@@ -1,1 +1,1 @@
-export const isSmallScreen = window ? window.innerWidth <= 768: false;
+export const isSmallScreen = typeof window !== 'undefined' && window.innerWidth <= 768;
