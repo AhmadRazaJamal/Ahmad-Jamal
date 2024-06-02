@@ -49,6 +49,7 @@ const Portfolio: React.FC = () => {
           <Sections />
         </Scroll>
       </ScrollControls>
+      <directionalLight castShadow position={[1, 2, 3]} intensity={3} />
     </React.Fragment>
   );
 };
