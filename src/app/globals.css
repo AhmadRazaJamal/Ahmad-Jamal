@@ -40,25 +40,10 @@ h2 {
     font-family: 'ManropeRegular';
 }
 
-html, body, #__next {
-    height: 100%;
-    width: 100%;
-}
-
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.scene {
-    position: relative;
-    perspective: 1000px;
-    z-index: 2;
-    height: calc(var(--size) * 2.75);
-    width: calc(var(--size) * 2.75);
-    display: grid;
-    place-items: center;
 }
 
 .cube-wrapper {
