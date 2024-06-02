@@ -19,7 +19,7 @@ export const FullScreenWrapper = styled.div<FullScreenWrapperProps>`
   left: 0;
   right: 0;
   bottom: 0;
-  background: #89c2d9;
+  background: floralwhite;
   opacity: ${props => props.isLoading ? 0 : 1};
   transition: opacity 1s ease-in-out;
   animation: ${props => !props.isLoading && fadeIn} 1s forwards;

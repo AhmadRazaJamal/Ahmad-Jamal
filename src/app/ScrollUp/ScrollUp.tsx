@@ -18,7 +18,7 @@ const ScrollUpContent = styled.div`
   font-size: 1.5em;
   width: 80vw;
   margin-bottom: 12vh;
-  color: lightcyan;
+  color: gray;
 `
 
 const StyledIcon = styled(KeyboardArrowUpIcon)`

@@ -25,7 +25,6 @@
     --medium-turquoise: #4dccbdff;
     --russian-violet: #110d31ff;
     --face-color: #1E90FF;
-    --border-color: antiquewhite;
     --size: 80px;
     --animation-duration: 2s;
 }
@@ -47,7 +46,6 @@ html, body, #__next {
 }
 
 body {
-    background-color: var(--border-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,7 +85,6 @@ body {
     position: absolute;
     inset: 0;
     background: var(--face-color);
-    border: solid 1px var(--border-color);
 }
 
 .cube-face.shadow {

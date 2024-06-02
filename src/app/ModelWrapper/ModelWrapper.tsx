@@ -25,7 +25,7 @@ const Portfolio: React.FC = () => {
   const [interactiveMode, setInteractiveMode] = useState<boolean>(false);
   const [transitionCamera, setTransitionCamera] = useState<boolean>(false);
   const model = loadModelWithTextures('office.glb', 'baked-office-textures.png') as IModel;
-  const originalZoom = isSmallScreen ? window.innerWidth * 0.5 : window.innerWidth * 0.25;
+  const originalZoom = isSmallScreen ? window.innerWidth * 0.6 : window.innerWidth * 0.25;
 
   useLayoutEffect(() => {
     setTransitionCamera(!interactiveMode);
@@ -132,7 +132,7 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
 
   return (
     <group ref={groupRef}>
-      <primitive object={model.scene} scale={[scale, scale, scale]} position={[-0.28, -0.3, 0]} />
+      <primitive object={model.scene} scale={[scale, scale, scale]} position={[-0.3, -0.3, 0]} />
     </group>
   );
 };
