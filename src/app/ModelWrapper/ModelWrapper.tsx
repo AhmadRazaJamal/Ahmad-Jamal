@@ -39,8 +39,8 @@ const ModelWrapper: React.FC = () => {
 
   return (
     <React.Fragment>
+      {<OrbitControls enabled={interactiveMode}/>}
       <ScrollControls pages={30}>
-        {interactiveMode && <OrbitControls />}
         <ScrollingSurfaces />
         <Office model={model} scale={0.08} isInteractiveMode={interactiveMode} />
         <Scroll html>
