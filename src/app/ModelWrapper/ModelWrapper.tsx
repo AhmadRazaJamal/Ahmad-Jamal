@@ -49,7 +49,7 @@ const Portfolio: React.FC = () => {
           <Sections />
         </Scroll>
       </ScrollControls>
-      <directionalLight castShadow position={[1, 2, 3]} intensity={3} />
+      <directionalLight position={[1, 2, 3]} intensity={3} />
     </React.Fragment>
   );
 };
@@ -71,9 +71,9 @@ const handleCameraTransition = (camera: THREE.PerspectiveCamera, originalZoom: n
 
 const ScrollingSurfaces: React.FC = () => (
   <>
-    <ScrollingSurface start={0} color="#FDD835" yPosition={-1} />
-    <ScrollingSurface start={0.25} color="#4682B4" yPosition={-0.79} />
-    <ScrollingSurface start={0.6} color="#FDD835" yPosition={-0.78} />
+    <ScrollingSurface start={0} color="#4682B4" yPosition={-1} />
+    <ScrollingSurface start={0.25} color="#FDD835" yPosition={-0.79} />
+    <ScrollingSurface start={0.6} color="#12664F" yPosition={-0.78} />
   </>
 );
 
@@ -125,9 +125,9 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
     );
 
     // console.log(scroll.offset)
-    changeProgressBarHeight('progress-bar-one', scroll.offset, 0.12, scroll.offset > 0.11 && scroll.offset < 0.24, 4000, 'rgb(253, 216, 53, 0.5)');
-    changeProgressBarHeight('progress-bar-two', scroll.offset, 0.36, scroll.offset > 0.34 && scroll.offset < 0.6, 3250, 'rgb(70, 130, 180, 0.5)');
-    changeProgressBarHeight('progress-bar-three', scroll.offset, 0.7, scroll.offset > 0.7 && scroll.offset < 0.85, 3200, 'rgb(253, 216, 53, 0.5)');
+    changeProgressBarHeight('progress-bar-one', scroll.offset, 0.12, scroll.offset > 0.11 && scroll.offset < 0.24, 4000, 'rgb(70, 130, 180, 0.5)');
+    changeProgressBarHeight('progress-bar-two', scroll.offset, 0.36, scroll.offset > 0.34 && scroll.offset < 0.6, 3250, 'rgb(253, 216, 53, 0.5)');
+    changeProgressBarHeight('progress-bar-three', scroll.offset, 0.7, scroll.offset > 0.7 && scroll.offset < 0.85, 3200, 'rgb(57, 150, 122, 0.5)');
   });
 
   return (
