@@ -34,7 +34,7 @@ export const Text = styled.p`
   color: black;
 `;
 
-export const Heading = styled.h2`
+export const Heading = styled.h1`
   font-size: 24px;
   font-weight: 700;
   line-height: 1.8;

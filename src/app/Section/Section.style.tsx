@@ -10,55 +10,55 @@ export const SectionContainer = styled.div<{ id: string }>`
     background-color: white;
     overflow: hidden;
 ${({ id }) => {
-        const baseStyles = css`
+    const baseStyles = css`
       padding-top: 300px;
       padding-left: 5vw;
       padding-right: 5vw;
     `;
-        switch (id) {
-            case 'section-one':
-                return css`
+    switch (id) {
+      case 'section-one':
+        return css`
           ${baseStyles}
-          ${isSmallScreen ? `top: 2500px;`: `top: 2700px;`}
-          ${isSmallScreen ? `width: 90%;`: `width: 40%;`}
-          ${isSmallScreen ? `height: 1300px;`: `height: 1350px;`}
+          ${isSmallScreen ? `top: 2500px;` : `top: 2700px;`}
+          ${isSmallScreen ? `width: 90%;` : `width: 40%;`}
+          ${isSmallScreen ? `height: 1300px;` : `height: 1350px;`}
           right: 0;
         `;
-            case 'section-two':
-                return css`
+      case 'section-two':
+        return css`
           ${baseStyles}
-          ${isSmallScreen ? `top: 7200px;`: `top: 7400px;`}
-          ${isSmallScreen ? `width: 90%;`: `width: 40%;`}
-          ${isSmallScreen ? `height: 3900px;`: `height: 4000px;`}
+          ${isSmallScreen ? `top: 7200px;` : `top: 7400px;`}
+          ${isSmallScreen ? `width: 90%;` : `width: 40%;`}
+          ${isSmallScreen ? `height: 3900px;` : `height: 4000px;`}
           right: 0;
         `;
-            case 'section-three':
-                return css`
+      case 'section-three':
+        return css`
           ${baseStyles}
-          ${isSmallScreen ? `top: 14450px;`: `top: 14650px;`}
-          ${isSmallScreen ? `width: 90%;`: `width: 40%;`}
-          ${isSmallScreen ? `height: 2100px;`: `height: 2200px;`}
+          ${isSmallScreen ? `top: 14450px;` : `top: 14650px;`}
+          ${isSmallScreen ? `width: 90%;` : `width: 40%;`}
+          ${isSmallScreen ? `height: 2100px;` : `height: 2200px;`}
           right: 0;
         `;
-            case 'section-four':
-                return css`
+      case 'section-four':
+        return css`
           width:80vw;
-          ${isSmallScreen ? `top: 20050px;`: `top: 20050px;`}
+          ${isSmallScreen ? `top: 20050px;` : `top: 20050px;`}
           height: 100%;
           padding-top: 15vh;
           padding-left: 10vw;
           padding-right: 10vw;
           border-top-left-radius: 0;
         `;
-            default:
-                return '';
-        }
-    }}
+      default:
+        return '';
+    }
+  }}
     
 `;
 
 export const SectionIntroWrapper = styled.div` 
-  margin: 0 12px;
+  margin: 0 24px;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -82,24 +82,22 @@ export const ProgressBar = styled.div`
 `;
 
 export const SectionTitle = styled.h1`
-  font-family: 'ManropeRegular';
+  font-weight: normal;
   font-size: 28px;
   padding-left: 12px;
   color: #1E90FF;
+  margin-bottom: 16px;
 `;
 
 export const SectionNumber = styled.span`
-  position: absolute;
-  bottom: 22px;
-  right: 24px;
+  font-size: 28px;
+  padding-left: 12px;
   color: #1E90FF;
-  font-size: 24px;
-  font-family: 'ManropeBold';
+  margin-bottom: 16px;
 `;
 
 export const SectionDetailWrapper = styled.div`
   line-height: 2;
   position: relative;
   padding: 20px 24px;
-  font-family: 'Poppins-Regular';
 `;
