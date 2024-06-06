@@ -20,7 +20,7 @@ interface OfficeProps {
   isInteractiveMode: boolean;
 }
 
-const Portfolio: React.FC = () => {
+const ModelWrapper: React.FC = () => {
   const { camera } = useThree();
   const [interactiveMode, setInteractiveMode] = useState<boolean>(false);
   const [transitionCamera, setTransitionCamera] = useState<boolean>(false);
@@ -137,4 +137,4 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
   );
 };
 
-export default Portfolio;
+export default ModelWrapper;
