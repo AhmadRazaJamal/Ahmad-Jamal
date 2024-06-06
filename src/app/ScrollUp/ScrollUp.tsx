@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useEffect, useState } from 'react';
+import styled, { css } from 'styled-components';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 const Wrapper = styled.div`
@@ -19,22 +19,39 @@ const ScrollUpContent = styled.div`
   width: 80vw;
   margin-bottom: 12vh;
   color: gray;
-`
-
-const StyledIcon = styled(KeyboardArrowUpIcon)`
-  opacity: 1;
-  width: 24px;
-  position: relative;
-  top: 60px;
-  left: 0px;
 `;
 
-const ScrollUp = () => (
-  <Wrapper>
-    <ScrollUpContent>
-      <StyledIcon fontSize="large" width={100} id='scroll-icon'/>
-    </ScrollUpContent>
-  </Wrapper>
-);
+const IconWrapper = styled.div<{ isMobileSafari: boolean }>`
+  position: relative;
+
+  ${({ isMobileSafari }) => isMobileSafari ? css`
+    top: -20px;
+  ` : css`
+    top: 60px;
+  `}
+`;
+
+const isMobileDevice = () => /Mobi|Android/i.test(navigator.userAgent);
+const isSafariBrowser = () => /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+const ScrollUp = () => {
+  const [isMobileSafari, setIsMobileSafari] = useState(false);
+
+  useEffect(() => {
+    if (isMobileDevice() && isSafariBrowser()) {
+      setIsMobileSafari(true);
+    }
+  }, []);
+
+  return (
+    <Wrapper>
+      <ScrollUpContent>
+        <IconWrapper isMobileSafari={isMobileSafari}>
+          <KeyboardArrowUpIcon fontSize="large" id='scroll-icon' />
+        </IconWrapper>
+      </ScrollUpContent>
+    </Wrapper>
+  );
+};
 
 export default ScrollUp;
