@@ -2,7 +2,6 @@ import React, { useLayoutEffect, useRef, useState } from 'react';
 import { useThree, useFrame } from '@react-three/fiber';
 import { OrbitControls, Scroll, ScrollControls, useScroll } from '@react-three/drei';
 import * as THREE from 'three';
-
 import { isSmallScreen } from '../utils/constants';
 import { animateSectionBorders, changeProgressBarHeight, loadModelWithTextures } from '../utils/helpers';
 import ScrollingSurface from '../ScrollingSurface/ScrollingSurface';
@@ -38,19 +37,34 @@ const ModelWrapper: React.FC = () => {
   });
 
   return (
-    <React.Fragment>
-      <OrbitControls enabled={interactiveMode}/>
-      <ScrollControls pages={30}>
-        <ScrollingSurfaces />
-        <Office model={model} scale={0.08} isInteractiveMode={interactiveMode} />
-        <Scroll html>
-          <InteractiveButton aria-label="interactive-mode-switch" setInteractive={setInteractiveMode} isOn={interactiveMode} />
-          <ScrollUp />
-          <Sections />
-        </Scroll>
-      </ScrollControls>
+    <>
+      {interactiveMode ? (
+        <>
+          <OrbitControls />
+          <Office model={model} scale={0.08} isInteractiveMode={interactiveMode} />
+          <ScrollControls pages={30}>
+            <ScrollingSurfaces />
+            <Office model={model} scale={0.08} isInteractiveMode={interactiveMode} />
+            <Scroll html>
+              <InteractiveButton aria-label="interactive-mode-switch" setInteractive={setInteractiveMode} isOn={interactiveMode} />
+              <ScrollUp />
+              <Sections />
+            </Scroll>
+          </ScrollControls>
+        </>
+      ) : (
+        <ScrollControls pages={30}>
+          <ScrollingSurfaces />
+          <Office model={model} scale={0.08} isInteractiveMode={interactiveMode} />
+          <Scroll html>
+            <InteractiveButton aria-label="interactive-mode-switch" setInteractive={setInteractiveMode} isOn={interactiveMode} />
+            <ScrollUp />
+            <Sections />
+          </Scroll>
+        </ScrollControls>
+      )}
       <directionalLight position={[1, 2, 3]} intensity={3} />
-    </React.Fragment>
+    </>
   );
 };
 
@@ -85,47 +99,49 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
   const scrollIcon = document.getElementById('scroll-icon');
 
   useFrame(() => {
-    if (!isInteractiveMode && groupRef.current && scroll.offset <= 0.0675 && !isSmallScreen) {
-      const xPosition = scroll.offset * -11.2;
-      groupRef.current.position.x = xPosition;
-      groupRef.current.position.z = xPosition;
-      camera.updateProjectionMatrix();
+    if (!isInteractiveMode && groupRef.current && scroll) {
+      if (scroll.offset <= 0.0675 && !isSmallScreen) {
+        const xPosition = scroll.offset * -11.2;
+        groupRef.current.position.x = xPosition;
+        groupRef.current.position.z = xPosition;
+        camera.updateProjectionMatrix();
+      }
+
+      if (scroll.offset >= 0.001 && scroll.offset <= 0.015 && scrollIcon) {
+        scrollIcon.style.opacity = `${1 - scroll.offset * 250}`;
+      }
+
+      animateSectionBorders(
+        'section-one',
+        scroll.offset,
+        300, 0,
+        0, 300,
+        0.11, 0.15,
+        0.172, 0.22
+      );
+
+      animateSectionBorders(
+        'section-two',
+        scroll.offset,
+        300, 0,
+        0, 250,
+        0.34, 0.38,
+        0.54, 0.58
+      );
+
+      animateSectionBorders(
+        'section-three',
+        scroll.offset,
+        300, 0,
+        0, 250,
+        0.7, 0.74,
+        0.82, 0.85
+      );
+
+      changeProgressBarHeight('progress-bar-one', scroll.offset, 0.12, scroll.offset > 0.11 && scroll.offset < 0.24, 4000, 'rgb(70, 130, 180, 0.5)');
+      changeProgressBarHeight('progress-bar-two', scroll.offset, 0.36, scroll.offset > 0.34 && scroll.offset < 0.6, 3250, 'rgb(253, 216, 53, 0.5)');
+      changeProgressBarHeight('progress-bar-three', scroll.offset, 0.7, scroll.offset > 0.7 && scroll.offset < 0.85, 3200, 'rgb(57, 150, 122, 0.8)');
     }
-
-    if (scroll.offset >= 0.001 && scroll.offset <= 0.015 && scrollIcon) {
-      scrollIcon.style.opacity = `${1 - scroll.offset * 250}`;
-    }
-
-    animateSectionBorders(
-      'section-one',
-      scroll.offset,
-      300, 0,
-      0, 300,
-      0.11, 0.15,
-      0.172, 0.22
-    );
-
-    animateSectionBorders(
-      'section-two',
-      scroll.offset,
-      300, 0,
-      0, 250,
-      0.34, 0.38,
-      0.54, 0.58
-    );
-
-    animateSectionBorders(
-      'section-three',
-      scroll.offset,
-      300, 0,
-      0, 250,
-      0.7, 0.74,
-      0.82, 0.85
-    );
-
-    changeProgressBarHeight('progress-bar-one', scroll.offset, 0.12, scroll.offset > 0.11 && scroll.offset < 0.24, 4000, 'rgb(70, 130, 180, 0.5)');
-    changeProgressBarHeight('progress-bar-two', scroll.offset, 0.36, scroll.offset > 0.34 && scroll.offset < 0.6, 3250, 'rgb(253, 216, 53, 0.5)');
-    changeProgressBarHeight('progress-bar-three', scroll.offset, 0.7, scroll.offset > 0.7 && scroll.offset < 0.85, 3200, 'rgb(57, 150, 122, 0.8)');
   });
 
   return (
