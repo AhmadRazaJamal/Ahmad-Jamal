@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     SectionContainer,
     ProgressBar,
@@ -8,6 +8,7 @@ import {
     SectionDetailWrapper,
     ProgressBarWrapper
 } from './Section.style';
+import { isMobileDevice, isSafariBrowser } from '../utils/constants';
 
 interface SectionProps {
     id: string;
@@ -16,21 +17,31 @@ interface SectionProps {
     children: React.ReactNode;
 }
 
-export const Section: React.FC<SectionProps> = ({ id, title, number, children }) => (
-    <SectionContainer id={`section-${id}`}>
-        <ProgressBarWrapper id={`progress-bar-${id}`}>
-            <ProgressBar />
-        </ProgressBarWrapper>
+export const Section: React.FC<SectionProps> = ({ id, title, number, children }) => {
+    const [isMobileSafari, setIsMobileSafari] = useState(false);
 
-        <SectionIntroWrapper>
-            <SectionTitle>
-                {title}
-            </SectionTitle>
-            <SectionNumber>{number}</SectionNumber>
-        </SectionIntroWrapper>
+    useEffect(() => {
+      if (isMobileDevice() && isSafariBrowser()) {
+        setIsMobileSafari(true);
+      }
+    }, []);
+    
+    return (
+        <SectionContainer id={`section-${id}`} isMobileSafari={isMobileSafari}>
+            <ProgressBarWrapper id={`progress-bar-${id}`}>
+                <ProgressBar />
+            </ProgressBarWrapper>
 
-        <SectionDetailWrapper>
-            {children}
-        </SectionDetailWrapper>
-    </SectionContainer>
-);
+            <SectionIntroWrapper>
+                <SectionTitle>
+                    {title}
+                </SectionTitle>
+                <SectionNumber>{number}</SectionNumber>
+            </SectionIntroWrapper>
+
+            <SectionDetailWrapper>
+                {children}
+            </SectionDetailWrapper>
+        </SectionContainer>
+    )
+};

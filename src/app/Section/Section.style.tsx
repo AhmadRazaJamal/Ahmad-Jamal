@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components';
 import { isSmallScreen } from '../utils/constants';
 
-export const SectionContainer = styled.div<{ id: string }>`
+export const SectionContainer = styled.div<{ id: string, isMobileSafari: boolean }>`
     position: absolute;
     border-top-left-radius: 300px 300px;
     border-bottom-left-radius: 0px 0px;
     padding-top: 100px;
     margin: 0;
     background-color: white;
-${({ id }) => {
+${({ id, isMobileSafari }) => {
     const baseStyles = css`
       padding-top: 300px;
       padding-left: 5vw;
@@ -42,7 +42,7 @@ ${({ id }) => {
       case 'section-four':
         return css`
           width:80vw;
-          ${isSmallScreen ? `top: 20050px;` : `top: 20050px;`}
+          ${isSmallScreen && isMobileSafari ? `top: 19050px;` : `top: 20050px;`}
           height: 100%;
           padding-top: 15vh;
           padding-left: 10vw;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { isMobileDevice, isSafariBrowser } from '../utils/constants';
 
 const Wrapper = styled.div`
   display: flex;
@@ -30,9 +31,6 @@ const IconWrapper = styled.div<{ isMobileSafari: boolean }>`
     top: 60px;
   `}
 `;
-
-const isMobileDevice = () => /Mobi|Android/i.test(navigator.userAgent);
-const isSafariBrowser = () => /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
 const ScrollUp = () => {
   const [isMobileSafari, setIsMobileSafari] = useState(false);
