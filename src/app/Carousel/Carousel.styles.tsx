@@ -25,12 +25,13 @@ export const CarouselCustom = styled.div`
   h3{
     font-size: 18px;
     margin-bottom: 0;
+    margin-top: 18px;
   }
 
   p {
     color: gray;
     font-size: 14px;
-    margin-top:0;
+    margin-top:-6px;
     margin-bottom:24px;
   }
 `;
