@@ -96,5 +96,6 @@ export const SectionNumber = styled.span`
 export const SectionDetailWrapper = styled.div`
   line-height: 2;
   position: relative;
-  padding: 20px 24px;
+  padding: 0px 24px;
+  padding-top: 36px;
 `;

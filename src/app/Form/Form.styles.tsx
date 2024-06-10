@@ -14,7 +14,6 @@ export const FormWrapper = styled.div`
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 24px;
-  margin-top: 8px;
   height: 424px;
 
   input{
