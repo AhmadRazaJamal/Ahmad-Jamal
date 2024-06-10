@@ -35,17 +35,18 @@ export const Text = styled.p`
 `;
 
 export const Heading = styled.h2`
+font-family: 'ManropeBold';
   font-size: 24px;
-  font-family: 'ManropeBold';
-  margin-top: 18px;
+  line-height: 1.6;
+  margin-top: 36px;
   color: black;
 `;
 
 export const ListHeading = styled.li`
+  font-family: 'ManropeBold';
   font-size: 24px;
-  font-weight: 700;
-  line-height: 1.8;
-  margin-top: 64px;
+  line-height: 1.6;
+  margin-top: 36px;
   color: black;
 `;
 
@@ -59,6 +60,7 @@ export const SectionList = styled.ul`
 
 export const ListItem = styled.li`
   line-height: 2;
+  margin-bottom: 16px;
   ${isSmallScreen ? `font-size: 16px;`: `font-size: 18px;`}
   color: black;
 `;
