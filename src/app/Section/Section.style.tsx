@@ -8,7 +8,6 @@ export const SectionContainer = styled.div<{ id: string }>`
     padding-top: 100px;
     margin: 0;
     background-color: white;
-    overflow: hidden;
 ${({ id }) => {
     const baseStyles = css`
       padding-top: 300px;
@@ -84,14 +83,12 @@ export const ProgressBar = styled.div`
 export const SectionTitle = styled.h1`
   font-weight: normal;
   font-size: 28px;
-  padding-left: 12px;
   color: #1E90FF;
   margin-bottom: 16px;
 `;
 
 export const SectionNumber = styled.span`
   font-size: 28px;
-  padding-left: 12px;
   color: #1E90FF;
   margin-bottom: 16px;
 `;

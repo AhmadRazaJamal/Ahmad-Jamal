@@ -34,11 +34,10 @@ export const Text = styled.p`
   color: black;
 `;
 
-export const Heading = styled.h1`
+export const Heading = styled.h2`
   font-size: 24px;
-  font-weight: 700;
-  line-height: 1.8;
-  margin-top: 64px;
+  font-family: 'ManropeBold';
+  margin-top: 18px;
   color: black;
 `;
 

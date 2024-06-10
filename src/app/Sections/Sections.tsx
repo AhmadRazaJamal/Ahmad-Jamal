@@ -82,11 +82,11 @@ export const Sections: React.FC = () => {
             <Section id="one" title="About Me" number="01">
                 <Text>Hello internet <WavingHand role="img" aria-label="wave">👋</WavingHand></Text>
                 <Text>My name is Ahmad Jamal, but everyone calls me Jamal</Text>  
-                <Text>I'm a Full-Stack Developer based in Calgary currently working remotely from the comfort of my home office</Text>
+                <Text>I'm a Full-Stack Developer based in Calgary currently working remotely from the comfort of my home office 🏠</Text>
                 <Text>I have worked professionally as a Developer for 4 years, running my 5th year now</Text> 
                     
-                <Text>I've teamed up with cool startups like HigherGround, FreshGrade, and now Fresh Tracks Canada. These fast-paced startups have made me the versatile developer I am today</Text>
-                <Text>I'm a big believer in always pushing myself to learn new things, which is why I've poured my heart and soul into the revamp of my old portfolio. I've used some fantastic tools like NextJS, Tailwind, and Three.js to create the skeleton of the website and Blender to create a 3D model of my office.</Text>
+                <Text>I've teamed up with cool startups like HigherGround, FreshGrade, and now Fresh Tracks Canada. Working at these fast-paced startups have made me the versatile developer I am today</Text>
+                <Text>I'm a big believer in always pushing myself to learn new things, which is why I've poured my heart and soul into the revamp of my old portfolio. I've used some fantastic new-ish tools like NextJS, Tailwind, and Three.js to create the skeleton of the website and Blender to create a 3D model of my office.</Text>
                 <Text>So, dive in and have fun exploring!</Text>
             </Section>
 
