@@ -4,6 +4,23 @@ interface FullScreenWrapperProps {
   isLoading?: boolean;
 }
 
+export const ChildrenWrapper = styled.div`
+    position: relative;
+    width: 100%;
+    height: 100%;
+`;
+
+
+export const Overlay = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white; // Or any color you prefer
+    z-index: 10;
+`;
+
 const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -61,7 +78,7 @@ export const CubeFace = styled.div<CubeFaceProps>`
   position: absolute;
   inset: 0;
   background: var(--face-color);
-  border: solid 1px var(--border-color);
+  border: solid 0.5px white;
   &.shadow {
     transform: translateZ(calc(-1 * var(--size)));
     animation: bouncing-shadow var(--animation-duration) infinite;
