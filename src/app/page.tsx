@@ -2,20 +2,20 @@
 
 import { NextUIProvider } from "@nextui-org/react";
 import { Canvas } from "@react-three/fiber";
-import LoadingScreen from "./Loading/Loading";
 import Portfolio from "./ModelWrapper/ModelWrapper";
+import { FullScreenWrapper } from "./Loading/Loading.styles";
 
 export default function Home() {
   return (
     <NextUIProvider>
-      <LoadingScreen>
+      <FullScreenWrapper>
         <Canvas
           shadows
           orthographic
         >
           <Portfolio />
         </Canvas>
-      </LoadingScreen>
+      </FullScreenWrapper>
     </NextUIProvider>
   );
 }

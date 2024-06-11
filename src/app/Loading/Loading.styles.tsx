@@ -4,23 +4,6 @@ interface FullScreenWrapperProps {
   isLoading?: boolean;
 }
 
-export const ChildrenWrapper = styled.div`
-    position: relative;
-    width: 100%;
-    height: 100%;
-`;
-
-
-export const Overlay = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white; // Or any color you prefer
-    z-index: 10;
-`;
-
 const fadeIn = keyframes`
   from {
     opacity: 0;

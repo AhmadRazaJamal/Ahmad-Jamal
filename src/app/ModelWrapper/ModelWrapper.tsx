@@ -8,6 +8,7 @@ import ScrollingSurface from '../ScrollingSurface/ScrollingSurface';
 import ScrollUp from '../ScrollUp/ScrollUp';
 import InteractiveButton from '../InteractiveButton/InteractiveButton';
 import Sections from '../Sections/Sections';
+import LoadingScreen from '../Loading/Loading';
 
 interface IModel {
   scene: THREE.Group;
@@ -35,6 +36,10 @@ const ModelWrapper: React.FC = () => {
       handleCameraTransition(camera as THREE.PerspectiveCamera, originalZoom, setTransitionCamera);
     }
   });
+
+  if (!model) {
+    return <LoadingScreen/>;
+  }
 
   return (
     <>
