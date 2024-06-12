@@ -25,7 +25,7 @@ const ModelWrapper: React.FC = () => {
   const [interactiveMode, setInteractiveMode] = useState<boolean>(false);
   const [transitionCamera, setTransitionCamera] = useState<boolean>(false);
   const { scene, bakedMaterial } = loadModelWithTextures('office.glb', 'baked-office-textures.png');
-  const originalZoom = isSmallScreen ? window.innerWidth * 0.6 : window.innerWidth * 0.25;
+  const originalZoom = isSmallScreen ? window.innerWidth * 0.55 : window.innerWidth * 0.25;
 
   useLayoutEffect(() => {
     setTransitionCamera(!interactiveMode);
