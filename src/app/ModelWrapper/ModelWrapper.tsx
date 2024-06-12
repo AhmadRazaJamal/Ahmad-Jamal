@@ -32,7 +32,7 @@ const ModelWrapper: React.FC = () => {
   }, [interactiveMode]);
 
   useFrame(() => {
-    if (transitionCamera) {
+    if (transitionCamera && bakedMaterial) {
       handleCameraTransition(camera as THREE.PerspectiveCamera, originalZoom, setTransitionCamera);
     }
   });
@@ -76,19 +76,30 @@ const ModelWrapper: React.FC = () => {
   );
 };
 
-const handleCameraTransition = (camera: THREE.PerspectiveCamera, originalZoom: number, setTransitionCamera: React.Dispatch<React.SetStateAction<boolean>>): void => {
+const handleCameraTransition = (
+  camera: THREE.PerspectiveCamera,
+  originalZoom: number,
+  setTransitionCamera: React.Dispatch<React.SetStateAction<boolean>>
+): void => {
   const targetPosition = new THREE.Vector3(-2, 1, 2);
-  camera.position.lerp(targetPosition, 0.05);
-  camera.zoom = THREE.MathUtils.lerp(camera.zoom, originalZoom, 0.05);
+  
+  const updateCameraPosition = () => {
+    camera.position.lerp(targetPosition, 0.001);
+    camera.zoom = THREE.MathUtils.lerp(camera.zoom, originalZoom, 0.001);
 
-  if (camera.position.distanceTo(targetPosition) < 0.1) {
-    camera.position.set(targetPosition.x, targetPosition.y, targetPosition.z);
-    camera.zoom = originalZoom;
-    setTransitionCamera(false);
-  }
+    if (camera.position.distanceTo(targetPosition) < 0.01 && Math.abs(camera.zoom - originalZoom) < 0.01) {
+      camera.position.copy(targetPosition);
+      camera.zoom = originalZoom;
+      setTransitionCamera(false);
+    } else {
+      requestAnimationFrame(updateCameraPosition);
+    }
 
-  camera.lookAt(0, 0, 0);
-  camera.updateProjectionMatrix();
+    camera.lookAt(0, 0, 0);
+    camera.updateProjectionMatrix();
+  };
+
+  requestAnimationFrame(updateCameraPosition);
 };
 
 const ScrollingSurfaces: React.FC = () => (
