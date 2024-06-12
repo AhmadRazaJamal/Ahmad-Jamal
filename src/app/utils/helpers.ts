@@ -12,17 +12,23 @@ export const changeProgressBarHeight = (
     isActive: boolean,
     heightMultiplier: number = 2000,
     color: string
-): void => {
+  ): void => {
     const progressBar = document.getElementById(progressBarId) as HTMLElement | null;
     if (!progressBar) return;
+  
     progressBar.style.backgroundColor = color;
-    if (isActive) {
+  
+    const handleAnimation = () => {
+      if (isActive) {
         const heightIncrement = Math.max(0, (scrollOffset - activationStart) * heightMultiplier);
         progressBar.style.height = `${Math.max(1, heightIncrement)}vh`;
-    } else {
+      } else {
         progressBar.style.height = "0vh";
-    }
-};
+      }
+    };
+  
+    requestAnimationFrame(handleAnimation);
+  };
 
 export const loadModelWithTextures = (modelPath: string, texturePath: string) => {
     const { scene } = useGLTF(modelPath);
