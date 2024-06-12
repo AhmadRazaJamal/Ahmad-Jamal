@@ -131,7 +131,7 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
       }
 
       animateSectionBorders('section-one', scroll.offset, 300, 0, 0, 300, 0.1, 0.14, 0.172, 0.22);
-      animateSectionBorders('section-two', scroll.offset, 300, 0, 0, 250, 0.35, 0.39, 0.53, 0.57);
+      animateSectionBorders('section-two', scroll.offset, 300, 0, 0, 250, 0.35, 0.5, 0.56, 0.57);
       animateSectionBorders('section-three', scroll.offset, 300, 0, 0, 250, 0.7, 0.74, 0.82, 0.85);
 
       changeProgressBarHeight('progress-bar-one', scroll.offset, 0.12, scroll.offset > 0.12 && scroll.offset < 0.24, 4000, 'rgb(70, 130, 180, 0.5)');

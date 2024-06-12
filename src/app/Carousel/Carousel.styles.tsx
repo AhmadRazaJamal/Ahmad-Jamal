@@ -23,6 +23,7 @@ export const CarouselCustom = styled.div`
   }
 
   h3{
+    font-weight: 100;
     font-size: 18px;
     margin-bottom: 0;
     margin-top: 36px;
@@ -31,7 +32,6 @@ export const CarouselCustom = styled.div`
   p {
     color: gray;
     font-size: 14px;
-    margin-top:-6px;
     margin-bottom:24px;
   }
 `;

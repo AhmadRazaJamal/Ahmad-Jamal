@@ -91,32 +91,31 @@ export const Sections: React.FC = () => {
 
             <Section id="two" title="My Work" number="02">
                 <Heading>ThreeJS Projects</Heading>
-                <Text>My latest endeavour has been learning ThreeJS, and creating fun small projects while following this amazing <a href={'https://threejs-journey.com/'}>course by Bruno Simons</a>. I have worked on both small and large-scale projects such as my portfolio that utilizes ThreeJS to the fullest. </Text>
-                <Text>My portfolio goes beyond just using vanilla ThreeJS but uses React Three Fiber and includes a mini version of my home office designed by me in Blender.</Text>
+                <Text>My latest endeavor has been diving into ThreeJS and creating fun, small projects by following this amazing <a href="https://threejs-journey.com/">course by Bruno Simon</a>. I've worked on both small and large-scale projects, including my portfolio, which leverages ThreeJS to its fullest.</Text>
+                <Text>Below are two examples of some fun small projects I've been working on</Text>
+                <Text>Whereas my portfolio goes beyond just using vanilla ThreeJS. It utilizes React Three Fiber and includes a mini version of my home office, which I designed in Blender.</Text>
                 <CarouselGallery content={threeJsProjectContent} />
 
                 <Heading>Fresh Tracks Canada Websites</Heading>
-                <Text>These are my projects from work. From creating new pages and components to owning the CI/CD setup for smooth development, A/B testing for user testing with Personalization for curating user content, and crafting a monorepo with all its intricate pathways.</Text> <Text>It has been challenging yet fun to work on it all!</Text>
+                <Text>These are some of my professional projects. From creating new pages and components to managing the CI/CD setup for smooth development, A/B testing for user insights with personalization for curating user content, and crafting a monorepo with all its intricate pathways.</Text>
+                <Text>It's been challenging yet incredibly fun to work on it all!</Text>
                 <ImageGalleryWrapper>
-                    <a href={'https://canadiantrainvacations.com/'}>Canadian Train Vacations</a>
+                    <a href="https://canadiantrainvacations.com/">Canadian Train Vacations</a>
                     <ImageGallery items={ctvImages} showFullscreenButton={false} slideInterval={2000} />
                 </ImageGalleryWrapper>
                 <ImageGalleryWrapper>
-                    <a href={'https://northernlightscanada.com/'}>Northern Lights Canada</a>
+                    <a href="https://northernlightscanada.com/">Northern Lights Canada</a>
                     <ImageGallery items={nlcImages} showFullscreenButton={false} slideInterval={2000} />
                 </ImageGalleryWrapper>
                 <ImageGalleryWrapper>
-                    <a href={'https://canadapolarbears.com/'}>Canada Polar Bears</a>
+                    <a href="https://canadapolarbears.com/">Canada Polar Bears</a>
                     <ImageGallery items={cpbImages} showFullscreenButton={false} slideInterval={2000} />
                 </ImageGalleryWrapper>
 
-
                 <Heading>Laurie Koss SEO Project</Heading>
-                <Text> Laurie, an artist, aimed to showcase her talent and reach a broader audience through improved SEO and enhanced performance. Collaborating with Laurie, I improved performance statistics, optimized the website for Google search ranking, and also helped set up Google Analytics and Google Console. I also provided guidance on content creation and explored additional marketing avenues for her products.
-                    <Text />
-                    Here is my complete research and thought process of how I made this possible: <a href={'https://wandering-psychology-b1a.notion.site/SEO-Optimization-Analysis-41a6620719af46ee9be5636e88f38d15?pvs=4'}>SEO Optimization Analysis on Notion</a>
-                </Text>
-                <Text>And you can check her website {'->'}<a href={'https://www.lauriekoss.com/'}> here</a></Text>
+                <Text>Laurie, an artist, aimed to showcase her talent and reach a broader audience through improved SEO and enhanced performance. Collaborating with Laurie, I improved performance statistics, optimized her website for Google search rankings, and set up Google Analytics and Google Console. I also provided guidance on content creation and explored additional marketing avenues for her products.</Text>
+                <Text>Here is my complete research and thought process of how I made this possible: <a href="https://wandering-psychology-b1a.notion.site/SEO-Optimization-Analysis-41a6620719af46ee9be5636e88f38d15?pvs=4">SEO Optimization Analysis on Notion</a></Text>
+                <Text>And you can check out her website <a href="https://www.lauriekoss.com/">here</a>.</Text>
             </Section>
 
             <Section id="three" title="My Services" number="03">
