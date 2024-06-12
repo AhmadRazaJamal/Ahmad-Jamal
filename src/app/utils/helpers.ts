@@ -1,21 +1,9 @@
-import { useGLTF } from "@react-three/drei"
+import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
+import { useState, useEffect } from "react";
 
-export const useMultiplier = (screenSize: number) => {
-    if (screenSize >= 768) {
-        return 2
-    } else {
-        return 1.5
-    }
-}
-
-export const positionCamera = (screenSize: number) => {
-    if (screenSize >= 768) {
-        return 0
-    } else {
-        return 12.4
-    }
-}
+export const useMultiplier = (screenSize: number) => (screenSize >= 768 ? 2 : 1.5);
+export const positionCamera = (screenSize: number) => (screenSize >= 768 ? 0 : 12.4);
 
 export const changeProgressBarHeight = (
     progressBarId: string,
@@ -23,12 +11,10 @@ export const changeProgressBarHeight = (
     activationStart: number,
     isActive: boolean,
     heightMultiplier: number = 2000,
-    color: string,
+    color: string
 ): void => {
     const progressBar = document.getElementById(progressBarId) as HTMLElement | null;
-
     if (!progressBar) return;
-
     progressBar.style.backgroundColor = color;
     if (isActive) {
         const heightIncrement = Math.max(0, (scrollOffset - activationStart) * heightMultiplier);
@@ -39,39 +25,42 @@ export const changeProgressBarHeight = (
 };
 
 export const loadModelWithTextures = (modelPath: string, texturePath: string) => {
-    const model = useGLTF(modelPath);
+    const { scene } = useGLTF(modelPath);
+    const [bakedMaterial, setBakedMaterial] = useState<THREE.MeshBasicMaterial | null>(null);
 
-    // Loads the textures
-    const textureLoader = new THREE.TextureLoader();
-    const bakedTexture = textureLoader.load(texturePath);
+    useEffect(() => {
+        const textureLoader = new THREE.TextureLoader();
+        textureLoader.load(texturePath, (texture) => {
+            texture.flipY = false;
+            texture.encoding = THREE.sRGBEncoding;
+            texture.wrapS = THREE.ClampToEdgeWrapping;
+            texture.wrapT = THREE.ClampToEdgeWrapping;
 
-    // Loads the baked material to apply onto the model
-    const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture });
-    bakedTexture.flipY = false;
-    bakedTexture.encoding = THREE.sRGBEncoding;
+            const material = new THREE.MeshBasicMaterial({ map: texture });
+            setBakedMaterial(material);
 
-    bakedTexture.wrapS = THREE.ClampToEdgeWrapping;
-    bakedTexture.wrapT = THREE.ClampToEdgeWrapping;
+            scene.traverse((child: any) => {
+                if (child.isMesh) {
+                    child.material = material;
+                }
+            });
+        });
+    }, [modelPath, texturePath, scene]);
 
-    // Apply material to model
-    model.scene.traverse((child: any) => {
-        child.material = bakedMaterial;
-    });
-
-    return model;
-}
+    return { scene, bakedMaterial };
+};
 
 export const animateSectionBorders = (
-    id: string, 
-    scrollOffset: number, 
-    initialTopRadius: number, 
-    finalTopRadius: number, 
-    initialBottomRadius: number, 
+    id: string,
+    scrollOffset: number,
+    initialTopRadius: number,
+    finalTopRadius: number,
+    initialBottomRadius: number,
     finalBottomRadius: number,
-    topStart: number,    // Scroll offset to start animating the top radius
-    topEnd: number,      // Scroll offset to end animating the top radius
-    bottomStart: number, // Scroll offset to start animating the bottom radius
-    bottomEnd: number    // Scroll offset to end animating the bottom radius
+    topStart: number,
+    topEnd: number,
+    bottomStart: number,
+    bottomEnd: number
 ) => {
     const section = document.getElementById(id) as HTMLElement;
     if (!section) return;
@@ -102,5 +91,4 @@ export const animateSectionBorders = (
     } else {
         section.style.borderBottomLeftRadius = `${finalBottomRadius}px`;
     }
-}
-
+};

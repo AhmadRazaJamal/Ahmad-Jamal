@@ -1,10 +1,9 @@
 "use client";
 
-import { FullScreenWrapper, LoadingContainer, CubeWrapper, Cube, CubeFaces, CubeFace } from './Loading.styles';
+import {LoadingContainer, CubeWrapper, Cube, CubeFaces, CubeFace } from './Loading.styles';
 
 const LoadingScreen = () => {
     return (
-        <FullScreenWrapper>
             <LoadingContainer>
                 <CubeWrapper>
                     <Cube>
@@ -20,7 +19,6 @@ const LoadingScreen = () => {
                     </Cube>
                 </CubeWrapper>
             </LoadingContainer>
-        </FullScreenWrapper>
     );
 };
 

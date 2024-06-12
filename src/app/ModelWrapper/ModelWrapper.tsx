@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useRef, useState } from 'react';
 import { useThree, useFrame } from '@react-three/fiber';
-import { OrbitControls, Scroll, ScrollControls, useScroll } from '@react-three/drei';
+import { Html, OrbitControls, Scroll, ScrollControls, useScroll } from '@react-three/drei';
 import * as THREE from 'three';
 import { isSmallScreen } from '../utils/constants';
 import { animateSectionBorders, changeProgressBarHeight, loadModelWithTextures } from '../utils/helpers';
@@ -24,7 +24,7 @@ const ModelWrapper: React.FC = () => {
   const { camera } = useThree();
   const [interactiveMode, setInteractiveMode] = useState<boolean>(false);
   const [transitionCamera, setTransitionCamera] = useState<boolean>(false);
-  const model = loadModelWithTextures('office.glb', 'baked-office-textures.png') as IModel;
+  const { scene, bakedMaterial } = loadModelWithTextures('office.glb', 'baked-office-textures.png');
   const originalZoom = isSmallScreen ? window.innerWidth * 0.6 : window.innerWidth * 0.25;
 
   useLayoutEffect(() => {
@@ -37,14 +37,22 @@ const ModelWrapper: React.FC = () => {
     }
   });
 
-  if (!model) {
-    return <LoadingScreen />;
+  console.log(bakedMaterial)
+  if (bakedMaterial) {
+    return <Html style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0, 
+      height: '100%'
+    }}><LoadingScreen /></Html>;
   }
 
   const renderContent = () => (
     <>
       <ScrollingSurfaces />
-      <Office model={model} scale={0.08} isInteractiveMode={interactiveMode} />
+      <Office model={{ scene }} scale={0.08} isInteractiveMode={interactiveMode} />
       <Scroll html>
         <InteractiveButton aria-label="interactive-mode-switch" setInteractive={setInteractiveMode} isOn={interactiveMode} />
         <ScrollUp />

@@ -20,17 +20,13 @@ export const FullScreenWrapper = styled.div<FullScreenWrapperProps>`
   right: 0;
   bottom: 0;
   background: floralwhite;
-  opacity: ${props => props.isLoading ? 0 : 1};
-  transition: opacity 1s ease-in-out;
-  animation: ${props => !props.isLoading && fadeIn} 1s forwards;
 `;
 
-export const LoadingContainer = styled.div`
+export const LoadingContainer = styled.div<FullScreenWrapperProps>`
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
 `;
 
 export const CubeWrapper = styled.div`
