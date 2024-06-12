@@ -38,35 +38,30 @@ const ModelWrapper: React.FC = () => {
   });
 
   if (!model) {
-    return <LoadingScreen/>;
+    return <LoadingScreen />;
   }
+
+  const renderContent = () => (
+    <>
+      <ScrollingSurfaces />
+      <Office model={model} scale={0.08} isInteractiveMode={interactiveMode} />
+      <Scroll html>
+        <InteractiveButton aria-label="interactive-mode-switch" setInteractive={setInteractiveMode} isOn={interactiveMode} />
+        <ScrollUp />
+        <Sections />
+      </Scroll>
+    </>
+  );
 
   return (
     <>
       {interactiveMode ? (
         <>
           <OrbitControls />
-          <Office model={model} scale={0.08} isInteractiveMode={interactiveMode} />
-          <ScrollControls pages={30}>
-            <ScrollingSurfaces />
-            <Office model={model} scale={0.08} isInteractiveMode={interactiveMode} />
-            <Scroll html>
-              <InteractiveButton aria-label="interactive-mode-switch" setInteractive={setInteractiveMode} isOn={interactiveMode} />
-              <ScrollUp />
-              <Sections />
-            </Scroll>
-          </ScrollControls>
+          <ScrollControls pages={30}>{renderContent()}</ScrollControls>
         </>
       ) : (
-        <ScrollControls pages={30}>
-          <ScrollingSurfaces />
-          <Office model={model} scale={0.08} isInteractiveMode={interactiveMode} />
-          <Scroll html>
-            <InteractiveButton aria-label="interactive-mode-switch" setInteractive={setInteractiveMode} isOn={interactiveMode} />
-            <ScrollUp />
-            <Sections />
-          </Scroll>
-        </ScrollControls>
+        <ScrollControls pages={30}>{renderContent()}</ScrollControls>
       )}
       <directionalLight position={[1, 2, 3]} intensity={3} />
     </>
@@ -116,32 +111,9 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
         scrollIcon.style.opacity = `${1 - scroll.offset * 250}`;
       }
 
-      animateSectionBorders(
-        'section-one',
-        scroll.offset,
-        300, 0,
-        0, 300,
-        0.11, 0.15,
-        0.172, 0.22
-      );
-
-      animateSectionBorders(
-        'section-two',
-        scroll.offset,
-        300, 0,
-        0, 250,
-        0.34, 0.38,
-        0.54, 0.58
-      );
-
-      animateSectionBorders(
-        'section-three',
-        scroll.offset,
-        300, 0,
-        0, 250,
-        0.7, 0.74,
-        0.82, 0.85
-      );
+      animateSectionBorders('section-one', scroll.offset, 300, 0, 0, 300, 0.11, 0.15, 0.172, 0.22);
+      animateSectionBorders('section-two', scroll.offset, 300, 0, 0, 250, 0.34, 0.38, 0.54, 0.58);
+      animateSectionBorders('section-three', scroll.offset, 300, 0, 0, 250, 0.7, 0.74, 0.82, 0.85);
 
       changeProgressBarHeight('progress-bar-one', scroll.offset, 0.12, scroll.offset > 0.11 && scroll.offset < 0.24, 4000, 'rgb(70, 130, 180, 0.5)');
       changeProgressBarHeight('progress-bar-two', scroll.offset, 0.36, scroll.offset > 0.34 && scroll.offset < 0.6, 3250, 'rgb(253, 216, 53, 0.5)');
