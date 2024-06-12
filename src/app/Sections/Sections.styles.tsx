@@ -35,11 +35,18 @@ export const Text = styled.p`
 `;
 
 export const Heading = styled.h2`
-font-family: 'ManropeBold';
+  font-family: 'ManropeBold';
   font-size: 24px;
   line-height: 1.6;
-  margin-top: 36px;
   color: black;
+
+  &:first-child {
+    margin-top: 36px;
+  }
+
+  &:not(:first-child) {
+    margin-top: 80px;
+  }
 `;
 
 export const ListHeading = styled.li`

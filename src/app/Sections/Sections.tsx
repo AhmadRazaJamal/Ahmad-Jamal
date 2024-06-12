@@ -80,13 +80,12 @@ export const Sections: React.FC = () => {
     return (
         <div>
             <Section id="one" title="About Me" number="01">
-                <Text>Hello internet <WavingHand role="img" aria-label="wave">👋</WavingHand></Text>
-                <Text>My name is Ahmad Jamal, but everyone calls me Jamal</Text>  
-                <Text>I'm a Full-Stack Developer based in Calgary currently working remotely from the comfort of my home office 🏠</Text>
-                <Text>I have worked professionally as a Developer for 4 years, running my 5th year now</Text> 
-                    
-                <Text>I've teamed up with cool startups like HigherGround, FreshGrade, and now Fresh Tracks Canada. Working at these fast-paced startups have made me the versatile developer I am today</Text>
-                <Text>I'm a big believer in always pushing myself to learn new things, which is why I've poured my heart and soul into the revamp of my old portfolio. I've used some fantastic new-ish tools like NextJS, Tailwind, and Three.js to create the skeleton of the website and Blender to create a 3D model of my office.</Text>
+                <Text>Hello, internet <WavingHand role="img" aria-label="wave">👋</WavingHand></Text>
+                <Text>My name is Ahmad Jamal, but everyone calls me Jamal.</Text>
+                <Text>I'm a Full-Stack Developer based in Calgary, currently working remotely from the comfort of my home office 🏠.</Text>
+                <Text>I have been working professionally as a Developer for 4 years, and I'm now in my 5th year.</Text>
+                <Text>I've teamed up with some amazing startups like HigherGround, FreshGrade, and now Fresh Tracks Canada. Working at these fast-paced startups has shaped me into the versatile developer I am today.</Text>
+                <Text>I believe in constantly pushing myself to learn new things. That's why I've poured my heart and soul into revamping my old portfolio. I've used fantastic tools like Next.js, Tailwind, and Three.js to build the website's skeleton and Blender to create a 3D model of my office.</Text>
                 <Text>So, dive in and have fun exploring!</Text>
             </Section>
 
@@ -99,19 +98,19 @@ export const Sections: React.FC = () => {
                 <Heading>Fresh Tracks Canada Websites</Heading>
                 <Text>These are my projects from work. From creating new pages and components to owning the CI/CD setup for smooth development, A/B testing for user testing with Personalization for curating user content, and crafting a monorepo with all its intricate pathways.</Text> <Text>It has been challenging yet fun to work on it all!</Text>
                 <ImageGalleryWrapper>
-                <a href={'https://canadiantrainvacations.com/'}>Canadian Train Vacations</a>
-                <ImageGallery items={ctvImages} showFullscreenButton={false} slideInterval={2000}/>
+                    <a href={'https://canadiantrainvacations.com/'}>Canadian Train Vacations</a>
+                    <ImageGallery items={ctvImages} showFullscreenButton={false} slideInterval={2000} />
                 </ImageGalleryWrapper>
                 <ImageGalleryWrapper>
-                <a href={'https://northernlightscanada.com/'}>Northern Lights Canada</a>
-                <ImageGallery items={nlcImages} showFullscreenButton={false} slideInterval={2000}/>
+                    <a href={'https://northernlightscanada.com/'}>Northern Lights Canada</a>
+                    <ImageGallery items={nlcImages} showFullscreenButton={false} slideInterval={2000} />
                 </ImageGalleryWrapper>
                 <ImageGalleryWrapper>
-                <a href={'https://canadapolarbears.com/'}>Canada Polar Bears</a>
-                <ImageGallery items={cpbImages} showFullscreenButton={false} slideInterval={2000}/>
+                    <a href={'https://canadapolarbears.com/'}>Canada Polar Bears</a>
+                    <ImageGallery items={cpbImages} showFullscreenButton={false} slideInterval={2000} />
                 </ImageGalleryWrapper>
 
-              
+
                 <Heading>Laurie Koss SEO Project</Heading>
                 <Text> Laurie, an artist, aimed to showcase her talent and reach a broader audience through improved SEO and enhanced performance. Collaborating with Laurie, I improved performance statistics, optimized the website for Google search ranking, and also helped set up Google Analytics and Google Console. I also provided guidance on content creation and explored additional marketing avenues for her products.
                     <Text />
@@ -132,7 +131,7 @@ export const Sections: React.FC = () => {
                         </ListItem>
                     </SectionList>
                     <ListHeading>Search Engine Optimization</ListHeading>
-                    
+
                     <SectionList>
                         <ListItem>
                             Optimize the Core Web Vitals for your website so your website can rise from the trenches of Google rankings

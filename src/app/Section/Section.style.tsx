@@ -8,6 +8,7 @@ export const SectionContainer = styled.div<{ id: string, isMobileSafari: boolean
     padding-top: 100px;
     margin: 0;
     background-color: white;
+    overflow: hidden; /* Ensure content stays within bounds */
 ${({ id, isMobileSafari }) => {
     const baseStyles = css`
       padding-top: 300px;
@@ -53,7 +54,6 @@ ${({ id, isMobileSafari }) => {
         return '';
     }
   }}
-    
 `;
 
 export const SectionIntroWrapper = styled.div` 
@@ -65,12 +65,12 @@ export const SectionIntroWrapper = styled.div`
 `;
 
 export const ProgressBarWrapper = styled.div`
-  height: 0;
+  height: 100%;
   width: 12px;
-  z-index: 9999;
   position: absolute;
   top: 0;
   right: 0;
+  overflow: hidden;
 `;
 
 export const ProgressBar = styled.div`
