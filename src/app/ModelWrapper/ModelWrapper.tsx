@@ -8,7 +8,7 @@ import ScrollingSurface from '../ScrollingSurface/ScrollingSurface';
 import ScrollUp from '../ScrollUp/ScrollUp';
 import InteractiveButton from '../InteractiveButton/InteractiveButton';
 import Sections from '../Sections/Sections';
-import LoadingScreen from '../Loading/Loading';
+import LoadingCube from '../Loading/Loading';
 
 interface IModel {
   scene: THREE.Group;
@@ -45,7 +45,7 @@ const ModelWrapper: React.FC = () => {
       right: 0,
       bottom: 0, 
     }}>
-      <LoadingScreen />
+      <LoadingCube />
     </Html>;
   }
 

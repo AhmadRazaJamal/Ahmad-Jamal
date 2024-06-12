@@ -4,14 +4,9 @@ interface FullScreenWrapperProps {
   isLoading?: boolean;
 }
 
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
+interface CubeFaceProps {
+  className: string;
+}
 
 export const FullScreenWrapper = styled.div<FullScreenWrapperProps>`
   position: fixed;
@@ -22,14 +17,11 @@ export const FullScreenWrapper = styled.div<FullScreenWrapperProps>`
   background: floralwhite;
 `;
 
-export const LoadingContainer = styled.div<FullScreenWrapperProps>`
+export const CubeWrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
-`;
-
-export const CubeWrapper = styled.div`
+  align-items: center;q
   transform-style: preserve-3d;
   animation: bouncing var(--animation-duration) infinite;
 `;
@@ -48,10 +40,6 @@ export const CubeFaces = styled.div`
   transform-origin: 0 0;
   transform: translateX(0) translateY(0) translateZ(calc(-1 * var(--size) / 2));
 `;
-
-interface CubeFaceProps {
-  className: string;
-}
 
 export const CubeFace = styled.div<CubeFaceProps>`
   position: absolute;
