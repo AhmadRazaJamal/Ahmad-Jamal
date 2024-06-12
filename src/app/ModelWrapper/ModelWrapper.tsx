@@ -37,16 +37,16 @@ const ModelWrapper: React.FC = () => {
     }
   });
 
-  console.log(bakedMaterial)
-  if (bakedMaterial) {
+  if (!bakedMaterial) {
     return <Html style={{
       position: 'fixed',
       top: 0,
       left: 0,
       right: 0,
       bottom: 0, 
-      height: '100%'
-    }}><LoadingScreen /></Html>;
+    }}>
+      <LoadingScreen />
+    </Html>;
   }
 
   const renderContent = () => (
