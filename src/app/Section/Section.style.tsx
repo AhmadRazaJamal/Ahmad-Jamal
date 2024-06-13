@@ -7,7 +7,7 @@ export const SectionContainer = styled.div<{ id: string, isMobileSafari: boolean
     border-bottom-left-radius: 0px 0px;
     padding-top: 100px;
     margin: 0;
-    background-color: white;
+    background-color: floralwhite;
     overflow: hidden; /* Ensure content stays within bounds */
 ${({ id, isMobileSafari }) => {
     const baseStyles = css`
