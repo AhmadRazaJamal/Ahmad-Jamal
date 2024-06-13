@@ -71,3 +71,21 @@ export const ListItem = styled.li`
   ${isSmallScreen ? `font-size: 16px;`: `font-size: 18px;`}
   color: black;
 `;
+
+
+export const IconContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 20px;
+`;
+
+export const Section = styled.section`
+  padding: 40px;
+  border-bottom: 1px solid #ddd;
+`;
+
+export const SectionTitle = styled.h2`
+  font-size: 2rem;
+  margin-bottom: 20px;
+`;

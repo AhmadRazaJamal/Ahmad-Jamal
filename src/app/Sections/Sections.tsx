@@ -1,10 +1,12 @@
 import React from 'react';
-import { Text, Heading, ListItem, SectionList, ListHeading, WavingHand, ImageGalleryWrapper, ListWrapper } from './Sections.styles';
+import { Text, Heading, ListItem, SectionList, ListHeading, WavingHand, ImageGalleryWrapper, ListWrapper, IconContainer } from './Sections.styles';
 import { CarouselGallery } from "../Carousel/Carousel";
 import { Form } from "../Form/Form";
 import ReactImageGallery from 'react-image-gallery';
 import "react-image-gallery/styles/css/image-gallery.css";
 import { Section } from '../Section/Section';
+import { LinkedIn, GitHub, Instagram } from '@mui/icons-material';
+import { IconButton } from '@mui/material';
 
 // Using type assertion as any to bypass a type bug caused from a mismatch between library and react types
 const ImageGallery = ReactImageGallery as any;
@@ -174,6 +176,17 @@ export const Sections: React.FC = () => {
 
             <Section id="four" title="Get In Touch" number="04">
                 <Form />
+                <IconContainer>
+                    <IconButton href="https://www.linkedin.com/in/ahmadjamal/" target="_blank" aria-label="LinkedIn">
+                        <LinkedIn fontSize="medium" />
+                    </IconButton>
+                    <IconButton href="https://github.com/AhmadRazaJamal" target="_blank" aria-label="GitHub">
+                        <GitHub fontSize="medium" />
+                    </IconButton>
+                    <IconButton href="https://www.instagram.com/ahmad.jamal_1" target="_blank" aria-label="Instagram">
+                        <Instagram fontSize="medium" />
+                    </IconButton>
+                </IconContainer>
             </Section>
         </div>
     );
