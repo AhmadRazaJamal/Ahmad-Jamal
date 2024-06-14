@@ -82,12 +82,12 @@ export const Sections: React.FC = () => {
     return (
         <div>
             <Section id="one" title="About Me" number="01">
-                <Text>Hello, internet <WavingHand role="img" aria-label="wave">👋</WavingHand></Text>
-                <Text>My name is Ahmad Jamal, but everyone calls me Jamal.</Text>
-                <Text>I'm a Full-Stack Developer based in Calgary, currently working remotely from the comfort of my home office 🏠.</Text>
-                <Text>I have been working professionally as a Developer for 4 years, and I'm now in my 5th year.</Text>
-                <Text>I've teamed up with some amazing startups like HigherGround, FreshGrade, and now Fresh Tracks Canada. Working at these fast-paced startups has shaped me into the versatile developer I am today.</Text>
-                <Text>I believe in constantly pushing myself to learn new things. That's why I've poured my heart and soul into revamping my old portfolio. I've used fantastic tools like Next.js, Tailwind, and Three.js to build the website's skeleton and Blender to create a 3D model of my office.</Text>
+                <Text>Hello World <WavingHand role="img" aria-label="wave">👋</WavingHand></Text>
+                <Text>My name is Ahmad Jamal, but everyone just knows me by Jamal.</Text>
+                <Text>I'm a Full-Stack Developer based in the sunny city of Calgary, currently working remotely from the comfort of my home office 🏠.</Text>
+                <Text>I have been working professionally as a Developer for almost 4 years, but fiddled with tech for almost 20.</Text>
+                <Text>Over the last few years I've had the opportunity to team up with some amazing people at startups like HigherGround, FreshGrade, and presently Fresh Tracks Canada. Working at these fast-paced and exciting startups has shaped me into the versatile developer I am today.</Text>
+                <Text>I am a big believer in constantly pushing yourself and learning something new everyday. That's why I poured my heart and soul into revamping my old portfolio. I've used fantastic modern tools like Next.js, Tailwind, and Three.js to build the website's skeleton and Blender to create a 3D model of my office.</Text>
                 <Text>So, dive in and have fun exploring!</Text>
             </Section>
 
