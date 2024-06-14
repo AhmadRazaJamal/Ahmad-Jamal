@@ -29,7 +29,7 @@ ${({ id, isMobileSafari }) => {
           ${baseStyles}
           ${isSmallScreen ? `top: 7200px;` : `top: 7400px;`}
           ${isSmallScreen ? `width: 90%;` : `width: 40%;`}
-          ${isSmallScreen ? `height: 3900px;` : `height: 4000px;`}
+          ${isSmallScreen ? `height: 4200px;` : `height: 4200px;`}
           right: 0;
         `;
       case 'section-three':

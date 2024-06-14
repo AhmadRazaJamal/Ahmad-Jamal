@@ -15,12 +15,17 @@ export const WavingHand = styled.span`
 `;
 
 export const ImageGalleryWrapper = styled.div`
+  margin-top: 36px;
+  > a {
+    font-size: 16px;
+    color: #1E90FF;
+  }
   > div {
     margin-top: 24px;
     margin-bottom: 24px;
   }
   .image-gallery-svg {
-    width: 18px;
+    ${isSmallScreen ? `width: 14px;` : `width: 18px;`}
   }
   .image-gallery-play-button{
     display: none;

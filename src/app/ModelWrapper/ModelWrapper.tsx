@@ -131,11 +131,11 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
       }
 
       animateSectionBorders('section-one', scroll.offset, 300, 0, 0, 300, 0.1, 0.14, 0.172, 0.22);
-      animateSectionBorders('section-two', scroll.offset, 300, 0, 0, 250, 0.33, 0.37, 0.535, 0.6);
+      animateSectionBorders('section-two', scroll.offset, 300, 0, 0, 250, 0.33, 0.37, 0.55, 0.6);
       animateSectionBorders('section-three', scroll.offset, 300, 0, 0, 250, 0.7, 0.74, 0.82, 0.85);
 
       changeProgressBarHeight('progress-bar-one', scroll.offset, 0.124, scroll.offset > 0.124 && scroll.offset < 0.24, 5100, 'rgb(70, 130, 180, 0.5)');
-      changeProgressBarHeight('progress-bar-two', scroll.offset, 0.358, scroll.offset > 0.358 && scroll.offset < 0.6, 3450, 'rgb(253, 216, 53, 0.5)');
+      changeProgressBarHeight('progress-bar-two', scroll.offset, 0.358, scroll.offset > 0.358 && scroll.offset < 0.6, 3410, 'rgb(253, 216, 53, 0.5)');
       changeProgressBarHeight('progress-bar-three', scroll.offset, 0.719, scroll.offset > 0.719 && scroll.offset < 0.85, 4050, 'rgb(57, 150, 122, 0.8)');
     }
   });
