@@ -9,7 +9,7 @@ interface InteractiveButtonProps {
 const InteractiveButton = ({ isOn, setInteractive }: InteractiveButtonProps) => {
   return (
     <Wrapper>
-    <Label>{`Interactive Mode`}</Label>
+    <Label>{`Interactive Mode: ${isOn ? 'On': 'Off'}`}</Label>
       <StyledViewInArIcon onClick={() => setInteractive(!isOn)} isOn={isOn} fontSize="large"/>
     </Wrapper>
   );
