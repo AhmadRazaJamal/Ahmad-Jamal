@@ -43,7 +43,7 @@ const ModelWrapper: React.FC = () => {
       top: 0,
       left: 0,
       right: 0,
-      bottom: 0, 
+      bottom: 0,
     }}>
       <LoadingCube />
     </Html>;
@@ -82,7 +82,7 @@ const handleCameraTransition = (
   setTransitionCamera: React.Dispatch<React.SetStateAction<boolean>>
 ): void => {
   const targetPosition = new THREE.Vector3(-2, 1, 2);
-  
+
   const updateCameraPosition = () => {
     camera.position.lerp(targetPosition, 0.001);
     camera.zoom = THREE.MathUtils.lerp(camera.zoom, originalZoom, 0.001);
@@ -130,9 +130,15 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
         scrollIcon.style.opacity = `${1 - scroll.offset * 250}`;
       }
 
-      animateSectionBorders('section-one', scroll.offset, 300, 0, 0, 300, 0.1, 0.14, 0.172, 0.22);
-      animateSectionBorders('section-two', scroll.offset, 300, 0, 0, 250, 0.33, 0.37, 0.55, 0.6);
-      animateSectionBorders('section-three', scroll.offset, 300, 0, 0, 250, 0.7, 0.74, 0.808, 0.84);
+      if (isSmallScreen) {
+        animateSectionBorders('section-one', scroll.offset, 300, 0, 0, 300, 0.1, 0.14, 0.172, 0.22);
+        animateSectionBorders('section-two', scroll.offset, 300, 0, 0, 300, 0.33, 0.37, 0.55, 0.6);
+        animateSectionBorders('section-three', scroll.offset, 300, 0, 0, 300, 0.695, 0.735, 0.808, 0.84);
+      } else {
+        animateSectionBorders('section-one', scroll.offset, 300, 0, 0, 300, 0.1, 0.14, 0.172, 0.22);
+        animateSectionBorders('section-two', scroll.offset, 300, 0, 0, 250, 0.33, 0.37, 0.55, 0.6);
+        animateSectionBorders('section-three', scroll.offset, 300, 0, 0, 250, 0.7, 0.74, 0.808, 0.84);
+      }
 
       changeProgressBarHeight('progress-bar-one', scroll.offset, 0.124, scroll.offset > 0.124 && scroll.offset < 0.24, 5100, 'rgb(70, 130, 180, 0.5)');
       changeProgressBarHeight('progress-bar-two', scroll.offset, 0.358, scroll.offset > 0.358 && scroll.offset < 0.6, 3410, 'rgb(253, 216, 53, 0.5)');
