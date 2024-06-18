@@ -35,7 +35,7 @@ export const ImageGalleryWrapper = styled.div`
 export const Text = styled.p`
   line-height: 2;
   margin-top: 18px;
-  ${isSmallScreen ? `font-size: 16px;`: `font-size: 18px;`}
+  font-size: 16px;
   color: black;
 `;
 
@@ -66,7 +66,7 @@ export const ListHeading = styled.li`
 export const SectionList = styled.ul`
   line-height: 2;
   margin-top: 18px;
-  ${isSmallScreen ? `font-size: 16px;`: `font-size: 18px;`}
+  font-size: 16px;
   color: black;
   padding-left: 0;
 `;
@@ -74,7 +74,7 @@ export const SectionList = styled.ul`
 export const ListItem = styled.li`
   line-height: 2;
   margin-bottom: 16px;
-  ${isSmallScreen ? `font-size: 16px;`: `font-size: 18px;`}
+  font-size: 16px;
   color: black;
 `;
 
