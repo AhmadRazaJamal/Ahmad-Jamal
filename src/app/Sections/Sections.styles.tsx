@@ -60,6 +60,7 @@ export const ListHeading = styled.li`
   line-height: 1.6;
   margin-top: 36px;
   color: black;
+  list-style: outside;
 `;
 
 export const SectionList = styled.ul`
@@ -81,7 +82,7 @@ export const ListItem = styled.li`
 export const IconContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 60px;
+  margin-top: 40px;
   gap: 20px;
 `;
 

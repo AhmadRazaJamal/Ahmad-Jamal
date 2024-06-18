@@ -122,61 +122,64 @@ export const Sections: React.FC = () => {
                 <Text>And you can check out her website <a href="https://www.lauriekoss.com/">here</a>.</Text>
             </Section>
 
-            <Section id="three" title="My Services" number="03">
+            <Section id="three" title="What I'm good at" number="03">
                 <ListWrapper>
                     <ListHeading>Web Development</ListHeading>
                     <SectionList>
                         <ListItem>
-                            Full-Stack Wizard: From the front end to the back end, I can conjure up websites that are functional, performant yet pleasing to look at
+                            Full-Stack Wizard: From the front end to the back end, I conjure up websites that are functional, performant yet pleasing to look at
                         </ListItem>
                         <ListItem>
-                            Web Solutions Architect: Create full scale solutions for your bussiness needs like Personalization, A/B testing, and Analytics etc.
+                            Web Solutions Architect: Creating full scale solutions for bussiness needs like Personalization, A/B testing, and Analytics etc.
                         </ListItem>
                     </SectionList>
                     <ListHeading>Search Engine Optimization</ListHeading>
 
                     <SectionList>
                         <ListItem>
-                            Optimize the Core Web Vitals for your website so your website can rise from the trenches of Google rankings
+                            Optimizing Core Web Vitals for websites so they can rise from the trenches of Google rankings
                         </ListItem>
                         <ListItem>
-                            Set up Google Analytics and Search Console. I don't just set it up, but act as your guide in understanding the data as well
+                            Setting up Google Analytics and Search Console. I don't just set them up, but also act as a guide in understanding the data as well
                         </ListItem>
                         <ListItem>
-                            Provide guidance on areas to help you improve your Google ranking through keywords, blogs, intentful content etc
+                            Providing guidance on areas to help improve Google rankings through keywords, blogs, intentful content etc
                         </ListItem>
                     </SectionList>
+
                     <ListHeading>CI/CD</ListHeading>
                     <SectionList>
                         <ListItem>
-                            Automate, test and deploy to make your life easier and your code robust
+                            Automation, testing and deployment to make developers life easier and making code robust
                         </ListItem>
                         <ListItem>
-                            Optimize your deployments and ensure everything flows smoothly to help you cut down on coffee breaks while waiting for your code to deploy
+                            Optimizing deployments and ensuring everything flows smoothly to help cut down on coffee breaks while waiting for your code to deploy
                         </ListItem>
                     </SectionList>
+
                     <ListHeading>Solution Architect</ListHeading>
                     <SectionList>
                         <ListItem>
-                            Design solutions for every day web problems
+                            Designing solutions for every day web problems
                         </ListItem>
                         <ListItem>
-                            Research, test and implement the best ways to solve problems that keep you up at night
+                            Researching, testing and implementing the best ways to solve problems that keep people up at night
                         </ListItem>
                     </SectionList>
+
                     <ListHeading>CMS Management</ListHeading>
                     <SectionList>
                         <ListItem>
-                            Set up, update, and maintain your CMS.
+                            Setting up, updateing and maintaining various CMS
                         </ListItem>
                         <ListItem>
-                            Ensure your project's plugins are always on their latest and greatest versions
+                            Ensuring project's plugins are always on their latest and greatest versions
                         </ListItem>
                     </SectionList>
                 </ListWrapper>
             </Section>
 
-            <Section id="four" title="Get In Touch" number="04">
+            <Section id="four" title="Get in touch" number="04">
                 <Form />
                 <IconContainer>
                     <IconButton href="https://www.linkedin.com/in/ahmadjamal/" target="_blank" aria-label="LinkedIn">
