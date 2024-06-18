@@ -3,6 +3,9 @@ import { isSmallScreen } from '../utils/constants';
 
 export const StyledForm = styled.form`
   width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   ${isSmallScreen ? `width: 100%;` : `width: 60%;`}
 `;
 
@@ -11,6 +14,7 @@ export const FormWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   height: 424px;
+  margin-top: -10px;
 
   .form-group {
     position: relative;
