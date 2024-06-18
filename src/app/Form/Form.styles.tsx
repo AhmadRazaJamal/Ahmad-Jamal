@@ -15,7 +15,7 @@ export const FormWrapper = styled.div`
   .form-group {
     position: relative;
     ${isSmallScreen ? `width: 92.5%;` : `width: 80%;`}
-    margin-bottom: 18px;
+    margin-bottom: 12px;
 
     &.input-error {
       margin-bottom: 24px;
@@ -32,7 +32,7 @@ export const FormWrapper = styled.div`
 
     .error-message {
       position: absolute;
-      bottom: -24px;
+      bottom: -26px;
       left: 0;
       color: red;
       font-size: 12px;
