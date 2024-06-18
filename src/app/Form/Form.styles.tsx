@@ -15,7 +15,7 @@ export const FormWrapper = styled.div`
   .form-group {
     position: relative;
     ${isSmallScreen ? `width: 92.5%;` : `width: 80%;`}
-    margin-bottom: 24px;
+    margin-bottom: 18px;
 
     input, textarea {
       padding: 8px;
