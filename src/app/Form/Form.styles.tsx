@@ -12,14 +12,27 @@ export const FormWrapper = styled.div`
   align-items: center;
   height: 424px;
 
-  input, textarea {
-    padding: 8px;
+  .form-group {
+    position: relative;
     ${isSmallScreen ? `width: 92.5%;` : `width: 80%;`}
-    margin-bottom: 12px;
-  }
+    margin-bottom: 24px;
 
-  textarea {
-    height: 180px !important;
+    input, textarea {
+      padding: 8px;
+      width: 100%;
+    }
+
+    textarea {
+      margin-bottom: -8px;
+    }
+
+    .error-message {
+      position: absolute;
+      bottom: -24px;
+      left: 0;
+      color: red;
+      font-size: 12px;
+    }
   }
 
   button {
@@ -33,15 +46,10 @@ export const FormWrapper = styled.div`
 
   .input-error input, .input-error textarea {
     border-color: red;
+    border-radius: 4px;
   }
 
   .input-error label {
     color: red;
-  }
-
-  .text-danger {
-    color: red;
-    font-size: 12px;
-    margin-top: -10px;
   }
 `;

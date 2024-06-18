@@ -21,49 +21,49 @@ export const Form = () => {
     return (
         <FormWrapper>
             <StyledForm onSubmit={handleSubmit(onSubmit)}>
-                <Input
-                    {...register("name", { required: "Name is required", minLength: { value: 2, message: "Name must be at least 2 characters" } })}
-                    isRequired
-                    type="text"
-                    label="Name*"
-                    placeholder="What should I call you?"
-                    fullWidth={true}
-                    style={{ marginBottom: 12 }}
-                    errorMessage={getErrorMessage(errors.name)}
-                    className={errors.name ? "input-error" : ""}
-                />
+                <div className={`form-group ${errors.name ? "input-error" : ""}`}>
+                    <Input
+                        {...register("name", { required: "Name is required", minLength: { value: 2, message: "Name must be at least 2 characters" } })}
+                        isRequired
+                        type="text"
+                        label="Name"
+                        placeholder="What should I call you?"
+                        fullWidth={true}
+                    />
+                    {errors.name && <span className="error-message text-danger">{getErrorMessage(errors.name)}</span>}
+                </div>
 
-                <Input
-                    {...register("email", {
-                        required: "Email is required",
-                        pattern: {
-                            value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                            message: "Invalid email address"
-                        }
-                    })}
-                    isRequired
-                    type="email"
-                    label="Email*"
-                    placeholder="tetris@icloud.com"
-                    fullWidth={true}
-                    style={{ marginBottom: 12 }}
-                    errorMessage={getErrorMessage(errors.email)}
-                    className={errors.email ? "input-error" : ""}
-                />
+                <div className={`form-group ${errors.email ? "input-error" : ""}`}>
+                    <Input
+                        {...register("email", {
+                            required: "Email is required",
+                            pattern: {
+                                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                                message: "Invalid email address"
+                            }
+                        })}
+                        isRequired
+                        type="email"
+                        label="Email"
+                        placeholder="tetris@icloud.com"
+                        fullWidth={true}
+                    />
+                    {errors.email && <span className="error-message text-danger">{getErrorMessage(errors.email)}</span>}
+                </div>
 
-                <Textarea
-                    {...register("message", {
-                        required: "Message is required",
-                        minLength: { value: 10, message: "Message must be at least 10 characters" }
-                    })}
-                    isRequired
-                    label="Message*"
-                    fullWidth={true}
-                    style={{ marginBottom: 12 }}
-                    minRows={6}
-                    errorMessage={getErrorMessage(errors.message)}
-                    className={errors.message ? "input-error" : ""}
-                />
+                <div className={`form-group ${errors.message ? "input-error" : ""}`}>
+                    <Textarea
+                        {...register("message", {
+                            required: "Message is required",
+                            minLength: { value: 10, message: "Message must be at least 10 characters" }
+                        })}
+                        isRequired
+                        label="Message"
+                        fullWidth={true}
+                        minRows={6}
+                    />
+                    {errors.message && <span className="error-message text-danger">{getErrorMessage(errors.message)}</span>}
+                </div>
                 <Button radius="md">
                     Lets Talk
                 </Button>
