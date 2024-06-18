@@ -26,7 +26,7 @@ export const Form = () => {
                         {...register("name", { required: "Name is required", minLength: { value: 2, message: "Name must be at least 2 characters" } })}
                         isRequired
                         type="text"
-                        label="Name"
+                        label="Name*"
                         placeholder="What should I call you?"
                         fullWidth={true}
                     />
@@ -44,7 +44,7 @@ export const Form = () => {
                         })}
                         isRequired
                         type="email"
-                        label="Email"
+                        label="Email*"
                         placeholder="tetris@icloud.com"
                         fullWidth={true}
                     />
@@ -58,7 +58,7 @@ export const Form = () => {
                             minLength: { value: 10, message: "Message must be at least 10 characters" }
                         })}
                         isRequired
-                        label="Message"
+                        label="Message*"
                         fullWidth={true}
                         minRows={6}
                     />

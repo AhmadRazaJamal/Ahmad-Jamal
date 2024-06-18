@@ -17,6 +17,10 @@ export const FormWrapper = styled.div`
     ${isSmallScreen ? `width: 92.5%;` : `width: 80%;`}
     margin-bottom: 18px;
 
+    &.input-error {
+      margin-bottom: 24px;
+    }
+
     input, textarea {
       padding: 8px;
       width: 100%;
