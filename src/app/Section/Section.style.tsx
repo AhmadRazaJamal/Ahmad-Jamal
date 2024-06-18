@@ -45,7 +45,7 @@ ${({ id, isMobileSafari }) => {
           width:80vw;
           ${isSmallScreen && isMobileSafari ? `top: 19050px;` : `top: 20050px;`}
           height: 100%;
-          padding-top: 15vh;
+          padding-top: 80px;
           padding-left: 10vw;
           padding-right: 10vw;
           border-top-left-radius: 0;

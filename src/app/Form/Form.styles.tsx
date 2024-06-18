@@ -42,6 +42,7 @@ export const FormWrapper = styled.div`
     border-radius: 10px;
     width: 120px;
     padding: 8px;
+    margin-top: 12px;
   }
 
   .input-error input, .input-error textarea {
