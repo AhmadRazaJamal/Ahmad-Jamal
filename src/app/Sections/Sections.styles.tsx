@@ -82,7 +82,7 @@ export const ListItem = styled.li`
 export const IconContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 50px;
   gap: 20px;
 `;
 
