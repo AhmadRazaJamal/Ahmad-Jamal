@@ -5,7 +5,7 @@ export const StyledForm = styled.form`
   width: 60%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  ${isSmallScreen ? `  align-items: start;;` : `align-items: center;`}
   ${isSmallScreen ? `width: 100%;` : `width: 60%;`}
 `;
 
