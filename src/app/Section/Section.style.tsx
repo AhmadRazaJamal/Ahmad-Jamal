@@ -19,7 +19,7 @@ ${({ id, isMobileSafari }) => {
       case 'section-one':
         return css`
           ${baseStyles}
-          ${isSmallScreen ? `top: 2500px;` : `top: 2700px;`}
+          ${isSmallScreen ? `top: 2500px;` : `top: 380vh;`}
           ${isSmallScreen ? `width: 90%;` : `width: 40%;`}
           ${isSmallScreen ? `height: 1300px;` : `height: 1350px;`}
           right: 0;
@@ -27,7 +27,7 @@ ${({ id, isMobileSafari }) => {
       case 'section-two':
         return css`
           ${baseStyles}
-          ${isSmallScreen ? `top: 7200px;` : `top: 7400px;`}
+          ${isSmallScreen ? `top: 7200px;` : `top: 1050vh;`}
           ${isSmallScreen ? `width: 90%;` : `width: 40%;`}
           ${isSmallScreen ? `height: 4200px;` : `height: 4200px;`}
           right: 0;
@@ -35,7 +35,7 @@ ${({ id, isMobileSafari }) => {
       case 'section-three':
         return css`
           ${baseStyles}
-          ${isSmallScreen ? `top: 14450px;` : `top: 14650px;`}
+          ${isSmallScreen ? `top: 14450px;` : `top: 2100vh;`}
           ${isSmallScreen ? `width: 90%;` : `width: 40%;`}
           ${isSmallScreen ? `height: 2100px;` : `height: 2200px;`}
           right: 0;

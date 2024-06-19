@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useRef, useState } from 'react';
 import { useThree, useFrame } from '@react-three/fiber';
 import { Html, OrbitControls, Scroll, ScrollControls, useScroll } from '@react-three/drei';
 import * as THREE from 'three';
-import { isSmallScreen } from '../utils/constants';
+import { isSmallScreen, isLargeScreen } from '../utils/constants';
 import { animateSectionBorders, changeProgressBarHeight, loadModelWithTextures } from '../utils/helpers';
 import ScrollingSurface from '../ScrollingSurface/ScrollingSurface';
 import ScrollUp from '../ScrollUp/ScrollUp';
@@ -136,8 +136,8 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
         animateSectionBorders('section-three', scroll.offset, 300, 0, 0, 300, 0.695, 0.735, 0.808, 0.84);
       } else {
         animateSectionBorders('section-one', scroll.offset, 300, 0, 0, 300, 0.1, 0.14, 0.179, 0.26);
-        animateSectionBorders('section-two', scroll.offset, 300, 0, 0, 250, 0.335, 0.375, 0.555, 0.62);
-        animateSectionBorders('section-three', scroll.offset, 300, 0, 0, 250, 0.695, 0.735, 0.819, 0.86);
+        animateSectionBorders('section-two', scroll.offset, 300, 0, 0, 250, 0.335, 0.375, 0.53, 0.6);
+        animateSectionBorders('section-three', scroll.offset, 300, 0, 0, 250, 0.695, 0.735, 0.805, 0.8605);
       }
 
       changeProgressBarHeight('progress-bar-one', scroll.offset, 0.124, scroll.offset > 0.124 && scroll.offset < 0.24, 5100, 'rgb(70, 130, 180, 0.5)');
