@@ -19,25 +19,25 @@ ${({ id, isMobileSafari }) => {
       case 'section-one':
         return css`
           ${baseStyles}
-          ${isSmallScreen ? `top: 2500px;` : `top: 380vh;`}
+          top: 380vh;
           ${isSmallScreen ? `width: 90%;` : `width: 40%;`}
-          ${isSmallScreen ? `height: 1300px;` : `height: 1350px;`}
+          height: 1150px;
           right: 0;
         `;
       case 'section-two':
         return css`
           ${baseStyles}
-          ${isSmallScreen ? `top: 7200px;` : `top: 1050vh;`}
+          top: 1050vh;
           ${isSmallScreen ? `width: 90%;` : `width: 40%;`}
-          ${isSmallScreen ? `height: 4200px;` : `height: 4200px;`}
+          height: 4200px;
           right: 0;
         `;
       case 'section-three':
         return css`
           ${baseStyles}
-          ${isSmallScreen ? `top: 14450px;` : `top: 2100vh;`}
+          top: 2100vh;
           ${isSmallScreen ? `width: 90%;` : `width: 40%;`}
-          ${isSmallScreen ? `height: 2100px;` : `height: 2200px;`}
+          height: 1750px;
           right: 0;
         `;
       case 'section-four':

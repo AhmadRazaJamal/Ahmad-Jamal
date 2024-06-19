@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { isSmallScreen } from '../utils/constants';
 
+export const SectionsContainer = styled.div`
+positions: relative;
+`;
+
 export const ListWrapper = styled.ol`
   padding-left: 22px;
 `

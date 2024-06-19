@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Heading, ListItem, SectionList, ListHeading, WavingHand, ImageGalleryWrapper, ListWrapper, IconContainer } from './Sections.styles';
+import { SectionsContainer, Text, Heading, ListItem, SectionList, ListHeading, WavingHand, ImageGalleryWrapper, ListWrapper, IconContainer } from './Sections.styles';
 import { CarouselGallery } from "../Carousel/Carousel";
 import { Form } from "../Form/Form";
 import ReactImageGallery from 'react-image-gallery';
@@ -80,7 +80,7 @@ const cpbImages = [
 
 export const Sections: React.FC = () => {
     return (
-        <div>
+        <SectionsContainer>
             <Section id="one" title="About Me" number="01">
                 <Text>Hello World <WavingHand role="img" aria-label="wave">👋</WavingHand></Text>
                 <Text>My name is Ahmad Jamal, but everyone just knows me by Jamal.</Text>
@@ -193,7 +193,7 @@ export const Sections: React.FC = () => {
                     </IconButton>
                 </IconContainer>
             </Section>
-        </div>
+        </SectionsContainer>
     );
 };
 
