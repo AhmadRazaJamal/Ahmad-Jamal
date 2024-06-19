@@ -1,3 +1,4 @@
+export const isMobileScreen = typeof window !== 'undefined' && window.innerWidth <= 425;
 export const isSmallScreen = typeof window !== 'undefined' && window.innerWidth <= 768;
 export const isMediumScreen = typeof window !== 'undefined' && window.innerWidth <= 1024;
 export const isLargeScreen = typeof window !== 'undefined' && window.innerWidth <= 1440;

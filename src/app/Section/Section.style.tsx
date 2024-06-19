@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { isSmallScreen } from '../utils/constants';
+import { isSmallScreen, isMobileScreen } from '../utils/constants';
 
 export const SectionContainer = styled.div<{ id: string, isMobileSafari: boolean }>`
     position: absolute;
@@ -21,7 +21,7 @@ ${({ id, isMobileSafari }) => {
           ${baseStyles}
           top: 380vh;
           ${isSmallScreen ? `width: 90%;` : `width: 40%;`}
-          height: 1150px;
+          ${isMobileScreen ? `height: 1400px;` : `height: 1150px;`}
           right: 0;
         `;
       case 'section-two':
