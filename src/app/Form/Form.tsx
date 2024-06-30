@@ -64,8 +64,8 @@ export const Form = () => {
                     />
                     {errors.message && <span className="error-message text-danger">{getErrorMessage(errors.message)}</span>}
                 </div>
-                <Button radius="md">
-                    Lets Talk
+                <Button radius="md" >
+                    Let's talk
                 </Button>
             </StyledForm>
         </FormWrapper>
