@@ -19,11 +19,14 @@ export const changeProgressBarHeight = (
     progressBar.style.backgroundColor = color;
 
     const handleAnimation = () => {
+        const viewportHeight = window.innerHeight;
+        const adjustedHeightMultiplier = (heightMultiplier / 100) * viewportHeight;
+
         if (isActive) {
-            const heightIncrement = Math.max(0, (scrollOffset - activationStart) * heightMultiplier);
-            progressBar.style.height = `${Math.max(1, heightIncrement)}vh`;
+            const heightIncrement = Math.max(0, (scrollOffset - activationStart) * adjustedHeightMultiplier);
+            progressBar.style.height = `${Math.max(1, heightIncrement)}px`;
         } else {
-            progressBar.style.height = "0vh";
+            progressBar.style.height = "0px";
         }
     };
 
@@ -74,27 +77,31 @@ export const animateSectionBorders = (
     const lerp = (start: number, end: number, t: number): number => (1 - t) * start + t * end;
     const easeOutCubic = (t: number): number => --t * t * t + 1;
 
+    const viewportHeight = window.innerHeight;
+    const topRadiusScale = viewportHeight / 800; // Adjust based on viewport height
+    const bottomRadiusScale = viewportHeight / 800;
+
     // Normalize scrollOffset for top border radius animation
     if (scrollOffset >= topStart && scrollOffset <= topEnd) {
         const normalizedTopProgress = (scrollOffset - topStart) / (topEnd - topStart);
         const progressTop = easeOutCubic(normalizedTopProgress);
-        const newTopRadius = lerp(initialTopRadius, finalTopRadius, progressTop);
+        const newTopRadius = lerp(initialTopRadius, finalTopRadius, progressTop) * topRadiusScale;
         section.style.borderTopLeftRadius = `${newTopRadius}px`;
     } else if (scrollOffset < topStart) {
-        section.style.borderTopLeftRadius = `${initialTopRadius}px`;
+        section.style.borderTopLeftRadius = `${initialTopRadius * topRadiusScale}px`;
     } else {
-        section.style.borderTopLeftRadius = `${finalTopRadius}px`;
+        section.style.borderTopLeftRadius = `${finalTopRadius * topRadiusScale}px`;
     }
 
     // Normalize scrollOffset for bottom border radius animation
     if (scrollOffset >= bottomStart && scrollOffset <= bottomEnd) {
         const normalizedBottomProgress = (scrollOffset - bottomStart) / (bottomEnd - bottomStart);
         const progressBottom = easeOutCubic(normalizedBottomProgress);
-        const newBottomRadius = lerp(initialBottomRadius, finalBottomRadius, progressBottom);
+        const newBottomRadius = lerp(initialBottomRadius, finalBottomRadius, progressBottom) * bottomRadiusScale;
         section.style.borderBottomLeftRadius = `${newBottomRadius}px`;
     } else if (scrollOffset < bottomStart) {
-        section.style.borderBottomLeftRadius = `${initialBottomRadius}px`;
+        section.style.borderBottomLeftRadius = `${initialBottomRadius * bottomRadiusScale}px`;
     } else {
-        section.style.borderBottomLeftRadius = `${finalBottomRadius}px`;
+        section.style.borderBottomLeftRadius = `${finalBottomRadius * bottomRadiusScale}px`;
     }
 };

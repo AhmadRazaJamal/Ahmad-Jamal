@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useRef, useState } from 'react';
 import { useThree, useFrame } from '@react-three/fiber';
 import { Html, OrbitControls, Scroll, ScrollControls, useScroll } from '@react-three/drei';
 import * as THREE from 'three';
-import { isSmallScreen, isMobileScreen, isSafariBrowser } from '../utils/constants';
+import { isSmallScreen, isMobileScreen, isSafariBrowser, isMobileDevice } from '../utils/constants';
 import { animateSectionBorders, changeProgressBarHeight, loadModelWithTextures } from '../utils/helpers';
 import ScrollingSurface from '../ScrollingSurface/ScrollingSurface';
 import ScrollUp from '../ScrollUp/ScrollUp';
@@ -130,17 +130,17 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
         scrollIcon.style.opacity = `${1 - scroll.offset * 250}`;
       }
 
-      if (isMobileScreen && isSafariBrowser()) {
+      if (isMobileDevice()) {
         animateSectionBorders('section-one', scroll.offset, 300, 0, 0, 300, 0.1, 0.14, 0.172, 0.22);
         animateSectionBorders('section-two', scroll.offset, 300, 0, 0, 300, 0.33, 0.37, 0.55, 0.6);
         animateSectionBorders('section-three', scroll.offset, 300, 0, 0, 300, 0.695, 0.735, 0.808, 0.84);
       } else {
         animateSectionBorders('section-one', scroll.offset, 300, 0, 0, 300, 0.1, 0.14, 0.17, 0.21);
-        animateSectionBorders('section-two', scroll.offset, 300, 0, 0, 250, 0.335, 0.375, 0.555, 0.595);
-        animateSectionBorders('section-three', scroll.offset, 300, 0, 0, 250, 0.695, 0.73, 0.815, 0.85);
+        animateSectionBorders('section-two', scroll.offset, 300, 0, 0, 300, 0.335, 0.375, 0.555, 0.595);
+        animateSectionBorders('section-three', scroll.offset, 300, 0, 0, 300, 0.695, 0.73, 0.815, 0.85);
       }
 
-      if (isMobileScreen && isSafariBrowser()) {
+      if (isMobileDevice()) {
         changeProgressBarHeight('progress-bar-one', scroll.offset, 0.13, scroll.offset > 0.13 && scroll.offset < 0.24, 4400, 'rgb(70, 130, 180, 0.5)');
         changeProgressBarHeight('progress-bar-two', scroll.offset, 0.358, scroll.offset > 0.358 && scroll.offset < 0.6, 3410, 'rgb(253, 216, 53, 0.5)');
         changeProgressBarHeight('progress-bar-three', scroll.offset, 0.719, scroll.offset > 0.719 && scroll.offset < 0.85, 4300, 'rgb(57, 150, 122, 0.8)');
