@@ -35,7 +35,7 @@ ${({ id, isMobileSafari }) => {
       case 'section-three':
         return css`
           ${baseStyles}
-          top: 2100vh;
+          top: 1950vh;
           ${isSmallScreen ? `width: 90%;` : `width: 40%;`}
           ${isSmallScreen ? `height: 2100px;` : `height: 2200px;`}
           right: 0;

@@ -129,10 +129,10 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
       if (scroll.offset >= 0.001 && scroll.offset <= 0.015 && scrollIcon) {
         scrollIcon.style.opacity = `${1 - scroll.offset * 250}`;
       }
-
+      console.log(scroll.offset)
       if (isMobileDevice()) {
-        animateSectionBorders('section-one', scroll.offset, 300, 0, 0, 300, 0.1, 0.14, 0.172, 0.22);
-        animateSectionBorders('section-two', scroll.offset, 300, 0, 0, 300, 0.33, 0.37, 0.55, 0.6);
+        animateSectionBorders('section-one', scroll.offset, 300, 0, 0, 300, 0.1, 0.14, 0.19, 0.23);
+        animateSectionBorders('section-two', scroll.offset, 300, 0, 0, 300, 0.38, 0.42, 0.61, 0.65);
         animateSectionBorders('section-three', scroll.offset, 300, 0, 0, 300, 0.695, 0.735, 0.808, 0.84);
       } else {
         animateSectionBorders('section-one', scroll.offset, 300, 0, 0, 300, 0.1, 0.14, 0.17, 0.21);
