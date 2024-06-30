@@ -105,8 +105,8 @@ const handleCameraTransition = (
 const ScrollingSurfaces: React.FC = () => (
   <>
     <ScrollingSurface start={0} color="#4682B4" yPosition={-1} />
-    <ScrollingSurface start={0.25} color="#FDD835" yPosition={-0.79} />
-    <ScrollingSurface start={0.6} color="#12664F" yPosition={-0.78} />
+    <ScrollingSurface start={0.25} color="#FDD835" yPosition={-0.98} />
+    <ScrollingSurface start={0.6} color="#12664F" yPosition={-0.96} />
   </>
 );
 
