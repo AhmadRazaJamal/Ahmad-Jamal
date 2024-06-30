@@ -135,9 +135,9 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
         animateSectionBorders('section-two', scroll.offset, 300, 0, 0, 300, 0.38, 0.42, 0.62, 0.66);
         animateSectionBorders('section-three', scroll.offset, 300, 0, 0, 300, 0.73, 0.77, 0.85, 0.89);
       } else {
-        animateSectionBorders('section-one', scroll.offset, 300, 0, 0, 300, 0.1, 0.14, 0.17, 0.21);
-        animateSectionBorders('section-two', scroll.offset, 300, 0, 0, 300, 0.335, 0.375, 0.555, 0.595);
-        animateSectionBorders('section-three', scroll.offset, 300, 0, 0, 300, 0.695, 0.73, 0.815, 0.85);
+        animateSectionBorders('section-one', scroll.offset, 300, 0, 0, 300, 0.09, 0.13, 0.16, 0.2);
+        animateSectionBorders('section-two', scroll.offset, 300, 0, 0, 300, 0.33, 0.37, 0.53, 0.57);
+        animateSectionBorders('section-three', scroll.offset, 300, 0, 0, 300, 0.64, 0.68, 0.73, 0.77);
       }
 
       if (isMobileDevice()) {
