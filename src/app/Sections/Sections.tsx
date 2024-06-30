@@ -122,7 +122,7 @@ export const Sections: React.FC = () => {
                 <Text>And you can check out her website <a href="https://www.lauriekoss.com/">here</a>.</Text>
             </Section>
 
-            <Section id="three" title="What I'm good at" number="03">
+            <Section id="three" title="What I'm Good At" number="03">
                 <ListWrapper>
                     <ListHeading>Web Development</ListHeading>
                     <SectionList>
