@@ -137,7 +137,7 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
       } else {
         animateSectionBorders('section-one', scroll.offset, 300, 0, 0, 300, 0.09, 0.13, 0.16, 0.2);
         animateSectionBorders('section-two', scroll.offset, 300, 0, 0, 300, 0.33, 0.37, 0.53, 0.57);
-        animateSectionBorders('section-three', scroll.offset, 300, 0, 0, 300, 0.64, 0.68, 0.73, 0.77);
+        animateSectionBorders('section-three', scroll.offset, 300, 0, 0, 300, 0.72, 0.76, 0.815, 0.855);
       }
 
       if (isMobileDevice() || isMobileScreen) {
@@ -145,9 +145,9 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
         changeProgressBarHeight('progress-bar-two', scroll.offset, 0.406, scroll.offset > 0.406 && scroll.offset < 0.7, 3360, 'rgb(253, 216, 53, 0.5)');
         changeProgressBarHeight('progress-bar-three', scroll.offset, 0.794, scroll.offset > 0.794 && scroll.offset < 0.95, 4000, 'rgb(57, 150, 122, 0.8)');
       } else {
-        changeProgressBarHeight('progress-bar-one', scroll.offset, 0.124, scroll.offset > 0.124 && scroll.offset < 0.24, 5100, 'rgb(70, 130, 180, 0.5)');
+        changeProgressBarHeight('progress-bar-one', scroll.offset, 0.124, scroll.offset > 0.124 && scroll.offset < 0.24, 6000, 'rgb(70, 130, 180, 0.5)');
         changeProgressBarHeight('progress-bar-two', scroll.offset, 0.358, scroll.offset > 0.358 && scroll.offset < 0.6, 3410, 'rgb(253, 216, 53, 0.5)');
-        changeProgressBarHeight('progress-bar-three', scroll.offset, 0.719, scroll.offset > 0.719 && scroll.offset < 0.85, 4300, 'rgb(57, 150, 122, 0.8)');
+        changeProgressBarHeight('progress-bar-three', scroll.offset, 0.758, scroll.offset > 0.758 && scroll.offset < 0.85, 4700, 'rgb(57, 150, 122, 0.8)');
       }
     }
   });
