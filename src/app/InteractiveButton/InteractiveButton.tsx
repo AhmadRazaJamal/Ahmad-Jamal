@@ -1,17 +1,21 @@
 import React from 'react';
-import { StyledViewInArIcon, Wrapper, Label } from "./InteractiveButton.styles";
+import { StyledToggleWrapper, StyledToggleLabel, StyledToggleSwitch, StyledToggleCircle, StyledViewInArIcon } from "./InteractiveButton.styles";
 
 interface InteractiveButtonProps {
   isOn: boolean;
   setInteractive: (isOn: boolean) => void; 
 }
 
-const InteractiveButton = ({ isOn, setInteractive }: InteractiveButtonProps) => {
+const InteractiveButton: React.FC<InteractiveButtonProps> = ({ isOn, setInteractive }) => {
   return (
-    <Wrapper>
-    <Label>{`Interactive Mode: ${isOn ? 'On': 'Off'}`}</Label>
-      <StyledViewInArIcon onClick={() => setInteractive(!isOn)} isOn={isOn} fontSize="large"/>
-    </Wrapper>
+    <StyledToggleWrapper>
+      <StyledToggleLabel>{`Interactive Mode`}</StyledToggleLabel>
+      <StyledToggleSwitch onClick={() => setInteractive(!isOn)} isOn={isOn}>
+        <StyledToggleCircle isOn={isOn}>
+          <StyledViewInArIcon isOn={isOn} />
+        </StyledToggleCircle>
+      </StyledToggleSwitch>
+    </StyledToggleWrapper>
   );
 };
 
