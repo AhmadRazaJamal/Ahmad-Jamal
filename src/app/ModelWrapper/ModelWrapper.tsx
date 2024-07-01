@@ -1,8 +1,8 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState, useCallback } from 'react';
 import { useThree, useFrame } from '@react-three/fiber';
 import { Html, OrbitControls, Scroll, ScrollControls, useScroll } from '@react-three/drei';
 import * as THREE from 'three';
-import { isSmallScreen, isMobileScreen, isSafariBrowser, isMobileDevice } from '../utils/constants';
+import { isSmallScreen, isMobileScreen, isMobileDevice } from '../utils/constants';
 import { animateSectionBorders, changeProgressBarHeight, loadModelWithTextures } from '../utils/helpers';
 import ScrollingSurface from '../ScrollingSurface/ScrollingSurface';
 import ScrollUp from '../ScrollUp/ScrollUp';
@@ -31,25 +31,43 @@ const ModelWrapper: React.FC = () => {
     setTransitionCamera(!interactiveMode);
   }, [interactiveMode]);
 
+  const handleCameraTransition = useCallback(() => {
+    const targetPosition = new THREE.Vector3(-2, 1, 2);
+
+    const updateCameraPosition = () => {
+      camera.position.lerp(targetPosition, 0.001);
+      camera.zoom = THREE.MathUtils.lerp(camera.zoom, originalZoom, 0.001);
+
+      if (camera.position.distanceTo(targetPosition) < 0.01 && Math.abs(camera.zoom - originalZoom) < 0.01) {
+        camera.position.copy(targetPosition);
+        camera.zoom = originalZoom;
+        setTransitionCamera(false);
+      } else {
+        requestAnimationFrame(updateCameraPosition);
+      }
+
+      camera.lookAt(0, 0, 0);
+      camera.updateProjectionMatrix();
+    };
+
+    requestAnimationFrame(updateCameraPosition);
+  }, [camera, originalZoom]);
+
   useFrame(() => {
     if (transitionCamera && bakedMaterial) {
-      handleCameraTransition(camera as THREE.PerspectiveCamera, originalZoom, setTransitionCamera);
+      handleCameraTransition();
     }
   });
 
   if (!bakedMaterial) {
-    return <Html style={{
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-    }}>
-      <LoadingCube />
-    </Html>;
+    return (
+      <Html style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}>
+        <LoadingCube />
+      </Html>
+    );
   }
 
-  const renderContent = () => (
+  const renderContent = (
     <>
       <ScrollingSurfaces />
       <Office model={{ scene }} scale={0.08} isInteractiveMode={interactiveMode} />
@@ -63,43 +81,11 @@ const ModelWrapper: React.FC = () => {
 
   return (
     <>
-      {interactiveMode ? (
-        <>
-          <OrbitControls />
-          <ScrollControls pages={30}>{renderContent()}</ScrollControls>
-        </>
-      ) : (
-        <ScrollControls pages={30}>{renderContent()}</ScrollControls>
-      )}
+      <ScrollControls pages={30}>{renderContent}</ScrollControls>
+      {interactiveMode && <OrbitControls />}
       <directionalLight position={[1, 2, 3]} intensity={3} />
     </>
   );
-};
-
-const handleCameraTransition = (
-  camera: THREE.PerspectiveCamera,
-  originalZoom: number,
-  setTransitionCamera: React.Dispatch<React.SetStateAction<boolean>>
-): void => {
-  const targetPosition = new THREE.Vector3(-2, 1, 2);
-
-  const updateCameraPosition = () => {
-    camera.position.lerp(targetPosition, 0.001);
-    camera.zoom = THREE.MathUtils.lerp(camera.zoom, originalZoom, 0.001);
-
-    if (camera.position.distanceTo(targetPosition) < 0.01 && Math.abs(camera.zoom - originalZoom) < 0.01) {
-      camera.position.copy(targetPosition);
-      camera.zoom = originalZoom;
-      setTransitionCamera(false);
-    } else {
-      requestAnimationFrame(updateCameraPosition);
-    }
-
-    camera.lookAt(0, 0, 0);
-    camera.updateProjectionMatrix();
-  };
-
-  requestAnimationFrame(updateCameraPosition);
 };
 
 const ScrollingSurfaces: React.FC = () => (
@@ -115,8 +101,6 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
   const groupRef = useRef<THREE.Group>(null);
   const scroll = useScroll();
 
-  const scrollIcon = document.getElementById('scroll-icon');
-
   useFrame(() => {
     if (!isInteractiveMode && groupRef.current && scroll) {
       if (scroll.offset <= 0.0675 && !isSmallScreen) {
@@ -126,8 +110,11 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
         camera.updateProjectionMatrix();
       }
 
-      if (scroll.offset >= 0.001 && scroll.offset <= 0.015 && scrollIcon) {
-        scrollIcon.style.opacity = `${1 - scroll.offset * 250}`;
+      if (scroll.offset >= 0.001 && scroll.offset <= 0.015) {
+        const scrollIcon = document.getElementById('scroll-icon');
+        if (scrollIcon) {
+          scrollIcon.style.opacity = `${1 - scroll.offset * 250}`;
+        }
       }
 
       if (isMobileDevice() || isMobileScreen) {
@@ -145,7 +132,7 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
         changeProgressBarHeight('progress-bar-two', scroll.offset, 0.406, scroll.offset > 0.406 && scroll.offset < 0.7, 3360, 'rgb(253, 216, 53, 0.5)');
         changeProgressBarHeight('progress-bar-three', scroll.offset, 0.794, scroll.offset > 0.794 && scroll.offset < 0.95, 4000, 'rgb(57, 150, 122, 0.8)');
       } else {
-        changeProgressBarHeight('progress-bar-one', scroll.offset, 0.124, scroll.offset > 0.124 && scroll.offset < 0.24, 6000, 'rgb(70, 130, 180, 0.5)');
+        changeProgressBarHeight('progress-bar-one', scroll.offset, 0.124, scroll.offset > 0.124 && scroll.offset < 0.24, 6700, 'rgb(70, 130, 180, 0.5)');
         changeProgressBarHeight('progress-bar-two', scroll.offset, 0.358, scroll.offset > 0.358 && scroll.offset < 0.6, 3410, 'rgb(253, 216, 53, 0.5)');
         changeProgressBarHeight('progress-bar-three', scroll.offset, 0.758, scroll.offset > 0.758 && scroll.offset < 0.85, 4700, 'rgb(57, 150, 122, 0.8)');
       }
