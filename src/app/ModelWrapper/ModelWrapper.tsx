@@ -66,10 +66,10 @@ const ModelWrapper: React.FC = () => {
       {interactiveMode ? (
         <>
           <OrbitControls />
-          <ScrollControls pages={31}>{renderContent()}</ScrollControls>
+          <ScrollControls pages={30}>{renderContent()}</ScrollControls>
         </>
       ) : (
-        <ScrollControls pages={31}>{renderContent()}</ScrollControls>
+        <ScrollControls pages={30}>{renderContent()}</ScrollControls>
       )}
       <directionalLight position={[1, 2, 3]} intensity={3} />
     </>
@@ -133,7 +133,7 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
       if (isMobileDevice() || isMobileScreen) {
         animateSectionBorders('section-one', scroll.offset, 300, 0, 0, 300, 0.1, 0.14, 0.19, 0.23);
         animateSectionBorders('section-two', scroll.offset, 300, 0, 0, 300, 0.38, 0.42, 0.62, 0.66);
-        animateSectionBorders('section-three', scroll.offset, 300, 0, 0, 300, 0.78, 0.82, 0.88, 0.92);
+        animateSectionBorders('section-three', scroll.offset, 300, 0, 0, 300, 0.76, 0.8, 0.89, 0.93);
       } else {
         animateSectionBorders('section-one', scroll.offset, 300, 0, 0, 300, 0.09, 0.13, 0.16, 0.2);
         animateSectionBorders('section-two', scroll.offset, 300, 0, 0, 300, 0.33, 0.37, 0.53, 0.57);
@@ -143,7 +143,7 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
       if (isMobileDevice() || isMobileScreen) {
         changeProgressBarHeight('progress-bar-one', scroll.offset, 0.135, scroll.offset > 0.135 && scroll.offset < 0.24, 4900, 'rgb(70, 130, 180, 0.5)');
         changeProgressBarHeight('progress-bar-two', scroll.offset, 0.406, scroll.offset > 0.406 && scroll.offset < 0.7, 3360, 'rgb(253, 216, 53, 0.5)');
-        changeProgressBarHeight('progress-bar-three', scroll.offset, 0.755, scroll.offset > 0.755 && scroll.offset < 0.9, 4000, 'rgb(57, 150, 122, 0.8)');
+        changeProgressBarHeight('progress-bar-three', scroll.offset, 0.794, scroll.offset > 0.794 && scroll.offset < 0.95, 4000, 'rgb(57, 150, 122, 0.8)');
       } else {
         changeProgressBarHeight('progress-bar-one', scroll.offset, 0.124, scroll.offset > 0.124 && scroll.offset < 0.24, 5100, 'rgb(70, 130, 180, 0.5)');
         changeProgressBarHeight('progress-bar-two', scroll.offset, 0.358, scroll.offset > 0.358 && scroll.offset < 0.6, 3410, 'rgb(253, 216, 53, 0.5)');
