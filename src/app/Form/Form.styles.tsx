@@ -53,6 +53,11 @@ export const FormWrapper = styled.div`
     margin-top: 12px;
   }
 
+  button:hover {
+    cursor: pointer; 
+    background-color: #1C86EE;
+  }
+
   .input-error input, .input-error textarea {
     border-color: red;
     border-radius: 4px;
