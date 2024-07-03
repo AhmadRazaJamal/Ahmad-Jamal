@@ -3,15 +3,13 @@ import { isSmallScreen, isMobileScreen } from '../utils/constants';
 
 export const SectionContainer = styled.div<{ id: string, isMobileSafari: boolean }>`
     position: absolute;
-    ${isSmallScreen ? `border-top-left-radius: 20px 20px;` : `border-top-left-radius: 300px 300px;`}
-    ${isSmallScreen ? `border-bottom-left-radius: 20px 20px;` : `border-bottom-left-radius: 0px 0px;`}
     padding-top: 100px;
     margin: 0;
     background-color: floralwhite;
     overflow: hidden; /* Ensure content stays within bounds */
 ${({ id, isMobileSafari }) => {
     const baseStyles = css`
-      padding-top: 300px;
+      padding-top: 200px;
       padding-left: 5vw;
       padding-right: 5vw;
     `;
