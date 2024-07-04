@@ -17,7 +17,7 @@ ${({ id, isMobileSafari }) => {
       case 'section-one':
         return css`
           ${baseStyles}
-          top: 350vh;
+          top: 400%;
           ${isSmallScreen ? `width: 90%;` : `width: 40%;`}
           ${isSmallScreen ? `height: 1400px;` : `height: 1200px;`}
           right: 0;
@@ -25,7 +25,7 @@ ${({ id, isMobileSafari }) => {
       case 'section-two':
         return css`
           ${baseStyles}
-          top: 1050vh;
+          top: 1200%;
           ${isSmallScreen ? `width: 90%;` : `width: 40%;`}
           ${isSmallScreen ? `height: 4350px;` : `height: 4200px;`}
           right: 0;
@@ -33,7 +33,7 @@ ${({ id, isMobileSafari }) => {
       case 'section-three':
         return css`
           ${baseStyles}
-          ${isSmallScreen ? `top: 2050vh;` : `top: 2200vh;`}
+          top: 2300%;
           ${isSmallScreen ? `width: 90%;` : `width: 40%;`}
           ${isSmallScreen ? `height: 2100px;` : `height: 1700px;`}
           right: 0;
@@ -41,7 +41,7 @@ ${({ id, isMobileSafari }) => {
       case 'section-four':
         return css`
           width:80vw;
-          ${isSmallScreen && isMobileSafari ? `top: 2570vh;` : `top: 2895vh;`}
+          top: 2900%;
           height: 100%;
           padding-top: 100px;
           padding-left: 10vw;
