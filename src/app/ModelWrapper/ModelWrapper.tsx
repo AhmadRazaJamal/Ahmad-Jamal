@@ -81,7 +81,7 @@ const ModelWrapper: React.FC = () => {
 
   return (
     <>
-      <ScrollControls pages={30}>{renderContent}</ScrollControls>
+      <ScrollControls pages={30} damping={2}>{renderContent}</ScrollControls>
       {interactiveMode && <OrbitControls />}
       <directionalLight position={[1, 2, 3]} intensity={3} />
     </>
@@ -117,25 +117,25 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
         }
       }
 
-      if (isMobileScreen) {
-        animateSectionBorders('section-one', scroll.offset, 200, 0, 0, 200, 0.09, 0.14, 0.17, 0.21);
-        animateSectionBorders('section-two', scroll.offset, 200, 0, 0, 200, 0.34, 0.4, 0.54, 0.57);
-        animateSectionBorders('section-three', scroll.offset, 200, 0, 0, 200, 0.68, 0.72, 0.785, 0.825);
-      } 
-      else {
-        animateSectionBorders('section-one', scroll.offset, 200, 0, 0, 200, 0.1, 0.14, 0.152, 0.18);
-        animateSectionBorders('section-two', scroll.offset, 200, 0, 0, 200, 0.34, 0.38, 0.525, 0.57);
-        animateSectionBorders('section-three', scroll.offset, 200, 0, 0, 200, 0.73, 0.77, 0.81, 0.855);
+      if (isSmallScreen) {
+        animateSectionBorders('section-one', scroll.offset, 200, 0, 0, 200, 0.115, 0.155, 0.182, 0.222);
+        animateSectionBorders('section-two', scroll.offset, 200, 0, 0, 200, 0.355, 0.395, 0.58, 0.62);
+        animateSectionBorders('section-three', scroll.offset, 200, 0, 0, 200, 0.7655, 0.805, 0.875, 0.915);
+      } else {
+        animateSectionBorders('section-one', scroll.offset, 200, 0, 0, 200, 0.115, 0.155, 0.165, 0.205);
+        animateSectionBorders('section-two', scroll.offset, 200, 0, 0, 200, 0.355, 0.395, 0.5375, 0.575);
+        animateSectionBorders('section-three', scroll.offset, 200, 0, 0, 200, 0.7655, 0.805, 0.84, 0.88);
       }
 
-      if (isMobileDevice() || isMobileScreen) {
+
+      if (isSmallScreen) {
         changeProgressBarHeight('progress-bar-one', scroll.offset, 0.135, scroll.offset > 0.135 && scroll.offset < 0.24, 4900, 'rgb(70, 130, 180, 0.5)');
-        changeProgressBarHeight('progress-bar-two', scroll.offset, 0.406, scroll.offset > 0.406 && scroll.offset < 0.7, 3360, 'rgb(253, 216, 53, 0.5)');
+        changeProgressBarHeight('progress-bar-two', scroll.offset, 0.378, scroll.offset > 0.378 && scroll.offset < 0.7, 3360, 'rgb(253, 216, 53, 0.5)');
         changeProgressBarHeight('progress-bar-three', scroll.offset, 0.794, scroll.offset > 0.794 && scroll.offset < 0.95, 4000, 'rgb(57, 150, 122, 0.8)');
       } else {
-        changeProgressBarHeight('progress-bar-one', scroll.offset, 0.124, scroll.offset > 0.124 && scroll.offset < 0.24, 6700, 'rgb(70, 130, 180, 0.5)');
-        changeProgressBarHeight('progress-bar-two', scroll.offset, 0.358, scroll.offset > 0.358 && scroll.offset < 0.6, 3410, 'rgb(253, 216, 53, 0.5)');
-        changeProgressBarHeight('progress-bar-three', scroll.offset, 0.758, scroll.offset > 0.758 && scroll.offset < 0.85, 4700, 'rgb(57, 150, 122, 0.8)');
+        changeProgressBarHeight('progress-bar-one', scroll.offset, 0.138, scroll.offset > 0.138 && scroll.offset < 0.24, 6700, 'rgb(70, 130, 180, 0.5)');
+        changeProgressBarHeight('progress-bar-two', scroll.offset, 0.378, scroll.offset > 0.358 && scroll.offset < 0.6, 3500, 'rgb(253, 216, 53, 0.5)');
+        changeProgressBarHeight('progress-bar-three', scroll.offset, 0.792, scroll.offset > 0.792 && scroll.offset < 0.85, 4800, 'rgb(57, 150, 122, 0.8)');
       }
     }
   });

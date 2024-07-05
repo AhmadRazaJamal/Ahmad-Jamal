@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { isSmallScreen, isMobileScreen } from '../utils/constants';
+import { isSmallScreen, isMobileScreen, isMobileDevice } from '../utils/constants';
 
 export const SectionContainer = styled.div<{ id: string, isMobileSafari: boolean }>`
     position: absolute;
@@ -17,15 +17,15 @@ ${({ id, isMobileSafari }) => {
       case 'section-one':
         return css`
           ${baseStyles}
-          top: 400%;
+          top: 400dvh;
           ${isSmallScreen ? `width: 90%;` : `width: 40%;`}
-          ${isSmallScreen ? `height: 1400px;` : `height: 1200px;`}
+          ${isSmallScreen ? `height: 1350px;` : `height: 1200px;`}
           right: 0;
         `;
       case 'section-two':
         return css`
           ${baseStyles}
-          top: 1200%;
+          top: 1100dvh;
           ${isSmallScreen ? `width: 90%;` : `width: 40%;`}
           ${isSmallScreen ? `height: 4350px;` : `height: 4200px;`}
           right: 0;
@@ -33,7 +33,7 @@ ${({ id, isMobileSafari }) => {
       case 'section-three':
         return css`
           ${baseStyles}
-          top: 2300%;
+          top: 2300dvh;
           ${isSmallScreen ? `width: 90%;` : `width: 40%;`}
           ${isSmallScreen ? `height: 2100px;` : `height: 1700px;`}
           right: 0;
@@ -41,7 +41,7 @@ ${({ id, isMobileSafari }) => {
       case 'section-four':
         return css`
           width:80vw;
-          top: 2900%;
+          ${isSmallScreen ? `top: 2890dvh;` : `top: 2900dvh;`}
           height: 100%;
           padding-top: 100px;
           padding-left: 10vw;
