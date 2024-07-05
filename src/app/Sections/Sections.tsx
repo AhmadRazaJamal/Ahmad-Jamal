@@ -1,6 +1,6 @@
 import React from 'react';
 import { SectionsContainer, Text, Heading, ListItem, SectionList, ListHeading, WavingHand, ImageGalleryWrapper, ListWrapper, IconContainer } from './Sections.styles';
-import { CarouselGallery } from "../Carousel/Carousel";
+import VideoPlayer from "../VideoPlayer/VideoPlayer";
 import { Form } from "../Form/Form";
 import ReactImageGallery from 'react-image-gallery';
 import "react-image-gallery/styles/css/image-gallery.css";
@@ -96,7 +96,7 @@ export const Sections: React.FC = () => {
                 <Text>My latest endeavor has been diving into ThreeJS and creating fun, small projects by following this amazing <a href="https://threejs-journey.com/">course by Bruno Simon</a>. I've worked on both small and large-scale projects, including my portfolio, which leverages ThreeJS to its fullest.</Text>
                 <Text>Below are two examples of some small projects I've been working on</Text>
                 <Text>Whereas my portfolio goes beyond just using vanilla ThreeJS. It utilizes React Three Fiber and includes a mini version of my home office, which I designed in Blender.</Text>
-                <CarouselGallery content={threeJsProjectContent} />
+                <VideoPlayer content={threeJsProjectContent} />
 
                 <Heading>Fresh Tracks Canada Websites</Heading>
                 <Text>During my time at Fresh Tracks Canada I have worked on challenging projects like managing CI/CD setups for seamless development, A/B testing for user insights, Personalization for tailored content, and crafting a monorepo with complex pathways etc.</Text>
