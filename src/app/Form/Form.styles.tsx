@@ -58,6 +58,10 @@ export const FormWrapper = styled.div`
     background-color: #1C86EE;
   }
 
+  button:disabled {
+    background-color: #87CEFA;
+  }
+
   .input-error input, .input-error textarea {
     border-color: red;
     border-radius: 4px;
@@ -65,5 +69,17 @@ export const FormWrapper = styled.div`
 
   .input-error label {
     color: red;
+  }
+
+  .success-message {
+    color: green;
+    margin-top: 12px;
+    font-size: 14px;
+  }
+
+  .error-message {
+    color: red;
+    margin-top: 12px;
+    font-size: 14px;
   }
 `;
