@@ -1,6 +1,7 @@
 import { FieldValues, useForm, FieldError, FieldErrorsImpl, Merge } from "react-hook-form";
 import { Button, Input, Textarea } from "@nextui-org/react";
 import { StyledForm, FormWrapper } from './Form.styles';
+import emailjs from 'emailjs-com';
 
 export const Form = () => {
     const {
@@ -10,8 +11,23 @@ export const Form = () => {
     } = useForm({
         mode: "onBlur"
     });
+
     const onSubmit = (data: FieldValues) => {
-        alert(JSON.stringify(data));
+        const templateParams = {
+            to_name: 'Your Name', // Replace with your name
+            from_name: data.name,
+            message: data.message,
+            reply_to: data.email
+        };
+
+        emailjs.send('service_l33hcys', 'template_1wetdsk', templateParams, 'g3nmDuRZvwSSm3QJb')
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+                alert('Email sent successfully!');
+            }, (error) => {
+                console.error('FAILED...', error);
+                alert('Failed to send email. Please try again later.');
+            });
     };
 
     const getErrorMessage = (
@@ -64,7 +80,7 @@ export const Form = () => {
                     />
                     {errors.message && <span className="error-message text-danger">{getErrorMessage(errors.message)}</span>}
                 </div>
-                <Button radius="md" >
+                <Button radius="md" type="submit">
                     Let's talk
                 </Button>
             </StyledForm>
