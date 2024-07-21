@@ -76,15 +76,26 @@ const ModelWrapper: React.FC = () => {
         <ScrollUp />
         <Sections />
       </Scroll>
+      <directionalLight position={[1, 2, 3]} intensity={3} />
     </>
   );
 
   return (
-    <>
-      <ScrollControls pages={30} damping={2}>{renderContent}</ScrollControls>
-      {interactiveMode && <OrbitControls />}
-      <directionalLight position={[1, 2, 3]} intensity={3} />
-    </>
+      <>
+       {interactiveMode ? (
+        <>
+          <OrbitControls />
+          <Office model={{scene}} scale={0.08} isInteractiveMode={interactiveMode} />
+          <ScrollControls pages={30}>
+            {renderContent}
+          </ScrollControls>
+        </>
+      ) : (
+        <ScrollControls pages={30}>
+          {renderContent}
+        </ScrollControls>
+      )}
+      </>  
   );
 };
 
