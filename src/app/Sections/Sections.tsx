@@ -102,17 +102,18 @@ export const Sections: React.FC = () => {
                 <Text>During my time at Fresh Tracks Canada I have worked on challenging projects like managing CI/CD setups for seamless development, A/B testing for user insights, Personalization for tailored content, and crafting a monorepo with complex pathways etc.</Text>
                 <Text>I have also created websites from the ground up and here are few examples of the websites I have worked on showcasing skills from creating new pages and components to managing their CI/CD processes, complex API pathways and optimizing SEO Performance.</Text>
                 <ImageGalleryWrapper>
-                    <a href="https://canadiantrainvacations.com/">1. Canadian Train Vacations</a>
-                    <ImageGallery items={ctvImages} showFullscreenButton={false} slideInterval={2000} />
+                    <a href="https://canadiantrainvacations.com/" target="_blank" rel="noopener noreferrer">1. Canadian Train Vacations</a>
+                    <ImageGallery items={ctvImages} slideInterval={2000} showFullscreenButton={false} />
                 </ImageGalleryWrapper>
                 <ImageGalleryWrapper>
-                    <a href="https://northernlightscanada.com/">2. Northern Lights Canada</a>
-                    <ImageGallery items={nlcImages} showFullscreenButton={false} slideInterval={2000} />
+                    <a href="https://northernlightscanada.com/" target="_blank" rel="noopener noreferrer">2. Northern Lights Canada</a>
+                    <ImageGallery items={nlcImages} slideInterval={2000} showFullscreenButton={false} />
                 </ImageGalleryWrapper>
                 <ImageGalleryWrapper>
-                    <a href="https://canadapolarbears.com/">3. Canada Polar Bears</a>
-                    <ImageGallery items={cpbImages} showFullscreenButton={false} slideInterval={2000} />
+                    <a href="https://canadapolarbears.com/" target="_blank" rel="noopener noreferrer">3. Canada Polar Bears</a>
+                    <ImageGallery items={cpbImages} slideInterval={2000} showFullscreenButton={false} />
                 </ImageGalleryWrapper>
+
 
                 <Heading>Laurie Koss SEO Project</Heading>
                 <Text>This is one of my favorite freelance projects that I worked on.</Text>

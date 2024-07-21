@@ -29,7 +29,7 @@ export const ImageGalleryWrapper = styled.div`
     margin-bottom: 24px;
   }
   .image-gallery-svg {
-    ${isSmallScreen ? `width: 14px;` : `width: 18px;`}
+    ${isSmallScreen ? `width: 18px;` : `width: 20px;`}
   }
   .image-gallery-play-button{
     display: none;
