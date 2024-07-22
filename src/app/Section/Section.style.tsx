@@ -7,9 +7,9 @@ export const SectionContainer = styled.div<{ id: string, isMobileSafari: boolean
     margin: 0;
     background-color: floralwhite;
     overflow: hidden; /* Ensure content stays within bounds */
-${({ id, isMobileSafari }) => {
+${({ id }) => {
     const baseStyles = css`
-      padding-top: 200px;
+      ${isSmallScreen ? `padding-top: 200px;` : `padding-top: 250px;`}
       padding-left: 5vw;
       padding-right: 5vw;
     `;
@@ -17,7 +17,7 @@ ${({ id, isMobileSafari }) => {
       case 'section-one':
         return css`
           ${baseStyles}
-          top: 400dvh;
+          top: 200dvh;
           ${isSmallScreen ? `width: 90%;` : `width: 40%;`}
           ${isSmallScreen ? `height: 1350px;` : `height: 1200px;`}
           right: 0;
@@ -25,23 +25,23 @@ ${({ id, isMobileSafari }) => {
       case 'section-two':
         return css`
           ${baseStyles}
-          top: 1100dvh;
+          top: 680dvh;
           ${isSmallScreen ? `width: 90%;` : `width: 40%;`}
-          ${isSmallScreen ? `height: 4350px;` : `height: 4200px;`}
+          ${isSmallScreen ? `height: 3800px;` : `height: 4000px;`}
           right: 0;
         `;
       case 'section-three':
         return css`
           ${baseStyles}
-          top: 2300dvh;
+          top: 1550dvh;
           ${isSmallScreen ? `width: 90%;` : `width: 40%;`}
-          ${isSmallScreen ? `height: 2100px;` : `height: 1700px;`}
+          ${isSmallScreen ? `height: 2100px;` : `height: 1900px;`}
           right: 0;
         `;
       case 'section-four':
         return css`
           width:80vw;
-          ${isSmallScreen ? `top: 2890dvh;` : `top: 2900dvh;`}
+          ${isSmallScreen ? `top: 2090dvh;` : `top: 2100dvh;`}
           height: 100%;
           padding-top: 100px;
           padding-left: 10vw;

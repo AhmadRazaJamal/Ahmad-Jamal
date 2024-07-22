@@ -86,12 +86,11 @@ const ModelWrapper: React.FC = () => {
         <>
           <OrbitControls />
           <Office model={{scene}} scale={0.08} isInteractiveMode={interactiveMode} />
-          <ScrollControls pages={30}>
+          <ScrollControls pages={22}>
             {renderContent}
           </ScrollControls>
         </>
       ) : (
-        <ScrollControls pages={30}>
           {renderContent}
         </ScrollControls>
       )}
@@ -102,8 +101,8 @@ const ModelWrapper: React.FC = () => {
 const ScrollingSurfaces: React.FC = () => (
   <>
     <ScrollingSurface start={0} color="#4682B4" yPosition={-1} />
-    <ScrollingSurface start={0.25} color="#FDD835" yPosition={-0.98} />
-    <ScrollingSurface start={0.65} color="#12664F" yPosition={-0.96} />
+    <ScrollingSurface start={0.22} color="#FDD835" yPosition={-0.98} />
+    <ScrollingSurface start={0.64} color="#12664F" yPosition={-0.96} />
   </>
 );
 
@@ -128,25 +127,26 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
         }
       }
 
+      console.log(scroll.offset)
       if (isSmallScreen) {
-        animateSectionBorders('section-one', scroll.offset, 200, 0, 0, 200, 0.115, 0.155, 0.182, 0.222);
-        animateSectionBorders('section-two', scroll.offset, 200, 0, 0, 200, 0.355, 0.395, 0.58, 0.62);
-        animateSectionBorders('section-three', scroll.offset, 200, 0, 0, 200, 0.7655, 0.805, 0.875, 0.915);
+        animateSectionBorders('section-one', scroll.offset, 200, 0, 0, 200, 0.06, 0.095, 0.154, 0.19);
+        animateSectionBorders('section-two', scroll.offset, 200, 0, 0, 200, 0.275, 0.33, 0.552, 0.6);
+        animateSectionBorders('section-three', scroll.offset, 200, 0, 0, 200, 0.69, 0.75, 0.848, 0.89);
       } else {
-        animateSectionBorders('section-one', scroll.offset, 200, 0, 0, 200, 0.115, 0.155, 0.165, 0.205);
-        animateSectionBorders('section-two', scroll.offset, 200, 0, 0, 200, 0.355, 0.395, 0.5375, 0.575);
-        animateSectionBorders('section-three', scroll.offset, 200, 0, 0, 200, 0.7655, 0.805, 0.84, 0.88);
+        animateSectionBorders('section-one', scroll.offset, 200, 0, 0, 200, 0.056, 0.11, 0.148, 0.185);
+        animateSectionBorders('section-two', scroll.offset, 200, 0, 0, 200, 0.278, 0.33, 0.568, 0.61);
+        animateSectionBorders('section-three', scroll.offset, 200, 0, 0, 200, 0.7, 0.75, 0.84, 0.88);
       }
 
 
       if (isSmallScreen) {
-        changeProgressBarHeight('progress-bar-one', scroll.offset, 0.135, scroll.offset > 0.135 && scroll.offset < 0.24, 4900, 'rgb(70, 130, 180, 0.5)');
-        changeProgressBarHeight('progress-bar-two', scroll.offset, 0.378, scroll.offset > 0.378 && scroll.offset < 0.7, 3360, 'rgb(253, 216, 53, 0.5)');
-        changeProgressBarHeight('progress-bar-three', scroll.offset, 0.794, scroll.offset > 0.794 && scroll.offset < 0.95, 4000, 'rgb(57, 150, 122, 0.8)');
+        changeProgressBarHeight('progress-bar-one', scroll.offset, 0.095, scroll.offset > 0.095 && scroll.offset < 0.22, 3770, 'rgb(70, 130, 180, 0.5)');
+        changeProgressBarHeight('progress-bar-two', scroll.offset, 0.323, scroll.offset > 0.323 && scroll.offset < 0.7, 2530, 'rgb(253, 216, 53, 0.5)');
+        changeProgressBarHeight('progress-bar-three', scroll.offset, 0.738, scroll.offset > 0.738 && scroll.offset < 0.9, 3000, 'rgb(57, 150, 122, 0.8)');
       } else {
-        changeProgressBarHeight('progress-bar-one', scroll.offset, 0.138, scroll.offset > 0.138 && scroll.offset < 0.24, 6700, 'rgb(70, 130, 180, 0.5)');
-        changeProgressBarHeight('progress-bar-two', scroll.offset, 0.378, scroll.offset > 0.358 && scroll.offset < 0.6, 3500, 'rgb(253, 216, 53, 0.5)');
-        changeProgressBarHeight('progress-bar-three', scroll.offset, 0.792, scroll.offset > 0.792 && scroll.offset < 0.85, 4800, 'rgb(57, 150, 122, 0.8)');
+        changeProgressBarHeight('progress-bar-one', scroll.offset, 0.095, scroll.offset > 0.095 && scroll.offset < 0.22, 4000, 'rgb(70, 130, 180, 0.5)');
+        changeProgressBarHeight('progress-bar-two', scroll.offset, 0.323, scroll.offset > 0.323 && scroll.offset < 0.7, 2500, 'rgb(253, 216, 53, 0.5)');
+        changeProgressBarHeight('progress-bar-three', scroll.offset, 0.738, scroll.offset > 0.738 && scroll.offset < 0.9, 3100, 'rgb(57, 150, 122, 0.8)');
       }
     }
   });

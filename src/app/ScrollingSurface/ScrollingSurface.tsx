@@ -16,7 +16,7 @@ const ScrollingSurface: React.FC<ScrollingSurfaceProps> = ({ start, color, yPosi
     useFrame(() => {
         if (ref.current) {
             // Calculate the scaling factor based on scroll offset
-            let scale = Math.max(0, Math.min(scroll.offset - start, 1)) * 100; // Adjust this scaling factor as needed
+            let scale = Math.max(0, Math.min(scroll.offset - start, 1)) * 200; // Adjust this scaling factor as needed
 
             // Set the scale of the object
             ref.current.scale.set(scale, scale, scale);
