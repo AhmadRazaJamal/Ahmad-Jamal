@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionsContainer, Text, Heading, ListItem, SectionList, ListHeading, WavingHand, ImageGalleryWrapper, ListWrapper, IconContainer } from './Sections.styles';
+import { SectionsContainer, Text, Heading, ListItem, SectionList, WavingHand, ImageGalleryWrapper, IconContainer } from './Sections.styles';
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
 import { Form } from "../Form/Form";
 import ReactImageGallery from 'react-image-gallery';
@@ -99,7 +99,7 @@ export const Sections: React.FC = () => {
 
                 <Heading>Fresh Tracks Canada Websites</Heading>
                 <Text>During my time at Fresh Tracks Canada I have worked on challenging projects like managing CI/CD setups for seamless development, A/B testing for user insights, Personalization for tailored content, and crafting a monorepo with complex pathways among other projects.</Text>
-                <Text>I have also created websites from the ground up and here are few examples of the websites I have worked on showcasing skills from creating new pages and components to managing their CI/CD processes, complex API pathways and optimizing SEO Performance.</Text>
+                <Text>I have also created websites from the ground up. Here are a few examples of the websites I have worked on, showcasing my skills in creating new pages and components, managing CI/CD processes, developing complex API pathways, and optimizing SEO performance.</Text>
                 <ImageGalleryWrapper>
                     <a href="https://canadiantrainvacations.com/" target="_blank" rel="noopener noreferrer">1. Canadian Train Vacations</a>
                     <ImageGallery items={ctvImages} slideInterval={2000} showFullscreenButton={false} />
@@ -118,77 +118,75 @@ export const Sections: React.FC = () => {
                 <Text>This is one of my favorite freelance projects that I worked on.</Text>
                 <Text>Laurie, an artist, aimed to showcase her talent and reach a broader audience through improved SEO and enhanced performance. </Text>
                 <Text>In collaboration with Laurie, I enhanced performance metrics, optimized her website for Google search rankings, set up Google Analytics and Google Console, and provided guidance on content creation and marketing strategies for her products.</Text>
-                <Text>Here is my complete research and thought process of how I made this possible: <a href="https://wandering-psychology-b1a.notion.site/SEO-Optimization-Analysis-41a6620719af46ee9be5636e88f38d15?pvs=4">SEO Optimization Analysis on Notion</a></Text>
-                <Text>And you can check out her website <a href="https://www.lauriekoss.com/">here</a>.</Text>
+                <Text>Here is my complete research and thought process of how I made this possible: <a href="https://wandering-psychology-b1a.notion.site/SEO-Optimization-Analysis-41a6620719af46ee9be5636e88f38d15?pvs=4" target="_blank" rel="noopener noreferrer">SEO Optimization Analysis on Notion</a></Text>
+                <Text>And you can check out her website <a href="https://www.lauriekoss.com/" target="_blank" rel="noopener noreferrer">here</a>.</Text>
             </Section>
 
             <Section id="three" title="What I'm Good At" number="03">
-                <ListWrapper>
-                    <ListHeading>Web Development</ListHeading>
-                    <SectionList>
-                        <ListItem>
-                            Full-Stack Wizard: From the front end to the back end, I conjure up websites that are functional, performant, yet pleasing to look at
-                        </ListItem>
-                        <ListItem>
-                            Web Solutions Architect: Creating full scale solutions for business needs like Personalization, A/B testing, and Analytics.
-                        </ListItem>
-                    </SectionList>
-                    <ListHeading>Search Engine Optimization</ListHeading>
+                <Heading>Web Development</Heading>
+                <SectionList>
+                    <ListItem>
+                        Creating websites that are functional, performant, yet pleasing to look at
+                    </ListItem>
+                    <ListItem>
+                        Creating full scale solutions for businesses like Personalization, A/B testing, and Analytics.
+                    </ListItem>
+                </SectionList>
+                <Heading>Search Engine Optimization</Heading>
 
-                    <SectionList>
-                        <ListItem>
-                            Optimizing Core Web Vitals for websites so they can rise from the trenches of Google rankings
-                        </ListItem>
-                        <ListItem>
-                            Setting up Google Analytics and Search Console. I don't just set them up, but also act as a guide in understanding the data as well
-                        </ListItem>
-                        <ListItem>
-                            Providing guidance on areas to help improve Google rankings through keywords, blogs, intentful content etc
-                        </ListItem>
-                    </SectionList>
+                <SectionList>
+                    <ListItem>
+                        Optimizing Core Web Vitals for websites so they can rise from the trenches of Google rankings
+                    </ListItem>
+                    <ListItem>
+                        Setting up Google Analytics and Search Console. I don't just set them up, but also act as a guide in understanding the data as well
+                    </ListItem>
+                    <ListItem>
+                        Providing guidance on areas to help improve Google rankings through keywords, blogs, intentful content etc
+                    </ListItem>
+                </SectionList>
 
-                    <ListHeading>CI/CD</ListHeading>
-                    <SectionList>
-                        <ListItem>
-                            Automation, testing, and deployment to make developers life easier and making code robust
-                        </ListItem>
-                        <ListItem>
-                            Optimizing deployments and ensuring everything flows smoothly to help cut down on coffee breaks while waiting for your code to deploy
-                        </ListItem>
-                    </SectionList>
+                <Heading>CI/CD</Heading>
+                <SectionList>
+                    <ListItem>
+                        Automation, testing, and deployment to make developers life easier and making code robust
+                    </ListItem>
+                    <ListItem>
+                        Optimizing deployments and ensuring everything flows smoothly to help cut down on coffee breaks while waiting for your code to deploy
+                    </ListItem>
+                </SectionList>
 
-                    <ListHeading>Solution Architect</ListHeading>
-                    <SectionList>
-                        <ListItem>
-                            Designing solutions for every day web problems
-                        </ListItem>
-                        <ListItem>
-                            Researching, testing, and implementing the best ways to solve problems that keep people up at night
-                        </ListItem>
-                    </SectionList>
+                <Heading>Solution Architect</Heading>
+                <SectionList>
+                    <ListItem>
+                        Designing solutions for every day web problems
+                    </ListItem>
+                    <ListItem>
+                        Researching, testing, and implementing the best ways to solve problems that keep people up at night
+                    </ListItem>
+                </SectionList>
 
-                    <ListHeading>CMS Management</ListHeading>
-                    <SectionList>
-                        <ListItem>
-                            Setting up, updating, and maintaining various CMS
-                        </ListItem>
-                        <ListItem>
-                            Ensuring project's plugins are always on their latest and greatest versions
-                        </ListItem>
-                    </SectionList>
-                </ListWrapper>
+                <Heading>CMS Management</Heading>
+                <SectionList>
+                    <ListItem>
+                        Setting up, updating, and maintaining various CMS
+                    </ListItem>
+                    <ListItem>
+                        Ensuring project's plugins are always on their latest and greatest versions
+                    </ListItem>
+                </SectionList>
             </Section>
 
             <Section id="four" title="Get In Touch" number="04">
                 <Form />
                 <IconContainer>
-                    <IconButton href="https://www.linkedin.com/in/ahmadjamal/" target="_blank" aria-label="LinkedIn">
+                    <IconButton href="https://www.linkedin.com/in/ahmadjamal/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <LinkedIn fontSize="medium" />
                     </IconButton>
-                    <IconButton href="https://github.com/AhmadRazaJamal" target="_blank" aria-label="GitHub">
+                    <IconButton href="https://github.com/AhmadRazaJamal" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                         <GitHub fontSize="medium" />
                     </IconButton>
-                    <IconButton href="https://www.instagram.com/ahmad.jamal_1" target="_blank" aria-label="Instagram">
+                    <IconButton href="https://www.instagram.com/ahmad.jamal_1" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <Instagram fontSize="medium" />
                     </IconButton>
                 </IconContainer>

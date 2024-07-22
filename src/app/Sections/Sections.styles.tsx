@@ -5,10 +5,6 @@ export const SectionsContainer = styled.div`
 positions: relative;
 `;
 
-export const ListWrapper = styled.ol`
-  padding-left: 22px;
-`
-
 export const WavingHand = styled.span`
   margin-left: 4px;
   animation-name: wave-animation;
@@ -58,15 +54,6 @@ export const Heading = styled.h2`
   }
 `;
 
-export const ListHeading = styled.li`
-  font-family: 'ManropeBold';
-  font-size: 24px;
-  line-height: 1.6;
-  margin-top: 36px;
-  color: black;
-  list-style: outside;
-`;
-
 export const SectionList = styled.ul`
   line-height: 2;
   margin-top: 18px;
@@ -79,9 +66,9 @@ export const ListItem = styled.li`
   line-height: 2;
   margin-bottom: 16px;
   font-size: 16px;
+  margin-left: 16px;
   color: black;
 `;
-
 
 export const IconContainer = styled.div`
   display: flex;
