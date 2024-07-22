@@ -85,21 +85,20 @@ export const Sections: React.FC = () => {
                 <Text>Hello World <WavingHand role="img" aria-label="wave">👋</WavingHand></Text>
                 <Text>My name is Ahmad Jamal, but you can just call me by my Starbucks name, Jamal!</Text>
                 <Text>I'm a Full-Stack Developer based in the sunny city of Calgary, currently working remotely from the comfort of my home office 🏠.</Text>
-                <Text>I have been working professionally as a Developer for almost 4 years now, but have been fiddlinh with tech for almost 20.</Text>
+                <Text>I have been working professionally as a Developer for almost 4 years now, but have been fiddling with tech for almost 20.</Text>
                 <Text>Over the last few years I've had the opportunity to team up with some amazing people at startups like HigherGround, FreshGrade, and presently Fresh Tracks Canada. Working at these fast-paced and exciting startups has shaped me into the versatile developer I am today.</Text>
-                <Text>I am a big believer in constantly pushing yourself and learning something new everyday. That's why I poured my heart and soul into revamping my old portfolio. I've used fantastic modern tools like Next.js, Tailwind, and Three.js to build the website's skeleton, and Blender to create a 3D model of my office.</Text>
+                <Text>I am a big believer in constantly pushing yourself and learning something new everyday. That's why I poured my heart and soul into revamping my old portfolio. I've used fantastic, modern tools like Next.js, Tailwind, and Three.js to build the website's skeleton; and Blender to create a 3D model of my office.</Text>
                 <Text>So, dive in and have fun exploring!</Text>
             </Section>
 
             <Section id="two" title="My Work" number="02">
                 <Heading>ThreeJS Projects</Heading>
                 <Text>My latest endeavor has been diving into ThreeJS and creating fun, small projects by following this amazing <a href="https://threejs-journey.com/">course by Bruno Simon</a>. I've worked on both small and large-scale projects, including my portfolio, which leverages ThreeJS to its fullest.</Text>
-                <Text>Below are two examples of some small projects I've been working on</Text>
-                <Text>Whereas my portfolio goes beyond just using vanilla ThreeJS. It utilizes React Three Fiber and includes a mini version of my home office, which I designed in Blender.</Text>
+                <Text>Below are two examples of some small projects I've been working on:</Text>
                 <VideoPlayer content={threeJsProjectContent} />
 
                 <Heading>Fresh Tracks Canada Websites</Heading>
-                <Text>During my time at Fresh Tracks Canada I have worked on challenging projects like managing CI/CD setups for seamless development, A/B testing for user insights, Personalization for tailored content, and crafting a monorepo with complex pathways etc.</Text>
+                <Text>During my time at Fresh Tracks Canada I have worked on challenging projects like managing CI/CD setups for seamless development, A/B testing for user insights, Personalization for tailored content, and crafting a monorepo with complex pathways among other projects.</Text>
                 <Text>I have also created websites from the ground up and here are few examples of the websites I have worked on showcasing skills from creating new pages and components to managing their CI/CD processes, complex API pathways and optimizing SEO Performance.</Text>
                 <ImageGalleryWrapper>
                     <a href="https://canadiantrainvacations.com/" target="_blank" rel="noopener noreferrer">1. Canadian Train Vacations</a>
@@ -128,10 +127,10 @@ export const Sections: React.FC = () => {
                     <ListHeading>Web Development</ListHeading>
                     <SectionList>
                         <ListItem>
-                            Full-Stack Wizard: From the front end to the back end, I conjure up websites that are functional, performant yet pleasing to look at
+                            Full-Stack Wizard: From the front end to the back end, I conjure up websites that are functional, performant, yet pleasing to look at
                         </ListItem>
                         <ListItem>
-                            Web Solutions Architect: Creating full scale solutions for bussiness needs like Personalization, A/B testing, and Analytics etc.
+                            Web Solutions Architect: Creating full scale solutions for business needs like Personalization, A/B testing, and Analytics.
                         </ListItem>
                     </SectionList>
                     <ListHeading>Search Engine Optimization</ListHeading>
@@ -151,7 +150,7 @@ export const Sections: React.FC = () => {
                     <ListHeading>CI/CD</ListHeading>
                     <SectionList>
                         <ListItem>
-                            Automation, testing and deployment to make developers life easier and making code robust
+                            Automation, testing, and deployment to make developers life easier and making code robust
                         </ListItem>
                         <ListItem>
                             Optimizing deployments and ensuring everything flows smoothly to help cut down on coffee breaks while waiting for your code to deploy
@@ -164,14 +163,14 @@ export const Sections: React.FC = () => {
                             Designing solutions for every day web problems
                         </ListItem>
                         <ListItem>
-                            Researching, testing and implementing the best ways to solve problems that keep people up at night
+                            Researching, testing, and implementing the best ways to solve problems that keep people up at night
                         </ListItem>
                     </SectionList>
 
                     <ListHeading>CMS Management</ListHeading>
                     <SectionList>
                         <ListItem>
-                            Setting up, updateing and maintaining various CMS
+                            Setting up, updating, and maintaining various CMS
                         </ListItem>
                         <ListItem>
                             Ensuring project's plugins are always on their latest and greatest versions
