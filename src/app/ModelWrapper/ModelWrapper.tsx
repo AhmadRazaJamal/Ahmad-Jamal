@@ -91,6 +91,7 @@ const ModelWrapper: React.FC = () => {
           </ScrollControls>
         </>
       ) : (
+        <ScrollControls pages={22}>
           {renderContent}
         </ScrollControls>
       )}
