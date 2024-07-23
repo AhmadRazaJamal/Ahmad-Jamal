@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 export const useMultiplier = (screenSize: number) => (screenSize >= 768 ? 2 : 1.5);
 export const positionCamera = (screenSize: number) => (screenSize >= 768 ? 0 : 12.4);
+export const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
 
 export const changeProgressBarHeight = (
     progressBarId: string,

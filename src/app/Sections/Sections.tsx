@@ -20,14 +20,14 @@ interface ProjectContent {
 
 const threeJsProjectContent: ProjectContent[] = [
     {
-        name: 'Galaxy Generator',
-        description: 'ThreeJS rendered galaxy generator',
+        name: 'Galaxy Generator in ThreeJS',
+        description: 'Three.js and React rendered model of a galaxy with controls for star randomness, radius, branches, and more',
         url: `/project-media/three-galaxy-generator.mp4`,
         thumbnail: `/project-media/galaxy-generator-thumbnail.png`,
     },
     {
         name: 'Waves in ThreeJS',
-        description: 'ThreeJS rendered waves',
+        description: 'Three.js rendered waves, showcasing dynamic and realistic wave simulations',
         url: `/project-media/three-waves.mp4`,
         thumbnail: `/project-media/waves-generator-thumbnail.png`,
     },

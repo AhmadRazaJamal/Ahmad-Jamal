@@ -3,7 +3,7 @@ import { useThree, useFrame } from '@react-three/fiber';
 import { Html, OrbitControls, Scroll, ScrollControls, useScroll } from '@react-three/drei';
 import * as THREE from 'three';
 import { isSmallScreen, isMobileScreen, isMobileDevice } from '../utils/constants';
-import { animateSectionBorders, changeProgressBarHeight, loadModelWithTextures } from '../utils/helpers';
+import { animateSectionBorders, changeProgressBarHeight, easeOutCubic, loadModelWithTextures } from '../utils/helpers';
 import ScrollingSurface from '../ScrollingSurface/ScrollingSurface';
 import ScrollUp from '../ScrollUp/ScrollUp';
 import InteractiveButton from '../InteractiveButton/InteractiveButton';
@@ -81,11 +81,11 @@ const ModelWrapper: React.FC = () => {
   );
 
   return (
-      <>
-       {interactiveMode ? (
+    <>
+      {interactiveMode ? (
         <>
           <OrbitControls />
-          <Office model={{scene}} scale={0.08} isInteractiveMode={interactiveMode} />
+          <Office model={{ scene }} scale={0.08} isInteractiveMode={interactiveMode} />
           <ScrollControls pages={22}>
             {renderContent}
           </ScrollControls>
@@ -95,7 +95,7 @@ const ModelWrapper: React.FC = () => {
           {renderContent}
         </ScrollControls>
       )}
-      </>  
+    </>
   );
 };
 
@@ -115,10 +115,27 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
   useFrame(() => {
     if (!isInteractiveMode && groupRef.current && scroll) {
       if (scroll.offset <= 0.0675 && !isSmallScreen) {
-        const xPosition = scroll.offset * -11.2;
-        groupRef.current.position.x = xPosition;
-        groupRef.current.position.z = xPosition;
-        camera.updateProjectionMatrix();
+        let actualX = 0;
+        let actualZ = 0;
+
+        const targetX = scroll.offset * -11.2;
+        const targetZ = scroll.offset * -11.2;
+
+        const easedProgress = easeOutCubic(scroll.offset / 0.0675);
+
+        actualX += (targetX - actualX) * easedProgress;
+        actualZ += (targetZ - actualZ) * easedProgress;
+
+        // Update group positions
+        if (groupRef.current) {
+            groupRef.current.position.x = actualX;
+            groupRef.current.position.z = actualZ;
+        }
+
+        // Update camera projection matrix
+        if (camera) {
+            camera.updateProjectionMatrix();
+        }
       }
 
       if (scroll.offset >= 0.001 && scroll.offset <= 0.015) {
@@ -128,7 +145,6 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
         }
       }
 
-      console.log(scroll.offset)
       if (isSmallScreen) {
         animateSectionBorders('section-one', scroll.offset, 200, 0, 0, 200, 0.06, 0.095, 0.154, 0.19);
         animateSectionBorders('section-two', scroll.offset, 200, 0, 0, 200, 0.275, 0.33, 0.552, 0.6);
