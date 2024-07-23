@@ -1,21 +1,20 @@
-'use client'
+"use client";
 
+import { FullScreenWrapper } from "./LoadingCube/LoadingCube.styles";
+import Portfolio from "./ModelWrapper/ModelWrapper";
 import { NextUIProvider } from "@nextui-org/react";
 import { Canvas } from "@react-three/fiber";
-import Portfolio from "./ModelWrapper/ModelWrapper";
-import { FullScreenWrapper } from "./LoadingCube/LoadingCube.styles";
 
-export default function Home() {
+const Home = () => {
   return (
     <NextUIProvider>
       <FullScreenWrapper>
-        <Canvas
-          shadows
-          orthographic
-        >
+        <Canvas shadows orthographic>
           <Portfolio />
         </Canvas>
       </FullScreenWrapper>
     </NextUIProvider>
   );
-}
+};
+
+export default Home;
