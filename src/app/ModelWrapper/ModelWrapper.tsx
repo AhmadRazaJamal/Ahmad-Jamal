@@ -10,7 +10,6 @@ import ScrollUp from '../ScrollUp/ScrollUp';
 import Sections from '../Sections/Sections';
 import * as THREE from 'three';
 
-
 interface IModel {
   scene: THREE.Group;
 }
