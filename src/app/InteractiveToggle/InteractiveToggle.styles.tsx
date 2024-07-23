@@ -36,22 +36,28 @@ export const StyledToggleCircle = styled.div<{ isOn: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease; /* Add transition for smooth animation */
+  transition: transform 0.3s ease;
 
-  ${({ isOn }) => isOn ? css`
-    transform: translateX(24px);
-  ` : css`
-    transform: translateX(0);
-  `}
+  ${({ isOn }) =>
+    isOn
+      ? css`
+          transform: translateX(24px);
+        `
+      : css`
+          transform: translateX(0);
+        `}
 `;
 
 export const StyledViewInArIcon = styled(SwipeIcon)<{ isOn: boolean }>`
   color: ${({ isOn }) => (isOn ? '#1e90ff' : 'gray')};
-  transition: transform 0.3s ease, color 0.3s ease; /* Add transition for smooth animation */
+  transition: transform 0.3s ease, color 0.3s ease;
 
-  ${({ isOn }) => isOn ? css`
-    transform: scale(0.65);
-  ` : css`
-    transform: scale(0.5);
-  `}
+  ${({ isOn }) =>
+    isOn
+      ? css`
+          transform: scale(0.65);
+        `
+      : css`
+          transform: scale(0.5);
+        `}
 `;

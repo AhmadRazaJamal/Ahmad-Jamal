@@ -1,7 +1,7 @@
 import React from 'react';
 import { SectionsContainer, Text, Heading, ListItem, SectionList, WavingHand, ImageGalleryWrapper, IconContainer } from './Sections.styles';
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
-import { Form } from "../Form/Form";
+import { ContactForm } from "../ContactForm/ContactForm";
 import ReactImageGallery from 'react-image-gallery';
 import "react-image-gallery/styles/css/image-gallery.css";
 import { Section } from '../Section/Section';
@@ -178,7 +178,7 @@ export const Sections: React.FC = () => {
             </Section>
 
             <Section id="four" title="Get In Touch" number="04">
-                <Form />
+                <ContactForm />
                 <IconContainer>
                     <IconButton href="https://www.linkedin.com/in/ahmadjamal/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <LinkedIn fontSize="medium" />

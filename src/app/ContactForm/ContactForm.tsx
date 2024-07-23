@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { FieldValues, useForm, FieldError, FieldErrorsImpl, Merge } from 'react-hook-form';
 import { Button, Input, Textarea } from '@nextui-org/react';
-import { StyledForm, FormWrapper } from './Form.styles';
+import { StyledForm, FormWrapper } from './ContactForm.styles';
 import emailjs from 'emailjs-com';
 
-export const Form = () => {
+export const ContactForm = () => {
   const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
