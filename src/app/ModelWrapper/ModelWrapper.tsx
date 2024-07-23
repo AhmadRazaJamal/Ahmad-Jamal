@@ -3,7 +3,7 @@ import { Html, OrbitControls, Scroll, ScrollControls, useScroll } from '@react-t
 import { useLayoutEffect, useRef, useState, useCallback } from 'react';
 import { useThree, useFrame } from '@react-three/fiber';
 import InteractiveButton from '../InteractiveToggle/InteractiveToggle';
-import ScrollingSurface from '../ScrollingSurface/ScrollingSurface';
+import ScrollingSurface from '../SectionSurface/SectionSurface';
 import LoadingCube from '../LoadingCube/LoadingCube';
 import { isSmallScreen } from '../utils/constants';
 import ScrollUp from '../ScrollUp/ScrollUp';
