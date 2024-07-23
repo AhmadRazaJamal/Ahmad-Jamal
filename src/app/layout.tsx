@@ -32,7 +32,7 @@ export default function RootLayout({
         <meta name="twitter:description" content="Explore the portfolio of Ahmad Jamal, a Full-Stack Developer from Calgary. With nearly 20 years in tech and 4 years of professional experience, Ahmad has worked with startups like HigherGround and FreshGrade. Discover his projects using modern tools like Next.js, Tailwind, Three.js, and Blender." />
         <meta name="twitter:image" content="/media/og-image.png" />
         <link rel="icon" href="/favicon.ico" />
-        <title>Ahmad Jamal's Portfolio</title>
+        <title>Ahmad R. Jamal's Portfolio</title>
       </head>
       <body className={inter.className}>{children}</body>
     </html>
