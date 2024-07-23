@@ -2,7 +2,20 @@ import styled from 'styled-components';
 import { isSmallScreen } from '../utils/constants';
 
 export const SectionsContainer = styled.div`
-positions: relative;
+  positions: relative;
+`;
+
+export const SectionTitle = styled.h2`
+  font-size: 2rem;
+  margin-bottom: 20px;
+`;
+
+export const SectionList = styled.ul`
+  line-height: 2;
+  margin-top: 18px;
+  font-size: 16px;
+  color: black;
+  padding-left: 0;
 `;
 
 export const WavingHand = styled.span`
@@ -54,14 +67,6 @@ export const Heading = styled.h2`
   }
 `;
 
-export const SectionList = styled.ul`
-  line-height: 2;
-  margin-top: 18px;
-  font-size: 16px;
-  color: black;
-  padding-left: 0;
-`;
-
 export const ListItem = styled.li`
   line-height: 2;
   margin-bottom: 16px;
@@ -75,14 +80,4 @@ export const IconContainer = styled.div`
   justify-content: center;
   ${isSmallScreen ? `margin-top: 50px;` : `margin-top: 36px;`}
   gap: 20px;
-`;
-
-export const Section = styled.section`
-  padding: 40px;
-  border-bottom: 1px solid #ddd;
-`;
-
-export const SectionTitle = styled.h2`
-  font-size: 2rem;
-  margin-bottom: 20px;
 `;
