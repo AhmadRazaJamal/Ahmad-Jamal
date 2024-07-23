@@ -31,36 +31,36 @@ const threeJsProjectContent: ProjectContent[] = [
   {
     name: 'Galaxy Generator in ThreeJS',
     description: 'Three.js rendered model of a galaxy with controls for star randomness, radius, branches, and more',
-    url: '/project-media/three-galaxy-generator.mp4',
-    thumbnail: '/project-media/galaxy-generator-thumbnail.png',
+    url: '/media/three-galaxy-generator.mp4',
+    thumbnail: '/media/galaxy-generator-thumbnail.png',
   },
   {
     name: 'Waves in ThreeJS',
     description: 'Three.js rendered waves, showcasing dynamic and realistic wave simulations',
-    url: '/project-media/three-waves.mp4',
-    thumbnail: '/project-media/waves-generator-thumbnail.png',
+    url: '/media/three-waves.mp4',
+    thumbnail: '/media/waves-generator-thumbnail.png',
   },
 ];
 
 const ctvImages = [
-  { original: '/project-media/ctv-1.webp' },
-  { original: '/project-media/ctv-2.webp' },
-  { original: '/project-media/ctv-3.webp' },
-  { original: '/project-media/ctv-4.webp' },
+  { original: '/media/ctv-1.webp' },
+  { original: '/media/ctv-2.webp' },
+  { original: '/media/ctv-3.webp' },
+  { original: '/media/ctv-4.webp' },
 ];
 
 const nlcImages = [
-  { original: '/project-media/nlc-1.webp' },
-  { original: '/project-media/nlc-2.webp' },
-  { original: '/project-media/nlc-3.webp' },
-  { original: '/project-media/nlc-4.webp' },
+  { original: '/media/nlc-1.webp' },
+  { original: '/media/nlc-2.webp' },
+  { original: '/media/nlc-3.webp' },
+  { original: '/media/nlc-4.webp' },
 ];
 
 const cpbImages = [
-  { original: '/project-media/cpb-1.webp' },
-  { original: '/project-media/cpb-2.webp' },
-  { original: '/project-media/cpb-3.webp' },
-  { original: '/project-media/cpb-4.webp' },
+  { original: '/media/cpb-1.webp' },
+  { original: '/media/cpb-2.webp' },
+  { original: '/media/cpb-3.webp' },
+  { original: '/media/cpb-4.webp' },
 ];
 
 const Sections: React.FC = () => {
