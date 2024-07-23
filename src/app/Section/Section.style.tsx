@@ -1,13 +1,19 @@
 import styled, { css } from 'styled-components';
-import { isSmallScreen, isMobileScreen, isMobileDevice } from '../utils/constants';
+import { isSmallScreen } from '../utils/constants';
 
-export const SectionContainer = styled.div<{ id: string, isMobileSafari: boolean }>`
-    position: absolute;
-    padding-top: 100px;
-    margin: 0;
-    background-color: floralwhite;
-    overflow: hidden; /* Ensure content stays within bounds */
-${({ id }) => {
+interface SectionContainerProps {
+  id: string;
+  isMobileSafari: boolean;
+}
+
+export const SectionContainer = styled.div<SectionContainerProps>`
+  position: absolute;
+  padding-top: 100px;
+  margin: 0;
+  background-color: floralwhite;
+  overflow: hidden;
+
+  ${({ id }) => {
     const baseStyles = css`
       ${isSmallScreen ? `padding-top: 200px;` : `padding-top: 250px;`}
       padding-left: 5vw;
@@ -40,7 +46,7 @@ ${({ id }) => {
         `;
       case 'section-four':
         return css`
-          width:80vw;
+          width: 80vw;
           ${isSmallScreen ? `top: 2090dvh;` : `top: 2100dvh;`}
           height: 100%;
           padding-top: 100px;
@@ -54,12 +60,12 @@ ${({ id }) => {
   }}
 `;
 
-export const SectionIntroWrapper = styled.div` 
+export const SectionIntroWrapper = styled.div`
   margin: 0 24px;
   display: flex;
   justify-content: space-between;
   position: relative;
-  border-bottom: 2px solid #1E90FF;
+  border-bottom: 2px solid #1e90ff;
 `;
 
 export const ProgressBarWrapper = styled.div`
@@ -81,13 +87,13 @@ export const ProgressBar = styled.div`
 export const SectionTitle = styled.h1`
   font-weight: normal;
   font-size: 28px;
-  color: #1E90FF;
+  color: #1e90ff;
   margin-bottom: 16px;
 `;
 
 export const SectionNumber = styled.span`
   font-size: 28px;
-  color: #1E90FF;
+  color: #1e90ff;
   margin-bottom: 16px;
 `;
 
