@@ -2,11 +2,10 @@ import styled from 'styled-components';
 import { isSmallScreen } from '../utils/constants';
 
 export const StyledForm = styled.form`
-  width: 60%;
+  width: ${isSmallScreen ? '100%' : '60%'};
   display: flex;
   flex-direction: column;
-  ${isSmallScreen ? `  align-items: start;;` : `align-items: center;`}
-  ${isSmallScreen ? `width: 100%;` : `width: 60%;`}
+  align-items: ${isSmallScreen ? 'start' : 'center'};
 `;
 
 export const FormWrapper = styled.div`
@@ -18,14 +17,15 @@ export const FormWrapper = styled.div`
 
   .form-group {
     position: relative;
-    ${isSmallScreen ? `width: 92.5%;` : `width: 80%;`}
+    width: ${isSmallScreen ? '92.5%' : '80%'};
     margin-bottom: 12px;
 
     &.input-error {
       margin-bottom: 24px;
     }
 
-    input, textarea {
+    input,
+    textarea {
       padding: 8px;
       width: 100%;
     }
@@ -44,25 +44,26 @@ export const FormWrapper = styled.div`
   }
 
   button {
-    background-color: #1E90FF;
+    background-color: #1e90ff;
     color: white;
-    border: 1px;
+    border: none;
     border-radius: 10px;
     width: 120px;
     padding: 8px;
     margin-top: 12px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #1c86ee;
+    }
+
+    &:disabled {
+      background-color: #87cefa;
+    }
   }
 
-  button:hover {
-    cursor: pointer; 
-    background-color: #1C86EE;
-  }
-
-  button:disabled {
-    background-color: #87CEFA;
-  }
-
-  .input-error input, .input-error textarea {
+  .input-error input,
+  .input-error textarea {
     border-color: red;
     border-radius: 4px;
   }
@@ -73,8 +74,8 @@ export const FormWrapper = styled.div`
 
   .success-message {
     color: green;
-    margin-top: 12px;
-    font-size: 14px;
+    margin-top: 8px;
+    font-size: 12px;
   }
 
   .error-message {
