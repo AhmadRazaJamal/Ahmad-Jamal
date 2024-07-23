@@ -6,9 +6,9 @@ import { isSmallScreen, isMobileScreen, isMobileDevice } from '../utils/constant
 import { animateSectionBorders, changeProgressBarHeight, easeOutCubic, loadModelWithTextures } from '../utils/helpers';
 import ScrollingSurface from '../ScrollingSurface/ScrollingSurface';
 import ScrollUp from '../ScrollUp/ScrollUp';
-import InteractiveButton from '../InteractiveButton/InteractiveButton';
+import InteractiveButton from '../InteractiveToggle/InteractiveToggle';
 import Sections from '../Sections/Sections';
-import LoadingCube from '../Loading/Loading';
+import LoadingCube from '../LoadingCube/LoadingCube';
 
 interface IModel {
   scene: THREE.Group;

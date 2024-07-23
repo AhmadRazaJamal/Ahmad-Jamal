@@ -1,11 +1,7 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 interface FullScreenWrapperProps {
   isLoading?: boolean;
-}
-
-interface CubeFaceProps {
-  className: string;
 }
 
 export const FullScreenWrapper = styled.div<FullScreenWrapperProps>`
@@ -21,7 +17,7 @@ export const CubeWrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;q
+  align-items: center;
   transform-style: preserve-3d;
   animation: bouncing var(--animation-duration) infinite;
 `;
@@ -41,15 +37,38 @@ export const CubeFaces = styled.div`
   transform: translateX(0) translateY(0) translateZ(calc(-1 * var(--size) / 2));
 `;
 
-export const CubeFace = styled.div<CubeFaceProps>`
+export const CubeFace = styled.div`
   position: absolute;
   inset: 0;
   background: var(--face-color);
   border: solid 0.5px white;
+
   &.shadow {
     transform: translateZ(calc(-1 * var(--size)));
     animation: bouncing-shadow var(--animation-duration) infinite;
   }
+
   &.face-top {
-    transform: translate
+    transform: translateZ(calc(var(--size) / 2));
+  }
+
+  &.face-bottom {
+    transform: translateZ(calc(-1 * var(--size) / 2));
+  }
+
+  &.face-left {
+    transform: rotateY(-90deg) translateZ(calc(var(--size) / 2));
+  }
+
+  &.face-right {
+    transform: rotateY(90deg) translateZ(calc(var(--size) / 2));
+  }
+
+  &.face-front {
+    transform: rotateX(90deg) translateZ(calc(var(--size) / 2));
+  }
+
+  &.face-back {
+    transform: rotateX(-90deg) translateZ(calc(var(--size) / 2));
+  }
 `;

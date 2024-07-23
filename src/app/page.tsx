@@ -3,7 +3,7 @@
 import { NextUIProvider } from "@nextui-org/react";
 import { Canvas } from "@react-three/fiber";
 import Portfolio from "./ModelWrapper/ModelWrapper";
-import { FullScreenWrapper } from "./Loading/Loading.styles";
+import { FullScreenWrapper } from "./LoadingCube/LoadingCube.styles";
 
 export default function Home() {
   return (
