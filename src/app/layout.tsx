@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -36,6 +37,7 @@ export default function RootLayout({
         <title>Ahmad R. Jamal Portfolio</title>
       </head>
       <body className={inter.className}>{children}</body>
+      <SpeedInsights />
       <Analytics />
     </html>
   );
