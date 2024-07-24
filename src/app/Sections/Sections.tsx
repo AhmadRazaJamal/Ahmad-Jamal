@@ -143,14 +143,14 @@ const Sections: React.FC = () => {
         <Heading>Web Development</Heading>
         <SectionList>
           <ListItem>Creating websites that are functional, performant, yet pleasing to look at</ListItem>
-          <ListItem>Creating full scale solutions for businesses like Personalization, A/B testing, and Analytics.</ListItem>
+          <ListItem>Creating full scale solutions for businesses like Personalization, A/B testing, and Analytics</ListItem>
         </SectionList>
 
         <Heading>Search Engine Optimization</Heading>
         <SectionList>
           <ListItem>Optimizing Core Web Vitals for websites so they can rise from the trenches of Google rankings</ListItem>
           <ListItem>Setting up Google Analytics and Search Console. I don't just set them up, but also act as a guide in understanding the data as well</ListItem>
-          <ListItem>Providing guidance on areas to help improve Google rankings through keywords, blogs, intentful content etc</ListItem>
+          <ListItem>Providing guidance on areas to help improve Google rankings through keywords, blogs, and intentful content</ListItem>
         </SectionList>
 
         <Heading>CI/CD</Heading>

@@ -146,17 +146,17 @@ const Office: React.FC<OfficeProps> = ({ model, scale, isInteractiveMode }) => {
       }
 
       if (isSmallScreen) {
-        animateSectionBorders('section-one', scroll.offset, 200, 0, 0, 200, 0.06, 0.095, 0.154, 0.19);
-        animateSectionBorders('section-two', scroll.offset, 200, 0, 0, 200, 0.275, 0.33, 0.552, 0.6);
-        animateSectionBorders('section-three', scroll.offset, 200, 0, 0, 200, 0.69, 0.75, 0.848, 0.89);
+        animateSectionBorders('section-one', scroll.offset, 200, 10, 10, 200, 0.06, 0.095, 0.154, 0.19);
+        animateSectionBorders('section-two', scroll.offset, 200, 10, 10, 200, 0.275, 0.33, 0.552, 0.6);
+        animateSectionBorders('section-three', scroll.offset, 200, 10, 10, 200, 0.69, 0.75, 0.848, 0.89);
 
         changeProgressBarHeight('progress-bar-one', scroll.offset, 0.095, scroll.offset > 0.095 && scroll.offset < 0.22, 3770, 'rgb(70, 130, 180, 0.5)');
         changeProgressBarHeight('progress-bar-two', scroll.offset, 0.323, scroll.offset > 0.323 && scroll.offset < 0.7, 2530, 'rgb(253, 216, 53, 0.5)');
         changeProgressBarHeight('progress-bar-three', scroll.offset, 0.738, scroll.offset > 0.738 && scroll.offset < 0.9, 3000, 'rgb(57, 150, 122, 0.8)');
       } else {
-        animateSectionBorders('section-one', scroll.offset, 200, 0, 0, 200, 0.056, 0.11, 0.148, 0.185);
-        animateSectionBorders('section-two', scroll.offset, 200, 0, 0, 200, 0.28, 0.34, 0.55, 0.61);
-        animateSectionBorders('section-three', scroll.offset, 200, 0, 0, 200, 0.7, 0.75, 0.84, 0.88);
+        animateSectionBorders('section-one', scroll.offset, 200, 10, 10, 200, 0.056, 0.11, 0.148, 0.185);
+        animateSectionBorders('section-two', scroll.offset, 200, 10, 10, 200, 0.28, 0.34, 0.55, 0.61);
+        animateSectionBorders('section-three', scroll.offset, 200, 10, 10, 200, 0.7, 0.75, 0.84, 0.88);
 
         changeProgressBarHeight('progress-bar-one', scroll.offset, 0.095, scroll.offset > 0.095 && scroll.offset < 0.22, 4000, 'rgb(70, 130, 180, 0.5)');
         changeProgressBarHeight('progress-bar-two', scroll.offset, 0.323, scroll.offset > 0.323 && scroll.offset < 0.7, 2500, 'rgb(253, 216, 53, 0.5)');
