@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   width: 100vw;
 `;
 
-const ScrollUpContent = styled.div`
+const ScrollArrowContent = styled.div`
   text-align: center;
   position: relative;
   font-weight: 800;
@@ -32,7 +32,7 @@ const IconWrapper = styled.div<{ isMobileSafari: boolean }>`
   `}
 `;
 
-const ScrollUp = () => {
+const ScrollArrow = () => {
   const [isMobileSafari, setIsMobileSafari] = useState(false);
 
   useEffect(() => {
@@ -43,13 +43,13 @@ const ScrollUp = () => {
 
   return (
     <Wrapper>
-      <ScrollUpContent>
+      <ScrollArrowContent>
         <IconWrapper isMobileSafari={isMobileSafari}>
           <KeyboardArrowUpIcon fontSize="large" id='scroll-icon' />
         </IconWrapper>
-      </ScrollUpContent>
+      </ScrollArrowContent>
     </Wrapper>
   );
 };
 
-export default ScrollUp;
+export default ScrollArrow;

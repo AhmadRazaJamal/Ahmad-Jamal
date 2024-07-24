@@ -6,7 +6,7 @@ import InteractiveButton from '../InteractiveToggle/InteractiveToggle';
 import ScrollingSurface from '../SectionSurface/SectionSurface';
 import LoadingCube from '../LoadingCube/LoadingCube';
 import { isSmallScreen } from '../utils/constants';
-import ScrollUp from '../ScrollUp/ScrollUp';
+import ScrollUp from '../ScrollArrow/ScrollUp';
 import Sections from '../Sections/Sections';
 import * as THREE from 'three';
 
