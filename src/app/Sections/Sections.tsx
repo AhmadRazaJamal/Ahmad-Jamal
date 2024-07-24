@@ -74,7 +74,7 @@ const Sections: React.FC = () => {
         <Text>
           I'm a Full-Stack Developer based in the sunny city of Calgary, currently working remotely from the comfort of my home office 🏠.
         </Text>
-        <Text>I have been working professionally as a Developer for almost 4 years now, but have been fiddling with tech for almost 20.</Text>
+        <Text>I have been working professionally as a Developer for almost 5 years now, but have been fiddling with tech for almost 20.</Text>
         <Text>
           Over the last few years I've had the opportunity to team up with some amazing people at startups like HigherGround, FreshGrade, and presently Fresh Tracks Canada.
           Working at these fast-paced and exciting startups has shaped me into the versatile developer I am today.
