@@ -50,6 +50,10 @@ export const loadModelWithTextures = (modelPath: string, texturePath: string): M
             texture.encoding = THREE.sRGBEncoding;
             texture.wrapS = THREE.ClampToEdgeWrapping;
             texture.wrapT = THREE.ClampToEdgeWrapping;
+            // Reduce GPU work and memory
+            texture.generateMipmaps = false;
+            texture.minFilter = THREE.LinearFilter;
+            texture.magFilter = THREE.LinearFilter;
 
             const material = new THREE.MeshBasicMaterial({ map: texture });
             setBakedMaterial(material);

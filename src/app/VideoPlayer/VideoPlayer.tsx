@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactPlayer from 'react-player';
+import ReactPlayer from 'react-player/lazy';
 import { VideoPlayerCustom, PlayerWrapper, ReactPlayerStyled } from './VideoPlayer.styles';
 
 interface VideoPlayerItem {
@@ -37,7 +37,7 @@ const VideoPlayerItemComponent: React.FC<VideoPlayerItemProps> = ({ item, classN
         <ReactPlayerStyled>
           <ReactPlayer
             className={className}
-            playing={true}
+            playing={false}
             url={item.url}
             light={item.thumbnail}
             controls={true}

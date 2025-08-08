@@ -1,13 +1,14 @@
 import { animateSectionBorders, changeProgressBarHeight, easeOutCubic, loadModelWithTextures } from '../utils/helpers';
-import { Html, OrbitControls, Scroll, ScrollControls, useScroll } from '@react-three/drei';
-import { useLayoutEffect, useRef, useState, useCallback } from 'react';
+import { Html, OrbitControls, Scroll, ScrollControls, useScroll, AdaptiveDpr, AdaptiveEvents } from '@react-three/drei';
+import { useLayoutEffect, useRef, useState, useCallback, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import { useThree, useFrame } from '@react-three/fiber';
 import InteractiveButton from '../InteractiveToggle/InteractiveToggle';
 import ScrollingSurface from '../SectionSurface/SectionSurface';
 import LoadingCube from '../LoadingCube/LoadingCube';
 import { isSmallScreen } from '../utils/constants';
 import ScrollUp from '../ScrollArrow/ScrollUp';
-import Sections from '../Sections/Sections';
+const Sections = dynamic(() => import('../Sections/Sections'), { ssr: false, loading: () => null });
 import * as THREE from 'three';
 
 interface IModel {
@@ -24,7 +25,8 @@ const ModelWrapper: React.FC = () => {
   const { camera } = useThree();
   const [interactiveMode, setInteractiveMode] = useState<boolean>(false);
   const [transitionCamera, setTransitionCamera] = useState<boolean>(false);
-  const { scene, bakedMaterial } = loadModelWithTextures('office.glb', 'baked-office-textures.png');
+  const { scene, bakedMaterial } = loadModelWithTextures('/office.glb', '/baked-office-textures.png');
+  const [showSections, setShowSections] = useState<boolean>(false);
   const originalZoom = isSmallScreen ? window.innerWidth * 0.55 : window.innerWidth * 0.25;
 
   useLayoutEffect(() => {
@@ -59,6 +61,12 @@ const ModelWrapper: React.FC = () => {
     }
   });
 
+  // Defer mounting heavy HTML sections slightly after initial render
+  useEffect(() => {
+    const id = window.setTimeout(() => setShowSections(true), 1200);
+    return () => window.clearTimeout(id);
+  }, []);
+
   if (!bakedMaterial) {
     return (
       <Html style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}>
@@ -69,14 +77,15 @@ const ModelWrapper: React.FC = () => {
 
   const renderContent = (
     <>
+      <AdaptiveDpr pixelated />
+      <AdaptiveEvents />
       <ScrollingSurfaces />
       <Office model={{ scene }} scale={0.08} isInteractiveMode={interactiveMode} />
       <Scroll html>
         <InteractiveButton aria-label="interactive-mode-switch" setInteractive={setInteractiveMode} isOn={interactiveMode} />
         <ScrollUp />
-        <Sections />
+        {showSections ? <Sections /> : null}
       </Scroll>
-      <directionalLight position={[1, 2, 3]} intensity={3} />
     </>
   );
 
@@ -101,9 +110,9 @@ const ModelWrapper: React.FC = () => {
 
 const ScrollingSurfaces: React.FC = () => (
   <>
-    <ScrollingSurface start={0} color="#4682B4" yPosition={-1} />
-    <ScrollingSurface start={0.22} color="#FDD835" yPosition={-0.98} />
-    <ScrollingSurface start={0.64} color="#12664F" yPosition={-0.96} />
+    <ScrollingSurface start={0} color="#BDE0FE" yPosition={-1} />
+    <ScrollingSurface start={0.22} color="#FFF2B2" yPosition={-0.98} />
+    <ScrollingSurface start={0.64} color="#CFF7E3" yPosition={-0.96} />
   </>
 );
 

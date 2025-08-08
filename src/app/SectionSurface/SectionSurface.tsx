@@ -26,7 +26,7 @@ const SectionSurface: React.FC<SectionSurfaceProps> = ({ start, color, yPosition
   return (
     <mesh ref={ref} rotation={[-Math.PI / 2, 0, 0]} position={[0, yPosition, 0]}>
       <circleGeometry args={[1, 64]} />
-      <meshStandardMaterial color={color} />
+      <meshBasicMaterial color={color} toneMapped transparent opacity={0.85} />
     </mesh>
   );
 };
